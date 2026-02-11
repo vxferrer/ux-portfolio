@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre mí — vanesafrz</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#0038FF;--blue-light:#3D6BFF;--blue-hover:#0030DD;--blue-glow:rgba(0,56,255,.10);--daisy-yellow:#FFD43B;--black:#0A0A0A;--white:#FAFAFA;--gray-50:#F8F8F8;--gray-100:#F4F4F5;--gray-200:#E4E4E7;--gray-300:#D4D4D8;--gray-400:#A1A1AA;--gray-500:#71717A;--gray-600:#52525B;--gray-700:#3F3F46;--radius:16px;--radius-lg:20px}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden;-webkit-font-smoothing:antialiased}::selection{background:var(--blue);color:#fff}a{color:inherit;text-decoration:none}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,10,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:#fff}.nav-logo .blue{color:var(--blue)}
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center}
+.nav-links a{font-size:14px;font-weight:500;color:rgba(255,255,255,.5);transition:color .3s}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-cta{font-size:13px;font-weight:600;color:#fff!important;background:var(--blue);padding:8px 20px;border-radius:100px;transition:all .3s}.nav-cta:hover{background:var(--blue-hover)}
+.intro{max-width:1100px;margin:0 auto;padding:160px 48px 80px;display:grid;grid-template-columns:1fr 380px;gap:64px;align-items:start}
+.intro-text h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(42px,5vw,64px);line-height:1.1;margin-bottom:32px}
+.intro-bio{font-size:17px;color:var(--gray-600);line-height:1.8;margin-bottom:20px}
+.intro-bio em{font-style:normal;color:var(--blue);font-weight:600}
+.intro-photo{position:relative}
+.intro-photo-frame{width:100%;aspect-ratio:3/4;background:var(--gray-100);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-200);display:flex;align-items:center;justify-content:center}
+.intro-photo-placeholder{font-size:14px;color:var(--gray-400);text-align:center;line-height:1.6}
+.intro-frizi{position:absolute;bottom:-16px;right:-16px;z-index:2}
+.origin-section{max-width:1100px;margin:0 auto;padding:40px 48px 80px}
+.origin-title{font-family:'Syne',sans-serif;font-weight:800;font-size:28px;margin-bottom:32px;text-align:center}
+.origin-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.origin-card{background:var(--gray-50);border-radius:var(--radius-lg);padding:32px;text-align:center;border:1px solid var(--gray-200);transition:all .3s}
+.origin-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.06)}
+.origin-emoji{font-size:48px;margin-bottom:12px;display:block}
+.origin-label{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;margin-bottom:4px}
+.origin-sub{font-size:13px;color:var(--gray-500)}
+.skills-section{max-width:1100px;margin:0 auto;padding:80px 48px}
+.skills-title{font-family:'Syne',sans-serif;font-weight:800;font-size:28px;margin-bottom:32px}
+.skills-cloud{display:flex;flex-wrap:wrap;gap:10px}
+.skill-pill{font-size:14px;font-weight:500;color:var(--gray-600);background:var(--gray-50);padding:10px 20px;border-radius:100px;border:1px solid var(--gray-200);transition:all .3s;cursor:default}
+.skill-pill:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-glow);transform:translateY(-2px)}
+.skill-pill.featured{background:var(--blue);color:#fff;border-color:var(--blue);font-weight:600}
+.skill-pill.featured:hover{background:var(--blue-hover);color:#fff}
+.fun-section{max-width:1100px;margin:0 auto;padding:0 48px 80px}
+.fun-title{font-family:'Syne',sans-serif;font-weight:800;font-size:28px;margin-bottom:32px}
+.fun-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.fun-card{aspect-ratio:1;background:var(--gray-100);border-radius:var(--radius);overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid var(--gray-200);transition:transform .3s}
+.fun-card:hover{transform:scale(1.02)}
+.fun-card.wide{grid-column:span 2;aspect-ratio:2/1}
+.fun-placeholder{font-size:13px;color:var(--gray-400);text-align:center;line-height:1.5}
+.fun-placeholder span{display:block;font-size:32px;margin-bottom:6px}
+.talk-section{padding:80px 48px 120px;text-align:center}
+.talk-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(48px,7vw,72px);line-height:1.1;margin-bottom:24px}
+.talk-email{display:inline-block;font-size:clamp(18px,2.5vw,24px);font-weight:500;color:var(--blue);border-bottom:2px solid transparent;padding-bottom:4px;transition:all .3s}
+.talk-email:hover{border-bottom-color:var(--blue)}
+.talk-sub{font-size:16px;color:var(--gray-400);margin-top:16px;line-height:1.6}
+.talk-frizi{margin-top:40px;opacity:.8}
+.footer{padding:32px 48px;background:var(--black);display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.06)}
+.footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;color:#fff}.footer-logo .blue{color:var(--blue)}
+.footer-note{font-size:12px;color:var(--gray-600)}
+.footer-socials{display:flex;gap:12px}
+.footer-socials a{width:34px;height:34px;border-radius:50%;border:1px solid var(--gray-700);display:flex;align-items:center;justify-content:center;color:var(--gray-500);transition:all .3s}
+.footer-socials a:hover{border-color:var(--blue);color:var(--blue);background:rgba(0,56,255,.08)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:translateY(0)}
+/* HAMBURGER */
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;z-index:201;background:none;border:none}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+.nav-hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav-hamburger.active span:nth-child(2){opacity:0}
+.nav-hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+@media(max-width:768px){
+.nav-hamburger{display:flex}
+.nav-links{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:rgba(10,10,10,.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);flex-direction:column;padding:100px 40px 40px;gap:0;transition:right .35s ease;z-index:200;border-left:1px solid rgba(255,255,255,.06)}
+.nav-links.open{right:0}
+.nav-links li{width:100%}
+.nav-links a{display:block;padding:16px 0;font-size:18px;border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-links .nav-cta{display:inline-flex;margin-top:16px;border-bottom:none;padding:12px 28px;text-align:center}
+.intro{grid-template-columns:1fr;gap:40px;padding:120px 24px 60px}
+.intro-photo{max-width:340px;margin:0 auto}
+.origin-grid{grid-template-columns:1fr}
+.fun-grid{grid-template-columns:1fr 1fr}.fun-card.wide{grid-column:span 1;aspect-ratio:1}
+.nav{padding:16px 24px}
+.origin-section,.skills-section,.fun-section{padding-left:24px;padding-right:24px}
+.journey-section{padding:60px 24px}
+.talk-section{padding:60px 24px 80px}
+.footer{flex-direction:column;gap:16px;text-align:center}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo">vanesa<span class="blue">frz</span></a>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Proyectos</a></li>
+    <li><a href="about.html" class="active">Sobre mí</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="mailto:tu@email.com" class="nav-cta">Hablemos</a></li>
+  </ul>
+</nav>
+
+<section class="intro">
+  <div class="intro-text reveal">
+    <h1>Hola 👋<br>Soy Vanesa.</h1>
+    <p class="intro-bio">Me gusta pensar que soy una diseñadora con alma de <em>storyteller</em>. Vengo del mundo de la edición de vídeo y el marketing digital, donde aprendí que todo comunica, todo cuenta una historia, y que los pequeños detalles marcan la diferencia.</p>
+    <p class="intro-bio">Ahora aplico esa mentalidad al diseño de productos digitales: entender a las personas, definir bien el problema y crear experiencias que <em>funcionan y se sienten bien</em>. Me encanta la fase de research — descubrir el "por qué" detrás de las cosas.</p>
+    <p class="intro-bio">Cuando no estoy diseñando, probablemente me encontrarás paseando con mi perro, viendo alguna serie, o buscando el café perfecto. Soy curiosa por naturaleza, siempre aprendiendo y siempre buscando mejorar.</p>
+  </div>
+  <div class="intro-photo reveal">
+    <div class="intro-photo-frame">
+      <!-- ✏️ CAMBIAR SRC: Pon la ruta de tu foto personal (380×480px recomendado) -->
+      <img src="" alt="Vanesa Ferrer Corzo" style="width:100%;height:100%;object-fit:cover;display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="intro-photo-placeholder" style="display:flex">Tu foto aquí<br><span style="font-size:12px">380 × 480px</span></div>
+    </div>
+    <div class="intro-frizi">
+      <svg width="65" height="65" viewBox="0 0 90 90" fill="none"><g transform="translate(45,45)"><ellipse cx="0" cy="-20" rx="10" ry="18" fill="#0038FF" opacity=".9" transform="rotate(0)"/><ellipse cx="0" cy="-20" rx="10" ry="18" fill="#0038FF" opacity=".9" transform="rotate(51.4)"/><ellipse cx="0" cy="-20" rx="10" ry="18" fill="#0038FF" opacity=".9" transform="rotate(102.8)"/><ellipse cx="0" cy="-20" rx="10" ry="18" fill="#0038FF" opacity=".9" transform="rotate(154.3)"/><ellipse cx="0" cy="-20" rx="10" ry="18" fill="#0038FF" opacity=".9" transform="rotate(205.7)"/><ellipse cx="0" cy="-20" rx="10" ry="18" fill="#0038FF" opacity=".9" transform="rotate(257.1)"/><ellipse cx="0" cy="-20" rx="10" ry="18" fill="#0038FF" opacity=".9" transform="rotate(308.6)"/><circle r="14" fill="#FFD43B"/><circle cx="-5" cy="-2" r="3" fill="#0A0A0A"/><circle cx="5" cy="-2" r="3" fill="#0A0A0A"/><circle cx="-4" cy="-3" r="1" fill="#fff"/><circle cx="6" cy="-3" r="1" fill="#fff"/><path d="M-5 4Q0 9 5 4" stroke="#0A0A0A" stroke-width="1.8" fill="none" stroke-linecap="round"/></g></svg>
+    </div>
+  </div>
+</section>
+
+<section class="origin-section reveal">
+  <h2 class="origin-title">Un poco sobre mi mundo</h2>
+  <div class="origin-grid">
+    <div class="origin-card"><span class="origin-emoji">🎬</span><div class="origin-label">Editora de vídeo</div><div class="origin-sub">Mi vida anterior — storytelling visual y marketing digital</div></div>
+    <div class="origin-card"><span class="origin-emoji">🌼</span><div class="origin-label">Product Designer</div><div class="origin-sub">Mi presente — en formación intensiva, creando mis primeros proyectos</div></div>
+    <div class="origin-card"><span class="origin-emoji">🇪🇸</span><div class="origin-label">España</div><div class="origin-sub">De aquí — abierta a remoto o presencial</div></div>
+    <div class="origin-card"><span class="origin-emoji">🐶</span><div class="origin-label">Dog lover</div><div class="origin-sub">Mi mejor compañero de brainstorming</div></div>
+  </div>
+</section>
+
+<section class="skills-section reveal">
+  <h2 class="skills-title">Lo que sé hacer</h2>
+  <div class="skills-cloud">
+    <span class="skill-pill featured">UX Research</span>
+    <span class="skill-pill featured">UI Design</span>
+    <span class="skill-pill featured">Figma</span>
+    <span class="skill-pill">Prototyping</span>
+    <span class="skill-pill">Design Thinking</span>
+    <span class="skill-pill">User Testing</span>
+    <span class="skill-pill">Wireframing</span>
+    <span class="skill-pill">Heurísticas</span>
+    <span class="skill-pill">Design Systems</span>
+    <span class="skill-pill">Adobe Premiere</span>
+    <span class="skill-pill">After Effects</span>
+    <span class="skill-pill">Marketing Digital</span>
+    <span class="skill-pill">Storytelling</span>
+    <span class="skill-pill">Canva</span>
+  </div>
+</section>
+
+<section class="fun-section reveal">
+  <h2 class="fun-title">Fun times 📸</h2>
+  <div class="fun-grid">
+    <div class="fun-card wide"><div class="fun-placeholder"><span>🐶</span>Foto con tu perro<br><span style="font-size:11px">o momento favorito</span></div></div>
+    <div class="fun-card"><div class="fun-placeholder"><span>☕</span>Tu café favorito</div></div>
+    <div class="fun-card"><div class="fun-placeholder"><span>🎨</span>Diseñando</div></div>
+    <div class="fun-card"><div class="fun-placeholder"><span>✈️</span>Viajando</div></div>
+    <div class="fun-card wide"><div class="fun-placeholder"><span>🌅</span>Un lugar especial<br><span style="font-size:11px">que te inspire</span></div></div>
+  </div>
+</section>
+
+<section class="talk-section">
+  <div class="reveal">
+    <h2 class="talk-title">Let's Talk</h2>
+    <a href="mailto:tu@email.com" class="talk-email">tu@email.com</a>
+    <p class="talk-sub">En España, pero abierta a explorar cualquier oportunidad.</p>
+    <div class="talk-frizi">
+      <svg width="70" height="90" viewBox="0 0 280 360" fill="none"><g transform="translate(55,85)"><path d="M40 30Q15 0 10-25" stroke="#0A0A0A" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="10" cy="-28" r="10" fill="#fff" stroke="#0A0A0A" stroke-width="2.5"/></g><g transform="translate(140,120)"><ellipse cx="0" cy="-42" rx="22" ry="36" fill="#0038FF" stroke="#0A0A0A" stroke-width="3" transform="rotate(0)"/><ellipse cx="0" cy="-42" rx="22" ry="36" fill="#0038FF" stroke="#0A0A0A" stroke-width="3" transform="rotate(51.4)"/><ellipse cx="0" cy="-42" rx="22" ry="36" fill="#0038FF" stroke="#0A0A0A" stroke-width="3" transform="rotate(102.8)"/><ellipse cx="0" cy="-42" rx="22" ry="36" fill="#0038FF" stroke="#0A0A0A" stroke-width="3" transform="rotate(154.3)"/><ellipse cx="0" cy="-42" rx="22" ry="36" fill="#0038FF" stroke="#0A0A0A" stroke-width="3" transform="rotate(205.7)"/><ellipse cx="0" cy="-42" rx="22" ry="36" fill="#0038FF" stroke="#0A0A0A" stroke-width="3" transform="rotate(257.1)"/><ellipse cx="0" cy="-42" rx="22" ry="36" fill="#0038FF" stroke="#0A0A0A" stroke-width="3" transform="rotate(308.6)"/><circle r="30" fill="#FFD43B" stroke="#0A0A0A" stroke-width="3"/><circle cx="-10" cy="-5" r="7" fill="#0A0A0A"/><circle cx="10" cy="-5" r="7" fill="#0A0A0A"/><circle cx="-7" cy="-8" r="2.5" fill="#fff"/><circle cx="13" cy="-8" r="2.5" fill="#fff"/><path d="M-12 10Q0 22 12 10" stroke="#0A0A0A" stroke-width="3" fill="none" stroke-linecap="round"/></g></svg>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <a href="index.html" class="footer-logo">vanesa<span class="blue">frz</span></a>
+  <div class="footer-note">Hecho con 🌼 por vanesafrz · 2026</div>
+  <div class="footer-socials">
+    <a href="https://linkedin.com/in/vanesafrz" target="_blank" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z" stroke="currentColor" stroke-width="2"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/></svg></a>
+    <a href="mailto:tu@email.com" aria-label="Email"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M22 7l-10 7L2 7" stroke="currentColor" stroke-width="2"/></svg></a>
+  </div>
+</footer>
+<script>
+function toggleMenu(){document.getElementById('hamburger').classList.toggle('active');document.getElementById('navLinks').classList.toggle('open')}
+document.querySelectorAll('#navLinks a').forEach(a=>{a.addEventListener('click',()=>{document.getElementById('hamburger').classList.remove('active');document.getElementById('navLinks').classList.remove('open')})});
+document.querySelectorAll('.reveal').forEach(el=>{new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -60px 0px'}).observe(el)});
+</script>
+</body>
+</html>
