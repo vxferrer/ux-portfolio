@@ -4,413 +4,390 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>vanesafrz — UX/UI & Product Designer</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --blue: #0038FF;
-  --blue-dark: #002ACC;
-  --blue-glow: rgba(0,56,255,0.12);
-  --yellow: #FFD43B;
-  --black: #0A0A0A;
-  --white: #FAFAFA;
-  --gray-400: #A1A1AA;
-  --gray-500: #71717A;
-  --gray-600: #52525B;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:auto}
-body{font-family:'Outfit',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-::selection{background:var(--blue);color:#fff}
-a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
+:root{--blue:#0038FF;--blue-light:#3D6BFF;--blue-hover:#0030DD;--blue-glow:rgba(0,56,255,.10);--daisy-yellow:#FFD43B;--black:#0A0A0A;--white:#FAFAFA;--gray-50:#F8F8F8;--gray-100:#F4F4F5;--gray-200:#E4E4E7;--gray-300:#D4D4D8;--gray-400:#A1A1AA;--gray-500:#71717A;--gray-600:#52525B;--gray-700:#3F3F46;--radius:16px;--radius-lg:20px}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden;-webkit-font-smoothing:antialiased}::selection{background:var(--blue);color:#fff}a{color:inherit;text-decoration:none}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;transition:all .4s}
+.nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:14px 48px;border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:#fff}.nav-logo .blue{color:var(--blue)}
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center}
+.nav-links a{font-size:14px;font-weight:500;color:rgba(255,255,255,.5);transition:color .3s}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-cta{font-size:13px;font-weight:600;color:#fff!important;background:var(--blue);padding:8px 20px;border-radius:100px;transition:all .3s}.nav-cta:hover{background:var(--blue-hover)}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:space-between;position:relative;background:var(--black);overflow:hidden;padding:120px 80px 80px;gap:60px}
+.hero::before{content:'';position:absolute;width:800px;height:800px;background:radial-gradient(circle,var(--blue) 0%,transparent 65%);opacity:.10;top:50%;left:40%;transform:translate(-50%,-50%);animation:heroPulse 6s ease-in-out infinite}
+@keyframes heroPulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.10}50%{transform:translate(-50%,-50%) scale(1.2);opacity:.16}}
+.hero-content{position:relative;z-index:2;max-width:650px;flex:1}
+.hero-greeting{font-size:18px;color:var(--gray-400);margin-bottom:24px;animation:fadeUp .8s ease-out}
+.hero-title{font-family:'Outfit',sans-serif;font-weight:600;font-size:clamp(28px,3vw,40px);line-height:1.35;color:#fff;margin-bottom:24px;animation:fadeUp .8s ease-out .1s both}
+.hero-title em{font-style:normal;color:var(--blue)}
+.hero-name{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(52px,8vw,90px);line-height:1;color:#fff;letter-spacing:-2px;margin-bottom:32px;animation:fadeUp .8s ease-out .15s both}
+.hero-name .blue{color:var(--blue)}
+.hero-buttons{display:flex;gap:16px;animation:fadeUp .8s ease-out .25s both}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;font-family:'Outfit';font-size:15px;font-weight:600;color:#fff;background:var(--blue);padding:14px 32px;border-radius:100px;transition:all .3s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--blue-hover);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,56,255,.3)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;font-family:'Outfit';font-size:15px;font-weight:500;color:var(--gray-400);padding:14px 32px;border-radius:100px;border:1px solid var(--gray-700);transition:all .3s;cursor:pointer}
+.btn-ghost:hover{color:#fff;border-color:var(--gray-500);transform:translateY(-2px)}
+.hero-frizi{position:relative;z-index:2;flex-shrink:0;animation:fadeUp 1s ease-out .3s both;filter:drop-shadow(0 8px 30px rgba(0,56,255,.15))}
+.hero-frizi svg{animation:friziFloat 4s ease-in-out infinite}
+@keyframes friziFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(2deg)}}
+.hero-scroll{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);animation:fadeUp .8s ease-out .5s both}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--gray-600),transparent);animation:scrollPulse 2s ease-in-out infinite}
+@keyframes scrollPulse{0%,100%{opacity:.4}50%{opacity:1}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.section-wrap{max-width:1200px;margin:0 auto;padding:120px 48px}
+.section-label{font-family:'Space Grotesk',monospace;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,3.5vw,42px);line-height:1.2;margin-bottom:48px}
+.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.project-card{border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;transition:transform .4s,box-shadow .4s;background:#fff;border:1px solid var(--gray-200)}
+.project-card:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(0,0,0,.08)}
+.project-card:hover .project-thumb{transform:scale(1.04)}
+.project-img-wrap{overflow:hidden;aspect-ratio:4/3;position:relative;background:var(--gray-100)}
+.project-thumb{width:100%;height:100%;object-fit:cover;transition:transform .6s;display:block}
+.project-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--gray-400);transition:transform .6s}
+.project-body{padding:28px 28px 32px}
+.project-name{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;margin-bottom:8px}
+.project-meta{font-family:'Space Grotesk',monospace;font-size:12px;font-weight:500;color:var(--gray-500);letter-spacing:.5px}
+.project-card.coming-soon{border-style:dashed;border-color:var(--gray-300);cursor:default}
+.coming-soon-content{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.coming-soon-number{font-family:'Syne',sans-serif;font-weight:800;font-size:56px;color:var(--gray-200)}
+.coming-soon-label{font-size:14px;color:var(--gray-400);font-weight:500}
 
-/* FRIZI INTRO */
-.frizi-intro{height:300vh;position:relative}
-.frizi-intro-sticky{position:sticky;top:0;width:100%;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;background:var(--black);z-index:200}
-.frizi-zoom-wrapper{position:relative;display:flex;align-items:center;justify-content:center;will-change:transform}
-.frizi-burst{position:fixed;top:50%;left:50%;width:100px;height:100px;border-radius:50%;background:var(--black);transform:translate(-50%,-50%) scale(0);z-index:199;pointer-events:none;will-change:transform,opacity}
-.intro-scroll-hint{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--gray-500);font-size:11px;letter-spacing:2px;text-transform:uppercase;animation:scrollBounce 2s ease-in-out infinite;transition:opacity .4s}
-.intro-scroll-hint.hidden{opacity:0}
-@keyframes scrollBounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
-.frizi-intro-text{margin-top:24px;font-family:'Syne',sans-serif;font-weight:800;font-size:18px;opacity:.7;transition:opacity .3s;text-align:center}
-.frizi-intro-text .blue{color:var(--blue)}
+/* ─── MODAL ─── */
+.modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(10,10,10,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:none;align-items:flex-start;justify-content:center;padding:40px 24px;overflow-y:auto}
+.modal-overlay.active{display:flex}
+body.modal-open{overflow:hidden}
+.modal{background:#fff;border-radius:var(--radius-lg);max-width:860px;width:100%;position:relative;animation:modalIn .4s ease-out}
+@keyframes modalIn{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.modal-close{position:absolute;top:20px;right:20px;z-index:5;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.9);border:1px solid var(--gray-200);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;font-size:18px;color:var(--gray-600)}
+.modal-close:hover{background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.1)}
+.modal-hero{width:100%;aspect-ratio:16/9;background:var(--gray-100);border-radius:var(--radius-lg) var(--radius-lg) 0 0;overflow:hidden;position:relative}
+.modal-hero img{width:100%;height:100%;object-fit:cover;display:block}
+.modal-hero-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--gray-400)}
+.modal-content{padding:48px}
+.modal-project-name{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,3vw,38px);margin-bottom:8px}
+.modal-project-sub{font-size:16px;color:var(--gray-500);margin-bottom:24px;line-height:1.6}
 
-/* SCROLL ANIMATIONS */
-.reveal{opacity:0;transform:translateY(60px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-left{opacity:0;transform:translateX(-80px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
-.reveal-left.visible{opacity:1;transform:translateX(0)}
-.reveal-right{opacity:0;transform:translateX(80px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
-.reveal-right.visible{opacity:1;transform:translateX(0)}
-.reveal-scale{opacity:0;transform:scale(.9);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
-.reveal-scale.visible{opacity:1;transform:scale(1)}
-.delay-1{transition-delay:.1s}.delay-2{transition-delay:.2s}.delay-3{transition-delay:.3s}.delay-4{transition-delay:.4s}
+/* Tags / Bubbles */
+.modal-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px}
+.modal-tag{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;padding:8px 16px;border-radius:100px;border:1px solid var(--gray-200);color:var(--gray-600);background:var(--gray-50)}
+.modal-tag svg{flex-shrink:0;opacity:.5}
+.modal-tag.tag-team{border-color:#E0E7FF;background:#EEF2FF;color:#4338CA}
+.modal-tag.tag-sector{border-color:#D1FAE5;background:#ECFDF5;color:#065F46}
+.modal-tag.tag-type{border-color:#FEF3C7;background:#FFFBEB;color:#92400E}
+.modal-tag.tag-skill{border-color:#DBEAFE;background:#EFF6FF;color:#1E40AF}
 
-/* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;transition:all .4s ease;opacity:0;transform:translateY(-20px);pointer-events:none}
-.nav.show{opacity:1;transform:translateY(0);pointer-events:all}
-.nav.scrolled{background:rgba(10,10,10,.9);backdrop-filter:blur(24px);padding:16px 48px}
-.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.5px}
-.nav-logo .blue{color:var(--blue)}
-.nav-links{display:flex;gap:36px;list-style:none}
-.nav-links a{font-size:14px;font-weight:500;color:rgba(255,255,255,.5);transition:color .3s;letter-spacing:.3px}
-.nav-links a:hover{color:#fff}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101}
-.nav-hamburger span{width:24px;height:2px;background:#fff;transition:all .3s}
+/* Text sections */
+.modal-section{margin-bottom:36px}
+.modal-section-label{font-family:'Space Grotesk',monospace;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.modal-section p{font-size:16px;color:var(--gray-600);line-height:1.8}
+
+/* Media placeholders */
+.modal-media{width:100%;border-radius:var(--radius);overflow:hidden;margin:24px 0;background:var(--gray-100);border:1px solid var(--gray-200)}
+.modal-media img{width:100%;display:block}
+.modal-media-placeholder{width:100%;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--gray-400);flex-direction:column;gap:4px}
+.modal-media-placeholder span{font-size:10px;color:var(--gray-300)}
+
+.talk-section{padding:120px 48px;text-align:center}
+.talk-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(48px,7vw,80px);line-height:1.1;margin-bottom:24px}
+.talk-email{display:inline-block;font-size:clamp(18px,2.5vw,24px);font-weight:500;color:var(--blue);border-bottom:2px solid transparent;padding-bottom:4px;transition:all .3s}
+.talk-email:hover{border-bottom-color:var(--blue)}
+.talk-sub{font-size:16px;color:var(--gray-400);margin-top:16px;line-height:1.6}
+.talk-frizi{margin-top:48px;opacity:.8}
+.footer{padding:32px 48px;background:var(--black);display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.06)}
+.footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;color:#fff}.footer-logo .blue{color:var(--blue)}
+.footer-note{font-size:12px;color:var(--gray-600)}
+.footer-socials{display:flex;gap:12px}
+.footer-socials a{width:34px;height:34px;border-radius:50%;border:1px solid var(--gray-700);display:flex;align-items:center;justify-content:center;color:var(--gray-500);transition:all .3s}
+.footer-socials a:hover{border-color:var(--blue);color:var(--blue);background:rgba(0,56,255,.08)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:translateY(0)}
+/* HAMBURGER */
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;z-index:201;background:none;border:none}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+.nav-hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav-hamburger.active span:nth-child(2){opacity:0}
+.nav-hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 @media(max-width:768px){
-  .nav{padding:16px 24px}.nav.scrolled{padding:12px 24px}
-  .nav-links{display:none}.nav-hamburger{display:flex}
-  .nav-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:var(--black);justify-content:center;align-items:center;gap:40px;z-index:200}
-  .nav-links.open a{font-size:28px;color:#fff}
-}
-
-/* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 48px 80px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,var(--blue-glow) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;animation:heroPulse 6s ease-in-out infinite}
-@keyframes heroPulse{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:.8;transform:translate(-50%,-50%) scale(1.15)}}
-.hero-claim{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(40px,7vw,88px);line-height:1.05;letter-spacing:-2px;margin-bottom:20px;position:relative;z-index:1}
-.hero-claim .highlight{color:var(--blue);position:relative}
-.hero-claim .highlight::after{content:'';position:absolute;bottom:4px;left:0;right:0;height:6px;background:var(--yellow);border-radius:4px;opacity:.6}
-.hero-sub{font-size:clamp(16px,2vw,20px);font-weight:400;color:var(--gray-400);max-width:500px;line-height:1.6;margin-bottom:40px;position:relative;z-index:1}
-.hero-cta{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;padding:16px 36px;border-radius:100px;font-weight:600;font-size:15px;letter-spacing:.5px;transition:all .3s;position:relative;z-index:1}
-.hero-cta:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,56,255,.3)}
-.hero-cta svg{transition:transform .3s}.hero-cta:hover svg{transform:translateX(4px)}
-
-/* MARQUEE */
-.marquee-section{padding:32px 0;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);overflow:hidden}
-.marquee-track{display:flex;gap:48px;animation:marquee 20s linear infinite;width:max-content}
-@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.marquee-item{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--gray-500);white-space:nowrap;display:flex;align-items:center;gap:48px}
-.marquee-item::after{content:'✦';color:var(--blue);font-size:10px}
-
-/* SERVICES */
-.services{padding:120px 48px}
-.section-label{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:4px;color:var(--blue);margin-bottom:16px}
-.section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(32px,5vw,56px);line-height:1.1;letter-spacing:-1.5px;margin-bottom:64px}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
-.service-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:48px 36px;transition:all .5s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden}
-.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.16,1,.3,1)}
-.service-card:hover::before{transform:scaleX(1)}
-.service-card:hover{background:rgba(255,255,255,.06);transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,.3)}
-.service-icon{width:56px;height:56px;background:var(--blue);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:28px;font-size:24px}
-.service-card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:22px;margin-bottom:14px}
-.service-card p{color:var(--gray-400);font-size:15px;line-height:1.7}
-
-/* PROJECTS */
-.projects{padding:120px 48px}
-.project-featured{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-bottom:80px;padding:60px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:24px;transition:all .5s}
-.project-featured:hover{border-color:rgba(0,56,255,.2);box-shadow:0 0 80px rgba(0,56,255,.06)}
-.project-img{width:100%;aspect-ratio:4/3;border-radius:16px;overflow:hidden;position:relative}
-.project-img img{width:100%;height:100%;object-fit:cover}
-.project-img .placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);color:var(--gray-500);font-size:14px;text-transform:uppercase;letter-spacing:2px}
-.project-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-.project-tag{background:rgba(0,56,255,.15);color:var(--blue);padding:5px 14px;border-radius:100px;font-size:12px;font-weight:600;letter-spacing:.5px}
-.project-tag.yellow{background:rgba(255,212,59,.15);color:var(--yellow)}
-.project-info h3{font-family:'Syne',sans-serif;font-weight:800;font-size:32px;margin-bottom:14px;letter-spacing:-.5px}
-.project-info p{color:var(--gray-400);font-size:16px;line-height:1.7;margin-bottom:28px}
-.project-link{display:inline-flex;align-items:center;gap:8px;color:var(--blue);font-weight:600;font-size:15px;transition:gap .3s}
-.project-link:hover{gap:14px}
-.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.project-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:20px;overflow:hidden;transition:all .5s cubic-bezier(.16,1,.3,1);cursor:pointer}
-.project-card:hover{transform:translateY(-6px);border-color:rgba(0,56,255,.2);box-shadow:0 24px 60px rgba(0,0,0,.3)}
-.project-card .project-img{border-radius:0;aspect-ratio:16/10}
-.project-card-body{padding:28px 32px}
-.project-card-body h3{font-family:'Syne',sans-serif;font-weight:700;font-size:20px;margin-bottom:8px}
-.project-card-body p{color:var(--gray-500);font-size:14px;line-height:1.6}
-.coming-soon-overlay{position:absolute;inset:0;background:rgba(10,10,10,.7);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center}
-.coming-soon-badge{background:var(--yellow);color:var(--black);padding:8px 20px;border-radius:100px;font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase}
-@media(max-width:768px){.project-featured{grid-template-columns:1fr;padding:32px}.projects-grid{grid-template-columns:1fr}}
-
-/* ABOUT */
-.about{padding:120px 48px;display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center}
-.about-visual{position:relative}
-.about-photo{width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:24px;overflow:hidden;position:relative}
-.about-photo img{width:100%;height:100%;object-fit:cover}
-.about-photo .placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--gray-500);font-size:14px;letter-spacing:2px;text-transform:uppercase}
-.about-frizi-float{position:absolute;bottom:-24px;right:-24px;animation:friziFloat 4s ease-in-out infinite}
-@keyframes friziFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-.about-content .section-label{margin-bottom:12px}
-.about-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,4vw,44px);line-height:1.15;letter-spacing:-1px;margin-bottom:24px}
-.about-title .highlight{color:var(--blue)}
-.about-text{color:var(--gray-400);font-size:16px;line-height:1.8;margin-bottom:20px}
-.about-stats{display:flex;gap:40px;margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,.06)}
-.stat-number{font-family:'Syne',sans-serif;font-weight:800;font-size:36px;color:var(--blue)}
-.stat-label{font-size:13px;color:var(--gray-500);margin-top:4px}
-@media(max-width:768px){.about{grid-template-columns:1fr;gap:48px;padding:80px 24px}}
-
-/* SKILLS */
-.skills-section{padding:80px 0;overflow:hidden}
-.skills-track{display:flex;gap:20px;animation:marquee 30s linear infinite;width:max-content}
-.skill-pill{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:100px;padding:12px 24px;font-size:14px;font-weight:500;white-space:nowrap;color:var(--gray-400);transition:all .3s}
-.skill-pill:hover{border-color:var(--blue);color:#fff;background:rgba(0,56,255,.08)}
-.skill-dot{width:6px;height:6px;background:var(--blue);border-radius:50%}
-
-/* CONTACT */
-.contact{padding:120px 48px;text-align:center}
-.contact-card{max-width:720px;margin:0 auto;padding:80px 60px;background:linear-gradient(135deg,rgba(0,56,255,.08),rgba(0,56,255,.02));border:1px solid rgba(0,56,255,.15);border-radius:32px;position:relative;overflow:hidden}
-.contact-card::before{content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(0,56,255,.12),transparent 70%);pointer-events:none}
-.contact-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(28px,4vw,44px);line-height:1.15;letter-spacing:-1px;margin-bottom:16px;position:relative}
-.contact-sub{color:var(--gray-400);font-size:16px;line-height:1.7;margin-bottom:40px;position:relative}
-.contact-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;position:relative}
-.contact-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;border-radius:100px;font-weight:600;font-size:15px;transition:all .3s}
-.contact-btn.primary{background:var(--blue);color:#fff}
-.contact-btn.primary:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,56,255,.3)}
-.contact-btn.secondary{background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.1)}
-.contact-btn.secondary:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
-
-/* FOOTER */
-.footer{padding:40px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.06);flex-wrap:wrap;gap:16px}
-.footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:18px}
-.footer-logo .blue{color:var(--blue)}
-.footer-note{font-size:13px;color:var(--gray-500)}
-.footer-socials{display:flex;gap:20px}
-.footer-socials a{color:var(--gray-500);transition:color .3s}
-.footer-socials a:hover{color:var(--blue)}
-
-.cursor-glow{position:fixed;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(0,56,255,.06),transparent 70%);pointer-events:none;z-index:0;transform:translate(-50%,-50%);transition:opacity .3s}
-
-@media(max-width:768px){
-  .hero{padding:100px 24px 80px}.services{padding:80px 24px}.services-grid{grid-template-columns:1fr}
-  .projects{padding:80px 24px}.contact{padding:80px 24px}.contact-card{padding:48px 28px}
-  .footer{padding:32px 24px;flex-direction:column;text-align:center}.about-stats{gap:24px;flex-wrap:wrap}
+.nav-hamburger{display:flex}
+.nav-links{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:rgba(10,10,10,.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);flex-direction:column;padding:100px 40px 40px;gap:0;transition:right .35s ease;z-index:200;border-left:1px solid rgba(255,255,255,.06)}
+.nav-links.open{right:0}
+.nav-links li{width:100%}
+.nav-links a{display:block;padding:16px 0;font-size:18px;border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-links .nav-cta{display:inline-flex;margin-top:16px;border-bottom:none;padding:12px 28px;text-align:center}
+.hero{flex-direction:column;padding:100px 24px 60px;text-align:center}
+.hero-content{text-align:center}.hero-buttons{justify-content:center;flex-wrap:wrap}
+.hero-frizi svg{width:150px;height:auto}
+.projects-grid{grid-template-columns:1fr}
+.section-wrap{padding:80px 24px}
+.nav{padding:16px 24px}
+.modal-content{padding:32px 24px}
+.modal-tags{gap:8px}
+.talk-section{padding:80px 24px}
+.footer{flex-direction:column;gap:16px;text-align:center}
 }
 </style>
 </head>
 <body>
 
-<div class="cursor-glow" id="cursorGlow"></div>
-
-<!-- FRIZI INTRO -->
-<section class="frizi-intro" id="friziIntro">
-  <div class="frizi-intro-sticky">
-    <div class="frizi-zoom-wrapper" id="friziZoom">
-      <svg width="120" height="120" viewBox="0 0 200 200" fill="none">
-        <g transform="translate(100,100)">
-          <ellipse cx="0" cy="-38" rx="18" ry="30" fill="#0038FF" stroke="#0A0A0A" stroke-width="2.5" transform="rotate(0)"/>
-          <ellipse cx="0" cy="-38" rx="18" ry="30" fill="#0038FF" stroke="#0A0A0A" stroke-width="2.5" transform="rotate(51.4)"/>
-          <ellipse cx="0" cy="-38" rx="18" ry="30" fill="#0038FF" stroke="#0A0A0A" stroke-width="2.5" transform="rotate(102.8)"/>
-          <ellipse cx="0" cy="-38" rx="18" ry="30" fill="#0038FF" stroke="#0A0A0A" stroke-width="2.5" transform="rotate(154.3)"/>
-          <ellipse cx="0" cy="-38" rx="18" ry="30" fill="#0038FF" stroke="#0A0A0A" stroke-width="2.5" transform="rotate(205.7)"/>
-          <ellipse cx="0" cy="-38" rx="18" ry="30" fill="#0038FF" stroke="#0A0A0A" stroke-width="2.5" transform="rotate(257.1)"/>
-          <ellipse cx="0" cy="-38" rx="18" ry="30" fill="#0038FF" stroke="#0A0A0A" stroke-width="2.5" transform="rotate(308.6)"/>
-          <circle r="26" fill="#FFD43B" stroke="#0A0A0A" stroke-width="2.5"/>
-          <circle cx="-8" cy="-4" r="5.5" fill="#0A0A0A"/>
-          <circle cx="8" cy="-4" r="5.5" fill="#0A0A0A"/>
-          <circle cx="-6" cy="-6.5" r="2" fill="#fff"/>
-          <circle cx="10" cy="-6.5" r="2" fill="#fff"/>
-          <path d="M-9 8Q0 17 9 8" stroke="#0A0A0A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        </g>
-      </svg>
-    </div>
-    <div class="frizi-intro-text" id="friziText">vanesa<span class="blue">frz</span></div>
-    <div class="intro-scroll-hint" id="introHint">
-      <span>Scroll</span>
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-    </div>
-  </div>
-</section>
-
-<div class="frizi-burst" id="friziBurst"></div>
-
 <!-- NAV -->
 <nav class="nav" id="nav">
-  <a href="#" class="nav-logo">vanesa<span class="blue">frz</span></a>
+  <a href="index.html" class="nav-logo">vanesa<span class="blue">frz</span></a>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#services">Servicios</a></li>
-    <li><a href="#projects">Proyectos</a></li>
-    <li><a href="#about">Sobre mí</a></li>
-    <li><a href="#contact">Contacto</a></li>
+    <li><a href="index.html" class="active">Proyectos</a></li>
+    <li><a href="about.html">Sobre mí</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="mailto:tu@email.com" class="nav-cta">Hablemos</a></li>
   </ul>
-  <div class="nav-hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
-    <span></span><span></span><span></span>
-  </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="hero">
-  <h1 class="hero-claim reveal delay-1">De crear historias<br>a <span class="highlight">diseñarlas</span></h1>
-  <p class="hero-sub reveal delay-2">UX/UI & Product Designer — Transformo ideas en experiencias digitales que conectan con las personas.</p>
-  <a href="#projects" class="hero-cta reveal delay-3">Ver proyectos <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-</section>
-
-<!-- MARQUEE -->
-<div class="marquee-section">
-  <div class="marquee-track">
-    <span class="marquee-item">UX Research</span><span class="marquee-item">UI Design</span><span class="marquee-item">Product Design</span><span class="marquee-item">Wireframing</span><span class="marquee-item">Prototyping</span><span class="marquee-item">Design Systems</span><span class="marquee-item">User Testing</span>
-    <span class="marquee-item">UX Research</span><span class="marquee-item">UI Design</span><span class="marquee-item">Product Design</span><span class="marquee-item">Wireframing</span><span class="marquee-item">Prototyping</span><span class="marquee-item">Design Systems</span><span class="marquee-item">User Testing</span>
-  </div>
-</div>
-
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="section-label reveal">Lo que hago</div>
-  <h2 class="section-title reveal delay-1">Diseño con<br>propósito y alma</h2>
-  <div class="services-grid">
-    <div class="service-card reveal delay-1">
-      <div class="service-icon">🔍</div>
-      <h3>UX Research</h3>
-      <p>Entrevistas, benchmarks, user personas y mapas de empatía. Entiendo a las personas antes de diseñar para ellas.</p>
-    </div>
-    <div class="service-card reveal delay-2">
-      <div class="service-icon">✏️</div>
-      <h3>UI Design</h3>
-      <p>Interfaces limpias, coherentes y con personalidad. Cada pixel tiene una razón de ser.</p>
-    </div>
-    <div class="service-card reveal delay-3">
-      <div class="service-icon">🧩</div>
-      <h3>Product Design</h3>
-      <p>Del problema a la solución. Flujos, wireframes, prototipos y tests de usabilidad.</p>
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-greeting">Hola, soy Vanesa 👋</p>
+    <h1 class="hero-title">Soy <em>Product Designer</em>, y estoy aquí para crear experiencias digitales que la gente quiera usar.</h1>
+    <div class="hero-name">vanesa<span class="blue">frz</span></div>
+    <div class="hero-buttons">
+      <a href="#work" class="btn-primary">Ver proyectos <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="mailto:tu@email.com" class="btn-ghost">Contacto</a>
     </div>
   </div>
+  <div class="hero-frizi">
+    <svg width="200" height="260" viewBox="0 0 280 360" fill="none">
+      <g transform="translate(55,85)"><path d="M40 30Q15 0 10-25" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="10" cy="-28" r="12" fill="#fff"/><rect x="3" y="-50" width="5" height="14" rx="2.5" fill="#fff" transform="rotate(-20 5-43)"/><rect x="10" y="-52" width="5" height="14" rx="2.5" fill="#fff" transform="rotate(-5 12-45)"/><rect x="17" y="-50" width="5" height="14" rx="2.5" fill="#fff" transform="rotate(10 19-43)"/></g>
+      <g transform="translate(180,105)"><path d="M0 25Q15 50 10 75" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" opacity=".2"/><circle cx="10" cy="78" r="10" fill="#fff" opacity=".2"/></g>
+      <g transform="translate(140,120)"><ellipse cx="0" cy="-42" rx="22" ry="36" fill="#0038FF" stroke="rgba(255,255,255,.12)" stroke-width="2" transform="rotate(0)"/><ellipse cx="0" cy="-42" rx="22" ry="36" fill="#0038FF" stroke="rgba(255,255,255,.12)" stroke-width="2" transform="rotate(51.4)"/><ellipse cx="0" cy="-42" rx="22" ry="36" fill="#0038FF" stroke="rgba(255,255,255,.12)" stroke-width="2" transform="rotate(102.8)"/><ellipse cx="0" cy="-42" rx="22" ry="36" fill="#0038FF" stroke="rgba(255,255,255,.12)" stroke-width="2" transform="rotate(154.3)"/><ellipse cx="0" cy="-42" rx="22" ry="36" fill="#0038FF" stroke="rgba(255,255,255,.12)" stroke-width="2" transform="rotate(205.7)"/><ellipse cx="0" cy="-42" rx="22" ry="36" fill="#0038FF" stroke="rgba(255,255,255,.12)" stroke-width="2" transform="rotate(257.1)"/><ellipse cx="0" cy="-42" rx="22" ry="36" fill="#0038FF" stroke="rgba(255,255,255,.12)" stroke-width="2" transform="rotate(308.6)"/><circle r="30" fill="#FFD43B"/><circle cx="-10" cy="-5" r="7" fill="#0A0A0A"/><circle cx="10" cy="-5" r="7" fill="#0A0A0A"/><circle cx="-7" cy="-8" r="2.5" fill="#fff"/><circle cx="13" cy="-8" r="2.5" fill="#fff"/><circle cx="-11" cy="-3" r="1.2" fill="#fff"/><circle cx="9" cy="-3" r="1.2" fill="#fff"/><circle cx="-18" cy="5" r="1.5" fill="#E8A820" opacity=".5"/><circle cx="-15" cy="8" r="1.5" fill="#E8A820" opacity=".5"/><circle cx="18" cy="5" r="1.5" fill="#E8A820" opacity=".5"/><circle cx="15" cy="8" r="1.5" fill="#E8A820" opacity=".5"/><path d="M-12 10Q0 22 12 10" stroke="#0A0A0A" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+      <path d="M120 158Q118 205 115 240" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" opacity=".2"/><path d="M160 158Q162 205 165 240" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" opacity=".2"/>
+      <ellipse cx="109" cy="248" rx="22" ry="12" fill="#0038FF" opacity=".5"/><ellipse cx="169" cy="248" rx="22" ry="12" fill="#0038FF" opacity=".5"/>
+    </svg>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div></div>
 </section>
 
 <!-- PROJECTS -->
-<section class="projects" id="projects">
-  <div class="section-label reveal">Proyectos</div>
-  <h2 class="section-title reveal delay-1">Trabajo<br>seleccionado</h2>
-
-  <div class="project-featured reveal-scale">
-    <div class="project-img">
-      <!-- 👇 REEMPLAZA src CON TU IMAGEN DE MUSEEK -->
-      <img src="" alt="Museek" style="display:none">
-      <div class="placeholder">Museek — Imagen del proyecto</div>
-    </div>
-    <div class="project-info">
-      <div class="project-tags">
-        <span class="project-tag">UX Research</span>
-        <span class="project-tag">App</span>
-        <span class="project-tag yellow">Gamificación</span>
-      </div>
-      <h3>Museek</h3>
-      <p>Una app que conecta a jóvenes con museos y exposiciones cercanas, gamificando la experiencia con escape rooms virtuales in-app.</p>
-      <a href="#" class="project-link">Ver case study <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-    </div>
-  </div>
-
-  <div class="project-featured reveal-scale">
-    <div class="project-info">
-      <div class="project-tags">
-        <span class="project-tag">UI Redesign</span>
-        <span class="project-tag">Heurísticas</span>
-        <span class="project-tag yellow">App</span>
-      </div>
-      <h3>Korean Air</h3>
-      <p>Rediseño heurístico de la aplicación de Korean Air, mejorando la usabilidad y la coherencia visual de la experiencia de usuario.</p>
-      <a href="#" class="project-link">Ver case study <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-    </div>
-    <div class="project-img">
-      <!-- 👇 REEMPLAZA src CON TU IMAGEN DE KOREAN AIR -->
-      <img src="" alt="Korean Air" style="display:none">
-      <div class="placeholder">Korean Air — Imagen del proyecto</div>
-    </div>
-  </div>
-
+<div class="section-wrap" id="work">
+  <div class="reveal"><div class="section-label">Proyectos</div><h2 class="section-title">Trabajo seleccionado</h2></div>
   <div class="projects-grid">
-    <div class="project-card reveal-left">
-      <div class="project-img" style="position:relative">
-        <div class="placeholder">Proyecto 3</div>
-        <div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
-      </div>
-      <div class="project-card-body">
-        <h3>Proyecto en curso</h3>
-        <p>Nuevo proyecto del bootcamp. Detalles próximamente.</p>
-      </div>
-    </div>
-    <div class="project-card reveal-right">
-      <div class="project-img" style="position:relative">
-        <div class="placeholder">Proyecto 4</div>
-        <div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
-      </div>
-      <div class="project-card-body">
-        <h3>Proyecto en curso</h3>
-        <p>Nuevo proyecto del bootcamp. Detalles próximamente.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="about-visual reveal-left">
-    <div class="about-photo">
-      <!-- 👇 REEMPLAZA src CON TU FOTO -->
-      <img src="" alt="Vanesa Ferrer Corzo" style="display:none">
-      <div class="placeholder">Tu foto aquí</div>
+    <!-- ✦ MUSEEK -->
+    <div class="project-card reveal" onclick="openModal('museek')">
+      <div class="project-img-wrap">
+        <!-- ✏️ CAMBIAR SRC: Pon la ruta de tu imagen de portada de Museek -->
+        <img class="project-thumb" src="img/museek-cover.jpg" alt="Museek" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-placeholder" style="display:none">Imagen portada Museek<br><span style="font-size:11px">Recomendado: 800×600px</span></div>
+      </div>
+      <div class="project-body"><h3 class="project-name">Museek</h3><p class="project-meta">UX Research · Gamificación · Low-fi Prototype</p></div>
     </div>
-    <div class="about-frizi-float">
-      <svg width="70" height="70" viewBox="0 0 200 200" fill="none"><g transform="translate(100,100)"><ellipse cx="0" cy="-38" rx="18" ry="30" fill="#0038FF" stroke="#0A0A0A" stroke-width="2.5" transform="rotate(0)"/><ellipse cx="0" cy="-38" rx="18" ry="30" fill="#0038FF" stroke="#0A0A0A" stroke-width="2.5" transform="rotate(51.4)"/><ellipse cx="0" cy="-38" rx="18" ry="30" fill="#0038FF" stroke="#0A0A0A" stroke-width="2.5" transform="rotate(102.8)"/><ellipse cx="0" cy="-38" rx="18" ry="30" fill="#0038FF" stroke="#0A0A0A" stroke-width="2.5" transform="rotate(154.3)"/><ellipse cx="0" cy="-38" rx="18" ry="30" fill="#0038FF" stroke="#0A0A0A" stroke-width="2.5" transform="rotate(205.7)"/><ellipse cx="0" cy="-38" rx="18" ry="30" fill="#0038FF" stroke="#0A0A0A" stroke-width="2.5" transform="rotate(257.1)"/><ellipse cx="0" cy="-38" rx="18" ry="30" fill="#0038FF" stroke="#0A0A0A" stroke-width="2.5" transform="rotate(308.6)"/><circle r="26" fill="#FFD43B" stroke="#0A0A0A" stroke-width="2.5"/><circle cx="-8" cy="-4" r="5.5" fill="#0A0A0A"/><circle cx="8" cy="-4" r="5.5" fill="#0A0A0A"/><circle cx="-6" cy="-6.5" r="2" fill="#fff"/><circle cx="10" cy="-6.5" r="2" fill="#fff"/><path d="M-9 8Q0 17 9 8" stroke="#0A0A0A" stroke-width="2.5" fill="none" stroke-linecap="round"/></g></svg>
-    </div>
-  </div>
-  <div class="about-content reveal-right">
-    <div class="section-label">Sobre mí</div>
-    <h2 class="about-title">De crear historias<br>a <span class="highlight">diseñarlas</span></h2>
-    <p class="about-text">Soy Vanesa, UX/UI & Product Designer en formación intensiva. Vengo del mundo del video editing y el marketing digital, donde aprendí que cada proyecto cuenta una historia.</p>
-    <p class="about-text">Ahora aplico esa misma visión narrativa al diseño de producto: entiendo a las personas, mapeo sus necesidades y creo experiencias digitales que conectan. Cercana, curiosa y con ganas de aportar valor desde el primer día.</p>
-    <p class="about-text" style="font-size:14px;color:var(--gray-500)">📍 España · Abierta a nuevas oportunidades</p>
-    <div class="about-stats">
-      <div class="stat-item reveal delay-2"><div class="stat-number">4</div><div class="stat-label">Proyectos UX/UI</div></div>
-      <div class="stat-item reveal delay-3"><div class="stat-number">+5</div><div class="stat-label">Años en digital</div></div>
-      <div class="stat-item reveal delay-4"><div class="stat-number">∞</div><div class="stat-label">Ganas de crecer</div></div>
-    </div>
-  </div>
-</section>
 
-<!-- SKILLS -->
-<div class="skills-section">
-  <div class="skills-track">
-    <span class="skill-pill"><span class="skill-dot"></span>Figma</span>
-    <span class="skill-pill"><span class="skill-dot"></span>Figjam</span>
-    <span class="skill-pill"><span class="skill-dot"></span>User Research</span>
-    <span class="skill-pill"><span class="skill-dot"></span>Wireframing</span>
-    <span class="skill-pill"><span class="skill-dot"></span>Prototyping</span>
-    <span class="skill-pill"><span class="skill-dot"></span>Design Systems</span>
-    <span class="skill-pill"><span class="skill-dot"></span>Adobe Premiere</span>
-    <span class="skill-pill"><span class="skill-dot"></span>After Effects</span>
-    <span class="skill-pill"><span class="skill-dot"></span>User Testing</span>
-    <span class="skill-pill"><span class="skill-dot"></span>Heurísticas</span>
-    <span class="skill-pill"><span class="skill-dot"></span>Figma</span>
-    <span class="skill-pill"><span class="skill-dot"></span>Figjam</span>
-    <span class="skill-pill"><span class="skill-dot"></span>User Research</span>
-    <span class="skill-pill"><span class="skill-dot"></span>Wireframing</span>
-    <span class="skill-pill"><span class="skill-dot"></span>Prototyping</span>
-    <span class="skill-pill"><span class="skill-dot"></span>Design Systems</span>
-    <span class="skill-pill"><span class="skill-dot"></span>Adobe Premiere</span>
-    <span class="skill-pill"><span class="skill-dot"></span>After Effects</span>
-    <span class="skill-pill"><span class="skill-dot"></span>User Testing</span>
-    <span class="skill-pill"><span class="skill-dot"></span>Heurísticas</span>
+    <!-- ✦ KOREAN AIR -->
+    <div class="project-card reveal" onclick="openModal('korean')">
+      <div class="project-img-wrap">
+        <!-- ✏️ CAMBIAR SRC: Pon la ruta de tu imagen de portada de Korean Air -->
+        <img class="project-thumb" src="img/koreanair-cover.jpg" alt="Korean Air" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="project-placeholder" style="display:none">Imagen portada Korean Air<br><span style="font-size:11px">Recomendado: 800×600px</span></div>
+      </div>
+      <div class="project-body"><h3 class="project-name">Korean Air</h3><p class="project-meta">Evaluación Heurística · UI Redesign · Usabilidad</p></div>
+    </div>
+
+    <!-- Coming soon -->
+    <div class="project-card coming-soon reveal"><div class="project-img-wrap"><div class="coming-soon-content"><div class="coming-soon-number">03</div><div class="coming-soon-label">Próximamente</div></div></div><div class="project-body"><h3 class="project-name" style="color:var(--gray-300)">En progreso</h3><p class="project-meta" style="color:var(--gray-400)">Coming soon</p></div></div>
+    <div class="project-card coming-soon reveal"><div class="project-img-wrap"><div class="coming-soon-content"><div class="coming-soon-number">04</div><div class="coming-soon-label">Próximamente</div></div></div><div class="project-body"><h3 class="project-name" style="color:var(--gray-300)">En progreso</h3><p class="project-meta" style="color:var(--gray-400)">Coming soon</p></div></div>
   </div>
 </div>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="contact-card reveal-scale">
-    <h2 class="contact-title">¿Hablamos?</h2>
-    <p class="contact-sub">Estoy buscando mi primera oportunidad como UX/UI Designer.<br>Si te gusta lo que ves, me encantaría conectar.</p>
-    <div class="contact-links">
-      <a href="mailto:tu@email.com" class="contact-btn primary">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
-        Escríbeme
-      </a>
-      <a href="https://linkedin.com/in/vanesafrz" target="_blank" class="contact-btn secondary">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        LinkedIn
-      </a>
+<!-- ═══════════════════════════════════════════ -->
+<!-- MODAL: MUSEEK -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal-museek" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+
+    <div class="modal-hero">
+      <!-- ✏️ CAMBIAR SRC: Imagen cabecera del case study Museek (1720×960px recomendado) -->
+      <img src="img/museek-front.jpg" alt="Museek hero" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="modal-hero-placeholder" style="display:none">Imagen cabecera Museek<br><span style="font-size:11px">1720 × 960px</span></div>
+    </div>
+
+    <div class="modal-content">
+      <h2 class="modal-project-name">Museek</h2>
+      <p class="modal-project-sub">App para descubrir museos y exposiciones, gamificando cada visita como un escape room virtual.</p>
+
+      <!-- Etiquetas -->
+      <div class="modal-tags">
+        <span class="modal-tag tag-team"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M23 21v-2a4 4 0 00-3-3.87" stroke="currentColor" stroke-width="2"/><path d="M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2"/></svg>Equipo: 1 persona</span>
+        <span class="modal-tag tag-sector"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="2"/></svg>Sector: Cultura</span>
+        <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg>UX Research</span>
+        <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg>Gamificación</span>
+        <span class="modal-tag tag-type"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor" stroke-width="2"/><line x1="12" y1="18" x2="12" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Tipo: App</span>
+      </div>
+
+      <!-- INTRO -->
+      <div class="modal-section">
+        <div class="modal-section-label">Introducción</div>
+        <p>Escribe aquí la introducción de tu caso de estudio. Describe el contexto, el problema que identificaste y por qué decidiste abordar este proyecto. Explica la oportunidad de diseño y qué te motivó.</p>
+      </div>
+
+      <!-- Foto 1 -->
+      <div class="modal-media">
+        <!-- ✏️ CAMBIAR SRC: Primera imagen del case study -->
+        <img src="img/interviews-museek.jpg" alt="Museek imagen 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="modal-media-placeholder" style="display:none">📷 Imagen 1 del case study<span>Recomendado: 1600×1000px</span></div>
+      </div>
+
+      <!-- DESARROLLO -->
+      <div class="modal-section">
+        <div class="modal-section-label">Desarrollo</div>
+        <p>Escribe aquí el desarrollo del proyecto. Incluye tu proceso de investigación, los insights principales, las decisiones de diseño, wireframes, iteraciones y cómo fuiste evolucionando la solución.</p>
+      </div>
+
+      <!-- GIF -->
+      <div class="modal-media">
+        <!-- ✏️ CAMBIAR SRC: GIF animado del prototipo o interacción -->
+        <img src="img/museek-prototype.gif" alt="Museek gif" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="modal-media-placeholder" style="display:none">🎬 GIF del prototipo / interacción<span>Formato: .gif · Recomendado: 1600×1000px</span></div>
+      </div>
+
+       <!-- DESARROLLO -->
+      <div class="modal-section">
+        <div class="modal-section-label">Desarrollo</div>
+        <p>Escribe aquí el desarrollo del proyecto. Incluye tu proceso de investigación, los insights principales, las decisiones de diseño, wireframes, iteraciones y cómo fuiste evolucionando la solución.</p>
+      </div>
+
+      <!-- Foto 2 -->
+      <div class="modal-media">
+        <!-- ✏️ CAMBIAR SRC: Segunda imagen del case study -->
+        <img src="" alt="Museek imagen 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="modal-media-placeholder" style="display:none">📷 Imagen 2 del case study<span>Recomendado: 1600×1000px</span></div>
+      </div>
+
+      <!-- CONCLUSIÓN -->
+      <div class="modal-section">
+        <div class="modal-section-label">Conclusión</div>
+        <p>Escribe aquí tus conclusiones. Qué aprendiste, qué cambiarías, los resultados obtenidos, métricas si las tienes, y los próximos pasos del proyecto.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- MODAL: KOREAN AIR -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal-korean" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+
+    <div class="modal-hero">
+      <!-- ✏️ CAMBIAR SRC: Imagen cabecera del case study Korean Air (1720×960px recomendado) -->
+      <img src="" alt="Korean Air hero" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="modal-hero-placeholder" style="display:none">Imagen cabecera Korean Air<br><span style="font-size:11px">1720 × 960px</span></div>
+    </div>
+
+    <div class="modal-content">
+      <h2 class="modal-project-name">Korean Air</h2>
+      <p class="modal-project-sub">Rediseño de la app de Korean Air basado en evaluación heurística para mejorar usabilidad y experiencia de reserva.</p>
+
+      <div class="modal-tags">
+        <span class="modal-tag tag-team"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M23 21v-2a4 4 0 00-3-3.87" stroke="currentColor" stroke-width="2"/><path d="M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2"/></svg>Equipo: 1 persona</span>
+        <span class="modal-tag tag-sector"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="2"/></svg>Sector: Ecommerce / Viajes</span>
+        <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg>Heurísticas</span>
+        <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg>UI Redesign</span>
+        <span class="modal-tag tag-type"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor" stroke-width="2"/><line x1="12" y1="18" x2="12" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Tipo: App</span>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-label">Introducción</div>
+        <p>Escribe aquí la introducción de tu caso de estudio. Describe el contexto del rediseño, qué problemas detectaste en la evaluación heurística y cuál era tu objetivo.</p>
+      </div>
+
+      <div class="modal-media">
+        <!-- ✏️ CAMBIAR SRC: Primera imagen del case study -->
+        <img src="" alt="Korean Air imagen 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="modal-media-placeholder" style="display:none">📷 Imagen 1 del case study<span>Recomendado: 1600×1000px</span></div>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-label">Desarrollo</div>
+        <p>Escribe aquí el desarrollo. Incluye el análisis heurístico, los principales problemas encontrados, tus propuestas de mejora, wireframes y el diseño final.</p>
+      </div>
+
+      <div class="modal-media">
+        <!-- ✏️ CAMBIAR SRC: GIF animado del prototipo o interacción -->
+        <img src="" alt="Korean Air gif" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="modal-media-placeholder" style="display:none">🎬 GIF del prototipo / interacción<span>Formato: .gif · Recomendado: 1600×1000px</span></div>
+      </div>
+
+      <div class="modal-media">
+        <!-- ✏️ CAMBIAR SRC: Segunda imagen del case study -->
+        <img src="" alt="Korean Air imagen 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="modal-media-placeholder" style="display:none">📷 Imagen 2 del case study<span>Recomendado: 1600×1000px</span></div>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-label">Conclusión</div>
+        <p>Escribe aquí tus conclusiones. Qué mejoró con el rediseño, qué aprendiste del proceso y los próximos pasos.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LET'S TALK -->
+<section class="talk-section">
+  <div class="reveal">
+    <h2 class="talk-title">Let's Talk</h2>
+    <a href="mailto:tu@email.com" class="talk-email">tu@email.com</a>
+    <p class="talk-sub">Buscando mi primera oportunidad como Product Designer.<br>Si crees que puedo encajar en tu equipo, me encantaría hablar.</p>
+    <div class="talk-frizi">
+      <svg width="70" height="90" viewBox="0 0 280 360" fill="none">
+        <g transform="translate(55,85)"><path d="M40 30Q15 0 10-25" stroke="#0A0A0A" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="10" cy="-28" r="10" fill="#fff" stroke="#0A0A0A" stroke-width="2.5"/></g>
+        <g transform="translate(140,120)"><ellipse cx="0" cy="-42" rx="22" ry="36" fill="#0038FF" stroke="#0A0A0A" stroke-width="3" transform="rotate(0)"/><ellipse cx="0" cy="-42" rx="22" ry="36" fill="#0038FF" stroke="#0A0A0A" stroke-width="3" transform="rotate(51.4)"/><ellipse cx="0" cy="-42" rx="22" ry="36" fill="#0038FF" stroke="#0A0A0A" stroke-width="3" transform="rotate(102.8)"/><ellipse cx="0" cy="-42" rx="22" ry="36" fill="#0038FF" stroke="#0A0A0A" stroke-width="3" transform="rotate(154.3)"/><ellipse cx="0" cy="-42" rx="22" ry="36" fill="#0038FF" stroke="#0A0A0A" stroke-width="3" transform="rotate(205.7)"/><ellipse cx="0" cy="-42" rx="22" ry="36" fill="#0038FF" stroke="#0A0A0A" stroke-width="3" transform="rotate(257.1)"/><ellipse cx="0" cy="-42" rx="22" ry="36" fill="#0038FF" stroke="#0A0A0A" stroke-width="3" transform="rotate(308.6)"/><circle r="30" fill="#FFD43B" stroke="#0A0A0A" stroke-width="3"/><circle cx="-10" cy="-5" r="7" fill="#0A0A0A"/><circle cx="10" cy="-5" r="7" fill="#0A0A0A"/><circle cx="-7" cy="-8" r="2.5" fill="#fff"/><circle cx="13" cy="-8" r="2.5" fill="#fff"/><path d="M-12 10Q0 22 12 10" stroke="#0A0A0A" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+      </svg>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-logo">vanesa<span class="blue">frz</span></div>
+  <a href="index.html" class="footer-logo">vanesa<span class="blue">frz</span></a>
   <div class="footer-note">Hecho con 🌼 por vanesafrz · 2026</div>
   <div class="footer-socials">
-    <a href="https://linkedin.com/in/vanesafrz" target="_blank" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-    <a href="mailto:tu@email.com" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg></a>
+    <a href="https://linkedin.com/in/vanesafrz" target="_blank" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z" stroke="currentColor" stroke-width="2"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/></svg></a>
+    <a href="mailto:tu@email.com" aria-label="Email"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M22 7l-10 7L2 7" stroke="currentColor" stroke-width="2"/></svg></a>
   </div>
 </footer>
 
 <script>
+// Hamburger menu
+function toggleMenu(){
+  document.getElementById('hamburger').classList.toggle('active');
+  document.getElementById('navLinks').classList.toggle('open');
+}
+// Close menu on link click
+document.querySelectorAll('#navLinks a').forEach(a=>{a.addEventListener('click',()=>{
+  document.getElementById('hamburger').classList.remove('active');
+  document.getElementById('navLinks').classList.remove('open');
+})});
 
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+
+// Reveal
+document.querySelectorAll('.reveal').forEach(el=>{new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -60px 0px'}).observe(el)});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
+
+// Modal
+function openModal(id){
+  document.getElementById('modal-'+id).classList.add('active');
+  document.body.classList.add('modal-open');
+}
+function closeModal(){
+  document.querySelectorAll('.modal-overlay').forEach(m=>m.classList.remove('active'));
+  document.body.classList.remove('modal-open');
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 </script>
 </body>
 </html>
