@@ -5,83 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sobre mí — vanesafrz</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--blue:#0038FF;--blue-light:#3D6BFF;--blue-hover:#0030DD;--blue-glow:rgba(0,56,255,.10);--daisy-yellow:#FFD43B;--black:#0A0A0A;--white:#FAFAFA;--gray-50:#F8F8F8;--gray-100:#F4F4F5;--gray-200:#E4E4E7;--gray-300:#D4D4D8;--gray-400:#A1A1AA;--gray-500:#71717A;--gray-600:#52525B;--gray-700:#3F3F46;--radius:16px;--radius-lg:20px}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden;-webkit-font-smoothing:antialiased}::selection{background:var(--blue);color:#fff}a{color:inherit;text-decoration:none}
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,10,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
-.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:#fff}.nav-logo .blue{color:var(--blue)}
-.nav-links{display:flex;gap:32px;list-style:none;align-items:center}
-.nav-links a{font-size:14px;font-weight:500;color:rgba(255,255,255,.5);transition:color .3s}
-.nav-links a:hover,.nav-links a.active{color:#fff}
-.nav-cta{font-size:13px;font-weight:600;color:#fff!important;background:var(--blue);padding:8px 20px;border-radius:100px;transition:all .3s}.nav-cta:hover{background:var(--blue-hover)}
-.intro{max-width:1100px;margin:0 auto;padding:160px 48px 80px;display:grid;grid-template-columns:1fr 380px;gap:64px;align-items:start}
-.intro-text h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(42px,5vw,64px);line-height:1.1;margin-bottom:32px}
-.intro-bio{font-size:17px;color:var(--gray-600);line-height:1.8;margin-bottom:20px}
-.intro-bio em{font-style:normal;color:var(--blue);font-weight:600}
-.intro-photo{position:relative}
-.intro-photo-frame{width:100%;aspect-ratio:3/4;background:var(--gray-100);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-200);display:flex;align-items:center;justify-content:center}
-.intro-photo-placeholder{font-size:14px;color:var(--gray-400);text-align:center;line-height:1.6}
-.intro-frizi{position:absolute;bottom:-16px;right:-16px;z-index:2}
-.origin-section{max-width:1100px;margin:0 auto;padding:40px 48px 80px}
-.origin-title{font-family:'Syne',sans-serif;font-weight:800;font-size:28px;margin-bottom:32px;text-align:center}
-.origin-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.origin-card{background:var(--gray-50);border-radius:var(--radius-lg);padding:32px;text-align:center;border:1px solid var(--gray-200);transition:all .3s}
-.origin-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.06)}
-.origin-emoji{font-size:48px;margin-bottom:12px;display:block}
-.origin-label{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;margin-bottom:4px}
-.origin-sub{font-size:13px;color:var(--gray-500)}
-.skills-section{max-width:1100px;margin:0 auto;padding:80px 48px}
-.skills-title{font-family:'Syne',sans-serif;font-weight:800;font-size:28px;margin-bottom:32px}
-.skills-cloud{display:flex;flex-wrap:wrap;gap:10px}
-.skill-pill{font-size:14px;font-weight:500;color:var(--gray-600);background:var(--gray-50);padding:10px 20px;border-radius:100px;border:1px solid var(--gray-200);transition:all .3s;cursor:default}
-.skill-pill:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-glow);transform:translateY(-2px)}
-.skill-pill.featured{background:var(--blue);color:#fff;border-color:var(--blue);font-weight:600}
-.skill-pill.featured:hover{background:var(--blue-hover);color:#fff}
-.fun-section{max-width:1100px;margin:0 auto;padding:0 48px 80px}
-.fun-title{font-family:'Syne',sans-serif;font-weight:800;font-size:28px;margin-bottom:32px}
-.fun-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.fun-card{aspect-ratio:1;background:var(--gray-100);border-radius:var(--radius);overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid var(--gray-200);transition:transform .3s}
-.fun-card:hover{transform:scale(1.02)}
-.fun-card.wide{grid-column:span 2;aspect-ratio:2/1}
-.fun-placeholder{font-size:13px;color:var(--gray-400);text-align:center;line-height:1.5}
-.fun-placeholder span{display:block;font-size:32px;margin-bottom:6px}
-.talk-section{padding:80px 48px 120px;text-align:center}
-.talk-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(48px,7vw,72px);line-height:1.1;margin-bottom:24px}
-.talk-email{display:inline-block;font-size:clamp(18px,2.5vw,24px);font-weight:500;color:var(--blue);border-bottom:2px solid transparent;padding-bottom:4px;transition:all .3s}
-.talk-email:hover{border-bottom-color:var(--blue)}
-.talk-sub{font-size:16px;color:var(--gray-400);margin-top:16px;line-height:1.6}
-.talk-frizi{margin-top:40px;opacity:.8}
-.footer{padding:32px 48px;background:var(--black);display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.06)}
-.footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;color:#fff}.footer-logo .blue{color:var(--blue)}
-.footer-note{font-size:12px;color:var(--gray-600)}
-.footer-socials{display:flex;gap:12px}
-.footer-socials a{width:34px;height:34px;border-radius:50%;border:1px solid var(--gray-700);display:flex;align-items:center;justify-content:center;color:var(--gray-500);transition:all .3s}
-.footer-socials a:hover{border-color:var(--blue);color:var(--blue);background:rgba(0,56,255,.08)}
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:translateY(0)}
-/* HAMBURGER */
-.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;z-index:201;background:none;border:none}
-.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
-.nav-hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-.nav-hamburger.active span:nth-child(2){opacity:0}
-.nav-hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-@media(max-width:768px){
-.nav-hamburger{display:flex}
-.nav-links{position:fixed;top:0;right:-100%;width:280px;height:100vh;background:rgba(10,10,10,.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);flex-direction:column;padding:100px 40px 40px;gap:0;transition:right .35s ease;z-index:200;border-left:1px solid rgba(255,255,255,.06)}
-.nav-links.open{right:0}
-.nav-links li{width:100%}
-.nav-links a{display:block;padding:16px 0;font-size:18px;border-bottom:1px solid rgba(255,255,255,.06)}
-.nav-links .nav-cta{display:inline-flex;margin-top:16px;border-bottom:none;padding:12px 28px;text-align:center}
-.intro{grid-template-columns:1fr;gap:40px;padding:120px 24px 60px}
-.intro-photo{max-width:340px;margin:0 auto}
-.origin-grid{grid-template-columns:1fr}
-.fun-grid{grid-template-columns:1fr 1fr}.fun-card.wide{grid-column:span 1;aspect-ratio:1}
-.nav{padding:16px 24px}
-.origin-section,.skills-section,.fun-section{padding-left:24px;padding-right:24px}
-.journey-section{padding:60px 24px}
-.talk-section{padding:60px 24px 80px}
-.footer{flex-direction:column;gap:16px;text-align:center}
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <nav class="nav">
@@ -174,10 +98,6 @@
     <a href="mailto:tu@email.com" aria-label="Email"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M22 7l-10 7L2 7" stroke="currentColor" stroke-width="2"/></svg></a>
   </div>
 </footer>
-<script>
-function toggleMenu(){document.getElementById('hamburger').classList.toggle('active');document.getElementById('navLinks').classList.toggle('open')}
-document.querySelectorAll('#navLinks a').forEach(a=>{a.addEventListener('click',()=>{document.getElementById('hamburger').classList.remove('active');document.getElementById('navLinks').classList.remove('open')})});
-document.querySelectorAll('.reveal').forEach(el=>{new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -60px 0px'}).observe(el)});
-</script>
+<script src="script.js"></script>
 </body>
 </html>
