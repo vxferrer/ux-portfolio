@@ -30,6 +30,35 @@ function closeModal(){
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 
+// ── Nav scroll effect ──
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('nav');
+  if (window.scrollY > 60) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
+
+// ── Cursor glow ──
+const glow = document.getElementById('cursorGlow');
+let mouseX = 0, mouseY = 0;
+let glowX = 0, glowY = 0;
+
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+function animateGlow() {
+  glowX += (mouseX - glowX) * 0.08;
+  glowY += (mouseY - glowY) * 0.08;
+  glow.style.left = glowX + 'px';
+  glow.style.top = glowY + 'px';
+  requestAnimationFrame(animateGlow);
+}
+animateGlow();
+
 // cv page
 
 function toggleMenu(){document.getElementById('hamburger').classList.toggle('active');document.getElementById('navLinks').classList.toggle('open')}
