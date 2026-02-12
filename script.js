@@ -59,6 +59,24 @@ function animateGlow() {
 }
 animateGlow();
 
+// ── Intersection Observer for scroll reveals ──
+const observerOptions = {
+  threshold: 0.15,
+  rootMargin: '0px 0px -60px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+  observer.observe(el);
+});
+
 // cv page
 
 function toggleMenu(){document.getElementById('hamburger').classList.toggle('active');document.getElementById('navLinks').classList.toggle('open')}
