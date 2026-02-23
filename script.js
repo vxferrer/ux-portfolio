@@ -97,6 +97,81 @@ const T = {
   'cv.languages':    { en: 'Language',         es: 'Idiomas' },
   'cv.lang.mother':  { en: 'Mother tongue',   es: 'Lengua materna' },
   'cv.lang.beginner':{ en: 'Beginner',        es: 'Principiante' },
+
+  // ─── MUSEEK MODAL ───
+  'm.museek.name': { en: 'Museek — Designing behavioral engagement through gamification', es: 'Museek — Diseñando engagement conductual a través de la gamificación' },
+  'm.museek.sub': { en: 'A mobile product concept that transforms traditional museum visits into interactive, challenge-based experiences to increase local cultural engagement among young adults.', es: 'Un concepto de producto móvil que transforma las visitas tradicionales a museos en experiencias interactivas basadas en retos para aumentar la participación cultural local entre jóvenes.' },
+  'm.museek.tag.team': { en: ' 3 teammates', es: ' 3 personas' },
+  'm.museek.tag.sector': { en: ' Leisure / Culture ', es: ' Ocio / Cultura ' },
+  'm.museek.tag.time': { en: '8 days', es: '8 días' },
+  'm.museek.l1': { en: 'THE CHALLENGE', es: 'EL RETO' },
+  'm.museek.l2': { en: 'PRODUCT STRATEGY', es: 'ESTRATEGIA DE PRODUCTO' },
+  'm.museek.l3': { en: 'INTERACTION DESIGN DECISIONS', es: 'DECISIONES DE DISEÑO DE INTERACCIÓN' },
+  'm.museek.l4': { en: 'MY ROLE', es: 'MI ROL' },
+  'm.museek.l5': { en: 'VALIDATION & LEARNINGS', es: 'VALIDACIÓN Y APRENDIZAJES' },
+  'm.museek.p1': { en: 'While young adults actively consume cultural experiences when traveling, they rarely visit museums in their own cities. <b>Our research revealed a behavioral gap between cultural interest and local participation.</b>', es: 'Aunque los jóvenes consumen activamente experiencias culturales al viajar, raramente visitan museos en sus propias ciudades. <b>Nuestra investigación reveló una brecha conductual entre el interés cultural y la participación local.</b>' },
+  'm.museek.p2': { en: 'Through 5 qualitative interviews (ages 25–35, urban and rural), we identified three consistent patterns:', es: 'A través de 5 entrevistas cualitativas (25–35 años, urbano y rural), identificamos tres patrones consistentes:' },
+  'm.museek.p3': { en: 'This reframed the opportunity from "promoting museums" to <b>redesigning the experience to create intrinsic motivation and emotional engagement.</b>', es: 'Esto replanteó la oportunidad de "promocionar museos" a <b>rediseñar la experiencia para crear motivación intrínseca y engagement emocional.</b>' },
+  'm.museek.p4': { en: 'Instead of designing another event listing app, we focused on solving two structural friction points:', es: 'En lugar de diseñar otra app de listado de eventos, nos enfocamos en resolver dos puntos de fricción estructurales:' },
+  'm.museek.p5': { en: 'Inspired by escape-room mechanics, we introduced a challenge-based system to increase perceived value, session duration and social motivation.', es: 'Inspirados por las mecánicas de escape rooms, introdujimos un sistema basado en retos para aumentar el valor percibido, la duración de la sesión y la motivación social.' },
+  'm.museek.p6': { en: 'The goal was not gamification for aesthetics, but as a behavioral nudge to drive participation.', es: 'El objetivo no era gamificación por estética, sino como un empujón conductual para impulsar la participación.' },
+  'm.museek.p7': { en: 'To ensure clarity and reduce friction, key design decisions included:', es: 'Para asegurar claridad y reducir fricción, las decisiones clave de diseño incluyeron:' },
+  'm.museek.p8': { en: 'These decisions aimed to balance excitement with usability — ensuring engagement without sacrificing clarity.', es: 'Estas decisiones buscaban equilibrar la emoción con la usabilidad — asegurando engagement sin sacrificar claridad.' },
+  'm.museek.p9': { en: 'I led user interviews, synthesized research insights into opportunity areas, and defined the primary user flow. I designed low-fidelity wireframes and developed the high-fidelity interactive prototype in Figma.', es: 'Lideré las entrevistas con usuarios, sinteticé los insights de investigación en áreas de oportunidad y definí el flujo principal. Diseñé wireframes de baja fidelidad y desarrollé el prototipo interactivo de alta fidelidad en Figma.' },
+  'm.museek.p10': { en: 'During usability testing, users responded positively to the challenge-based concept, highlighting increased perceived excitement and clarity of purpose.', es: 'Durante las pruebas de usabilidad, los usuarios respondieron positivamente al concepto basado en retos, destacando un mayor entusiasmo percibido y claridad de propósito.' },
+  'm.museek.p11': { en: 'However, early testing revealed confusion around progression mechanics. We iterated by simplifying the task flow and clarifying reward feedback.', es: 'Sin embargo, las pruebas tempranas revelaron confusión en las mecánicas de progresión. Iteramos simplificando el flujo de tareas y clarificando el feedback de recompensas.' },
+  'm.museek.p13': { en: '<b>Key learning:</b> Gamification increases engagement only when supported by strong information architecture and clear feedback systems.', es: '<b>Aprendizaje clave:</b> La gamificación aumenta el engagement solo cuando está respaldada por una arquitectura de información sólida y sistemas de feedback claros.' },
+  'm.museek.p12': { en: 'In future iterations, I would validate behavioral impact through measurable metrics such as completion rate, session duration and return visits.', es: 'En futuras iteraciones, validaría el impacto conductual a través de métricas medibles como tasa de completado, duración de sesión y visitas recurrentes.' },
+
+  // ─── KOREAN AIR MODAL ───
+  'm.korean.name': { en: 'Korean Air — Redesigning clarity and trust in a high-cognitive-load app', es: 'Korean Air — Rediseñando claridad y confianza en una app de alta carga cognitiva' },
+  'm.korean.sub': { en: 'Concept redesign based on a heuristic audit to reduce cognitive overload, clarify primary actions, and establish a scalable visual system for a travel product.', es: 'Rediseño conceptual basado en una auditoría heurística para reducir la sobrecarga cognitiva, clarificar acciones primarias y establecer un sistema visual escalable para un producto de viajes.' },
+  'm.korean.tag.team': { en: 'Solo project', es: 'Proyecto individual' },
+  'm.korean.tag.sector': { en: 'Travel', es: 'Viajes' },
+  'm.korean.tag.time': { en: '3 days', es: '3 días' },
+  'm.korean.l1': { en: 'THE CHALLENGE', es: 'EL RETO' },
+  'm.korean.l2': { en: 'HEURISTIC AUDIT', es: 'AUDITORÍA HEURÍSTICA' },
+  'm.korean.l3': { en: 'REDESIGN STRATEGY', es: 'ESTRATEGIA DE REDISEÑO' },
+  'm.korean.l4': { en: 'KEY DESIGN MOVES', es: 'DECISIONES CLAVE DE DISEÑO' },
+  'm.korean.l5': { en: 'VISUAL SYSTEM', es: 'SISTEMA VISUAL' },
+  'm.korean.l6': { en: 'OUTCOME & NEXT STEPS', es: 'RESULTADO Y PRÓXIMOS PASOS' },
+  'm.korean.p1': { en: 'Airline apps are high-stakes and high-cognitive-load environments: users need to find critical information fast, complete complex tasks under time pressure, and feel confident about irreversible decisions (payments, bookings).', es: 'Las apps de aerolíneas son entornos de alta complejidad cognitiva: los usuarios necesitan encontrar información crítica rápido, completar tareas complejas bajo presión temporal y sentir confianza en decisiones irreversibles (pagos, reservas).' },
+  'm.korean.p2': { en: 'In the original Korean Air app, multiple UI blocks compete for attention, CTAs are unclear, and the hierarchy doesn\'t reflect user priorities.', es: 'En la app original de Korean Air, múltiples bloques de UI compiten por la atención, los CTAs son poco claros y la jerarquía no refleja las prioridades del usuario.' },
+  'm.korean.p8': { en: '<b>Goal:</b> reduce cognitive overload, clarify primary actions (e.g., trips and reservations), and create a consistent UI system that can scale.', es: '<b>Objetivo:</b> reducir la sobrecarga cognitiva, clarificar acciones primarias (ej: viajes y reservas) y crear un sistema UI consistente y escalable.' },
+  'm.korean.p3': { en: 'I ran a heuristic evaluation to identify usability issues, assess severity, and prioritize fixes based on impact and ease of implementation. Key issues found:', es: 'Realicé una evaluación heurística para identificar problemas de usabilidad, evaluar su severidad y priorizar soluciones por impacto y facilidad de implementación. Problemas clave encontrados:' },
+  'm.korean.p4': { en: 'Instead of redesigning screens "by taste", I reframed the UI around task priority and decision clarity. The strategy focused on three pillars:', es: 'En lugar de rediseñar pantallas "por gusto", replanteé la UI en torno a prioridad de tareas y claridad de decisiones. La estrategia se centró en tres pilares:' },
+  'm.korean.p5': { en: 'Here are the most impactful design decisions mapped to the problems found:', es: 'Estas son las decisiones de diseño más impactantes mapeadas a los problemas encontrados:' },
+  'm.korean.p6': { en: 'To prevent inconsistencies and make the redesign scalable, I created lightweight UI guidelines: spacing scale, typography hierarchy, iconography and a refined blue palette aligned with the brand.', es: 'Para evitar inconsistencias y hacer el rediseño escalable, creé guías UI ligeras: escala de espaciado, jerarquía tipográfica, iconografía y una paleta azul refinada alineada con la marca.' },
+  'm.korean.p7': { en: 'This redesign focuses on clarity and trust: fewer competing elements, more explicit actions, and a scalable system. If I continued the project, I would validate improvements with usability testing and measurable product metrics: task completion rate (Add reservation), time on task, and drop-offs on key flows.', es: 'Este rediseño se centra en claridad y confianza: menos elementos compitiendo, acciones más explícitas y un sistema escalable. Si continuara el proyecto, validaría las mejoras con pruebas de usabilidad y métricas de producto medibles: tasa de completado (Añadir reserva), tiempo en tarea y abandonos en flujos clave.' },
+  'm.korean.p9': { en: '<b>Key learning:</b> In complex products (travel, banking, fintech), UX issues are often structural — hierarchy, system feedback and clarity matter as much as visual polish.', es: '<b>Aprendizaje clave:</b> En productos complejos (viajes, banca, fintech), los problemas de UX suelen ser estructurales — la jerarquía, el feedback del sistema y la claridad importan tanto como el acabado visual.' },
+
+  // ─── LUMIX MODAL ───
+  'm.lumix.name': { en: 'Lumix — Designing financial clarity through emotional regulation', es: 'Lumix — Diseñando claridad financiera a través de la regulación emocional' },
+  'm.lumix.sub': { en: 'A behavioral fintech concept that integrates real financial data with emotional support to reduce anxiety and increase perceived control among young professionals.', es: 'Un concepto fintech conductual que integra datos financieros reales con apoyo emocional para reducir la ansiedad y aumentar el control percibido entre jóvenes profesionales.' },
+  'm.lumix.tag.team': { en: ' 4 teammates', es: ' 4 personas' },
+  'm.lumix.tag.sector': { en: ' Fintech / Wellness ', es: ' Fintech / Bienestar ' },
+  'm.lumix.tag.time': { en: '10 days', es: '10 días' },
+  'm.lumix.l1': { en: 'THE CHALLENGE', es: 'EL RETO' },
+  'm.lumix.l2': { en: 'FINANCIAL CLARITY', es: 'CLARIDAD FINANCIERA' },
+  'm.lumix.l3': { en: 'EMOTIONAL TRACKING', es: 'SEGUIMIENTO EMOCIONAL' },
+  'm.lumix.l4': { en: 'EDUCATION & GUIDANCE', es: 'EDUCACIÓN Y GUÍA' },
+  'm.lumix.l5': { en: 'CONVERSATIONAL SUPPORT', es: 'SOPORTE CONVERSACIONAL' },
+  'm.lumix.l6': { en: 'MY ROLE', es: 'MI ROL' },
+  'm.lumix.l7': { en: 'KEY LEARNINGS', es: 'APRENDIZAJES CLAVE' },
+  'm.lumix.p1': { en: 'Many young professionals with stable income still experience persistent financial stress. Traditional financial apps often amplify anxiety through dense dashboards and data-heavy interfaces.', es: 'Muchos jóvenes profesionales con ingresos estables siguen experimentando estrés financiero persistente. Las apps financieras tradicionales a menudo amplifican la ansiedad con dashboards densos e interfaces cargadas de datos.' },
+  'm.lumix.p2': { en: 'Our research showed that financial stress is less about numbers and more about perceived lack of control.', es: 'Nuestra investigación mostró que el estrés financiero tiene menos que ver con los números y más con la percepción de falta de control.' },
+  'm.lumix.p14': { en: 'The opportunity was clear: <b>Design a financial experience that prioritizes clarity and emotional regulation over feature density.</b>', es: 'La oportunidad era clara: <b>Diseñar una experiencia financiera que priorice la claridad y la regulación emocional sobre la densidad de funcionalidades.</b>' },
+  'm.lumix.p3': { en: 'Instead of overwhelming users with complex graphs, Lumix provides a simplified monthly overview and focused savings tracking.', es: 'En lugar de abrumar a los usuarios con gráficos complejos, Lumix ofrece un resumen mensual simplificado y un seguimiento de ahorro enfocado.' },
+  'm.lumix.p4': { en: 'Key principles:', es: 'Principios clave:' },
+  'm.lumix.p5': { en: 'Financial decisions are deeply emotional. Lumix integrates daily mood tracking to identify patterns between spending behavior and emotional states.', es: 'Las decisiones financieras son profundamente emocionales. Lumix integra seguimiento diario del estado de ánimo para identificar patrones entre comportamiento de gasto y estados emocionales.' },
+  'm.lumix.p6': { en: 'This transforms the product from a budgeting tool into a behavioral awareness system.', es: 'Esto transforma el producto de una herramienta de presupuesto a un sistema de conciencia conductual.' },
+  'm.lumix.p7': { en: 'Instead of passive dashboards, Lumix includes an educational section designed to build financial literacy in a non-intimidating way.', es: 'En lugar de dashboards pasivos, Lumix incluye una sección educativa diseñada para construir alfabetización financiera de forma no intimidante.' },
+  'm.lumix.p8': { en: 'Content focuses on practical micro-habits, mindset shifts and long-term clarity.', es: 'El contenido se centra en micro-hábitos prácticos, cambios de mentalidad y claridad a largo plazo.' },
+  'm.lumix.p9': { en: 'A conversational assistant translates financial data into actionable insights and empathetic feedback.', es: 'Un asistente conversacional traduce datos financieros en insights accionables y feedback empático.' },
+  'm.lumix.p10': { en: 'The goal is to reduce avoidance behavior and create a safe interaction layer when facing financial data.', es: 'El objetivo es reducir el comportamiento de evitación y crear una capa de interacción segura al enfrentarse a datos financieros.' },
+  'm.lumix.p11': { en: 'I led research synthesis, defined behavioral opportunity areas and structured the MVP experience. I designed core interaction flows and contributed to visual hierarchy decisions to reduce cognitive load.', es: 'Lideré la síntesis de investigación, definí áreas de oportunidad conductual y estructuré la experiencia MVP. Diseñé los flujos de interacción principales y contribuí a decisiones de jerarquía visual para reducir la carga cognitiva.' },
+  'm.lumix.p12': { en: 'Financial products do not only communicate data — they communicate safety.', es: 'Los productos financieros no solo comunican datos — comunican seguridad.' },
+  'm.lumix.p13': { en: 'Simplicity increases perceived control. Emotional tone influences behavioral consistency. Reducing cognitive load can directly impact trust.', es: 'La simplicidad aumenta el control percibido. El tono emocional influye en la consistencia conductual. Reducir la carga cognitiva puede impactar directamente en la confianza.' },
 };
 
 function getLang(){ return localStorage.getItem('vanesafrz-lang') || 'en' }
@@ -114,7 +189,7 @@ function applyLang(lang){
   });
   // Update all toggle buttons on page
   document.querySelectorAll('.lang-toggle').forEach(btn => {
-    btn.textContent = lang === 'en' ? '🇬🇧 ENG' : '🇪🇸 ES';
+    btn.textContent = lang === 'en' ? '🇪🇸 ES' : '🇬🇧 EN';
   });
 }
 
