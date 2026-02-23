@@ -27,10 +27,20 @@
   <h1 class="page-header-title">My Resume</h1>
   <div class="page-header-actions">
     <!-- ✏️ CAMBIAR HREF: Pon la ruta de tu CV en PDF, ej: href="docs/vanesa-cv.pdf" -->
-    <a href="docs/vanesa-cv.pdf" class="btn-download" download>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="7 10 12 15 17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="15" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      Download PDF
-    </a>
+    <!-- Dropdown descarga CV -->
+<div class="btn-download-wrap">
+  <button class="btn-download" onclick="this.parentElement.classList.toggle('open')">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="7 10 12 15 17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="15" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    Descargar CV
+    <svg class="btn-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="btn-download-menu">
+    <!-- ✏️ CAMBIAR HREF: Ruta a tu CV en español -->
+    <a href="docs/vanesa-cv-es.pdf" download>🇪🇸 Español</a>
+    <!-- ✏️ CAMBIAR HREF: Ruta a tu CV en inglés -->
+    <a href="docs/vanesa-cv-en.pdf" download>🇬🇧 English</a>
+  </div>
+</div>
   </div>
 </div>
 
