@@ -114,7 +114,7 @@ function applyLang(lang){
   });
   // Update all toggle buttons on page
   document.querySelectorAll('.lang-toggle').forEach(btn => {
-    btn.textContent = lang === 'en' ? '🇪🇸 ES' : '🇬🇧 EN';
+    btn.textContent = lang === 'en' ? '🇬🇧 ENG' : '🇪🇸 ES';
   });
 }
 
