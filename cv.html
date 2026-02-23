@@ -14,24 +14,25 @@
   <a href="index.html" class="nav-logo">vanesa<span class="blue">frz</span></a>
   <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   <ul class="nav-links" id="navLinks">
-    <li><a href="index.html">Proyectos</a></li>
-    <li><a href="about.html">Sobre mí</a></li>
-    <li><a href="cv.html" class="active">CV</a></li>
-    <li><a href="mailto:tu@email.com" class="nav-cta">Hablemos</a></li>
+    <li><a href="index.html" data-i18n="nav.home">Proyectos</a></li>
+    <li><a href="about.html" data-i18n="nav.about">Sobre mí</a></li>
+    <li><a href="cv.html" class="active" data-i18n="nav.cv">CV</a></li>
+    <li><a href="/cdn-cgi/l/email-protection#7f0b0a3f1a121e1613511c1012" class="nav-cta">Hablemos</a></li>
+    <li><button class="lang-toggle" onclick="toggleLang()">🇪🇸 ES</button></li>
   </ul>
 </nav>
 
 <!-- PAGE HEADER -->
 <div class="page-header">
-  <div class="page-header-label">Resume</div>
-  <h1 class="page-header-title">My Resume</h1>
+  <div class="page-header-label" data-i18n="cv.label">Resume</div>
+  <h1 class="page-header-title" data-i18n="cv.title">My Resume</h1>
   <div class="page-header-actions">
     <!-- ✏️ CAMBIAR HREF: Pon la ruta de tu CV en PDF, ej: href="docs/vanesa-cv.pdf" -->
     <!-- Dropdown descarga CV -->
 <div class="btn-download-wrap">
   <button class="btn-download" onclick="this.parentElement.classList.toggle('open')">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="7 10 12 15 17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="15" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    Descargar CV
+    <span data-i18n="cv.download">Descargar CV</span>
     <svg class="btn-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </button>
   <div class="btn-download-menu">
@@ -57,11 +58,11 @@
     <div class="cv-header-info">
       <h2>Vanesa Ferrer</h2>
       <div class="cv-role">UX/UI & Product Designer</div>
-      <p>📍 Malaga, Spain · Open to work remotely</p>
+      <p data-i18n="cv.location">📍 Malaga, Spain · Open to work remotely</p>
       <div class="cv-header-links">
-        <a href="mailto:tu@email.com">
+        <a href="/cdn-cgi/l/email-protection#cfbbba8faaa2aea6a3e1aca0a2">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M22 7l-10 7L2 7" stroke="currentColor" stroke-width="2"/></svg>
-          vanesafrz.ux@gmail.com
+          <span class="__cf_email__" data-cfemail="bec8dfd0dbcddfd8ccc490cbc6fed9d3dfd7d290ddd1d3">[email&#160;protected]</span>
         </a>
         <a href="https://linkedin.com/in/vanesafrz" target="_blank">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z" stroke="currentColor" stroke-width="2"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/></svg>
@@ -77,7 +78,7 @@
 
   <!-- EXPERIENCE -->
   <div class="cv-section reveal">
-    <h2 class="cv-section-title">Work Experience</h2>
+    <h2 class="cv-section-title" data-i18n="cv.experience">Work Experience</h2>
 
     <div class="cv-item">
       <div class="cv-item-date">2023 — 2025</div>
@@ -122,7 +123,7 @@
 
   <!-- EDUCATION -->
   <div class="cv-section reveal">
-    <h2 class="cv-section-title">EDUCATION</h2>
+    <h2 class="cv-section-title" data-i18n="cv.education">EDUCATION</h2>
 
     <div class="cv-item">
       <div class="cv-item-date">2025</div>
@@ -154,7 +155,7 @@
 
   <!-- SKILLS -->
   <div class="cv-section reveal">
-    <h2 class="cv-section-title">Skills</h2>
+    <h2 class="cv-section-title" data-i18n="cv.skills">Skills</h2>
 
     <div class="cv-skills-grid">
       <div class="cv-skill-group">
@@ -164,7 +165,7 @@
         </div>
       </div>
       <div class="cv-skill-group">
-        <h4>Otras</h4>
+        <h4 data-i18n="cv.skills.other">Otras</h4>
         <div class="cv-skill-list">
           <span>Adobe Premiere</span><span>After Effects</span><span>Marketing Digital</span><span>Storytelling</span><span>Canva</span><span>Google Analytics</span>
         </div>
@@ -174,7 +175,7 @@
 
   <!-- LANGUAGES -->
   <div class="cv-section reveal">
-    <h2 class="cv-section-title">Language</h2>
+    <h2 class="cv-section-title" data-i18n="cv.languages">Language</h2>
 
     <div class="cv-lang-row">
       <div class="cv-lang-item">
@@ -183,7 +184,7 @@
         <div class="cv-lang-dots">
           <div class="cv-lang-dot filled"></div><div class="cv-lang-dot filled"></div><div class="cv-lang-dot filled"></div><div class="cv-lang-dot filled"></div><div class="cv-lang-dot filled"></div>
         </div>
-        <div class="cv-lang-level">Mother tongue</div>
+        <div class="cv-lang-level" data-i18n="cv.lang.mother">Mother tongue</div>
       </div>
       <div class="cv-lang-item">
         <div class="cv-lang-name">English</div>
@@ -197,7 +198,7 @@
         <div class="cv-lang-dots">
           <div class="cv-lang-dot filled"></div><div class="cv-lang-dot"></div><div class="cv-lang-dot"></div><div class="cv-lang-dot"></div><div class="cv-lang-dot"></div>
         </div>
-        <div class="cv-lang-level">Beginner</div>
+        <div class="cv-lang-level" data-i18n="cv.lang.beginner">Beginner</div>
       </div>
     </div>
   </div>
@@ -207,12 +208,7 @@
 <!-- FOOTER -->
 <footer class="footer">
   <a href="index.html" class="footer-logo">vanesa<span class="blue">frz</span></a>
-  <div class="footer-note">Built with 🤍 vanesafrz · 2026</div>
+  <div class="footer-note"><span data-i18n="footer.note">Built with 🤍 vanesafrz · 2026</span></div>
   <div class="footer-socials">
     <a href="https://linkedin.com/in/vanesafrz" target="_blank" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z" stroke="currentColor" stroke-width="2"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/></svg></a>
-    <a href="vanesafrz.ux@gmail.com" aria-label="Email"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M22 7l-10 7L2 7" stroke="currentColor" stroke-width="2"/></svg></a>
-  </div>
-</footer>
-<script src="script.js"></script>
-</body>
-</html>
+    <a href="vanesafrz.ux@gmail.com" aria-label="Email"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor

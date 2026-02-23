@@ -306,3 +306,6 @@ body.modal-open{overflow:hidden}
 .nav{padding:16px 24px}
 .footer{flex-direction:column;gap:16px;text-align:center}
 }
+/* LANG TOGGLE */
+.lang-toggle{font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.15);padding:6px 14px;border-radius:100px;cursor:pointer;transition:all .3s;white-space:nowrap}
+.lang-toggle:hover{background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.3)}
