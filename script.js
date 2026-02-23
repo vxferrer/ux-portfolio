@@ -123,4 +123,8 @@ function toggleLang(){
 }
 
 // Apply saved language on load
-document.addEventListener('DOMContentLoaded', () => applyLang(getLang()));
+if(document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', () => applyLang(getLang()));
+} else {
+  applyLang(getLang());
+}
