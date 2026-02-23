@@ -237,6 +237,16 @@ body.modal-open{overflow:hidden}
 .cv-section{margin-bottom:48px}
 .cv-section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--blue);display:inline-block}
 
+/*Download CV*/
+.btn-download-wrap{position:relative;display:inline-block}
+.btn-download .btn-chevron{transition:transform .3s;margin-left:-2px}
+.btn-download-wrap.open .btn-chevron{transform:rotate(180deg)}
+.btn-download-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(8px);background:#fff;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.15);border:1px solid var(--gray-200);overflow:hidden;opacity:0;visibility:hidden;transition:all .25s;min-width:180px;z-index:10}
+.btn-download-wrap.open .btn-download-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.btn-download-menu a{display:flex;align-items:center;gap:10px;padding:14px 20px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;color:var(--black);transition:background .2s;text-decoration:none}
+.btn-download-menu a:hover{background:var(--gray-50)}
+.btn-download-menu a:first-child{border-bottom:1px solid var(--gray-100)}
+
 /* Experience items */
 .cv-item{display:grid;grid-template-columns:140px 1fr;gap:24px;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--gray-100)}
 .cv-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}

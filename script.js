@@ -36,6 +36,8 @@ function toggleMenu(){document.getElementById('hamburger').classList.toggle('act
 document.querySelectorAll('#navLinks a').forEach(a=>{a.addEventListener('click',()=>{document.getElementById('hamburger').classList.remove('active');document.getElementById('navLinks').classList.remove('open')})});
 document.querySelectorAll('.reveal').forEach(el=>{new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -60px 0px'}).observe(el)});
 
+document.addEventListener('click',e=>{if(!e.target.closest('.btn-download-wrap')){document.querySelectorAll('.btn-download-wrap').forEach(w=>w.classList.remove('open'))}});
+
 // about page
 
 
