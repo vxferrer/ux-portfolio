@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumix — Case Study — vanesafrz</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">vanesa<span class="blue">frz</span></a>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+    <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
+    <li><a href="about.html" data-i18n="nav.about">About me</a></li>
+    <li><a href="cv.html" data-i18n="nav.cv">CV</a></li>
+    <li><a href="mailto:vanesafrz.ux@gmail.com" class="nav-cta" data-i18n="nav.cta">Let's talk!</a></li>
+    <li><button class="lang-toggle" onclick="toggleLang()">🇪🇸 ES</button></li>
+  </ul>
+</nav>
+
+<main class="case-wrap">
+  <a class="case-back" href="projects.html">← <span data-i18n="case.back">Back to projects</span></a>
+
+  <div class="case-card">
+    <div class="modal-hero">
+      <!-- ✏️ CAMBIAR SRC: Imagen cabecera del case study Museek (1720×960px recomendado) -->
+      <img src="img/lumix-case-study.jpg" alt="Lumix hero" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="modal-hero-placeholder" style="display:none">Imagen cabecera Lumix<br><span style="font-size:11px">1720 × 960px</span></div>
+    </div>
+    <div class="case-content">
+      <h2 class="modal-project-name" data-i18n="m.lumix.name">Lumix — Designing financial clarity through emotional regulation</h2>
+      <p class="modal-project-sub" data-i18n="m.lumix.sub">A behavioral fintech concept that integrates real financial data with emotional support to reduce anxiety and increase perceived control among young professionals.</p>
+
+      <!-- Domain tags (for filters) -->
+      <div class="case-domain-tags" data-tags="Fintech, Finanzas, Bienestar" aria-label="Project tags">
+        <span class="chip chip-static" data-i18n="tag.domain.fintech">Fintech</span>
+        <span class="chip chip-static" data-i18n="tag.domain.finanzas">Finanzas</span>
+        <span class="chip chip-static" data-i18n="tag.domain.bienestar">Bienestar</span>
+      </div>
+
+      <!-- Etiquetas -->
+      <div class="modal-tags">
+        <span class="modal-tag tag-team"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M23 21v-2a4 4 0 00-3-3.87" stroke="currentColor" stroke-width="2"/><path d="M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="m.lumix.tag.team">4 teammates</span></span>
+        <span class="modal-tag tag-sector"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="m.lumix.tag.sector">Fintech / Wellness</span></span>
+        <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="tag.skill.productdesign">Product Design</span></span>
+        <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="tag.skill.app">App</span></span>
+        <span class="modal-tag tag-type"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor" stroke-width="2"/><line x1="12" y1="18" x2="12" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-i18n="m.lumix.tag.time">10 days</span></span>
+      </div>
+      <div class="case-grid">
+        <!-- INTRO -->
+       <!-- VIDEO (VIMEO) -->
+<div class="modal-media">
+  <div style="position:relative;padding:56.25% 0 0 0;overflow:hidden;border-radius:16px;">
+    <iframe
+      src="https://player.vimeo.com/video/1167375942?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      style="position:absolute;top:0;left:0;width:100%;height:100%;"
+      title="Lumix — Designing financial clarity through emotional regulation">
+    </iframe>
+  </div>
+</div>
+      <!-- THE CHALLENGE -->
+      <div class="modal-section">
+        <div class="modal-section-label" data-i18n="m.lumix.l1">THE CHALLENGE</div>
+        <p data-i18n="m.lumix.p1">
+          Many young professionals with stable income still experience persistent financial stress.
+          Traditional financial apps often amplify anxiety through dense dashboards and data-heavy interfaces.
+        </p>
+
+        <p data-i18n="m.lumix.p2">
+          Our research showed that financial stress is less about numbers and more about perceived lack of control.
+        </p>
+
+        <p data-i18n="m.lumix.p14">
+          The opportunity was clear:
+          <b>Design a financial experience that prioritizes clarity and emotional regulation over feature density.</b>
+        </p>
+      </div>
+
+      <!-- PRODUCT OVERVIEW -->
+      <div class="modal-media">
+        <img src="img/lumix-control.jpg" alt="Lumix financial overview screens">
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-label" data-i18n="m.lumix.l2">FINANCIAL CLARITY</div>
+        <p data-i18n="m.lumix.p3">
+          Instead of overwhelming users with complex graphs, Lumix provides a simplified monthly overview and focused savings tracking.
+        </p>
+
+        <p data-i18n="m.lumix.p4">
+          Key principles:
+        </p>
+
+        <ol class="list-number" data-i18n="m.lumix.ol1">
+          <li>One active savings goal to reduce decision fatigue.</li>
+          <li>Clear progress visualization with predictive guidance.</li>
+          <li>Reduced visual noise and structured hierarchy.</li>
+        </ol>
+      </div>
+
+      <!-- MOOD TRACKING -->
+      <div class="modal-media">
+        <img src="img/lumix-mood.jpg" alt="Lumix mood tracking feature">
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-label" data-i18n="m.lumix.l3">EMOTIONAL TRACKING</div>
+        <p data-i18n="m.lumix.p5">
+          Financial decisions are deeply emotional. Lumix integrates daily mood tracking to identify patterns between spending behavior and emotional states.
+        </p>
+
+        <p data-i18n="m.lumix.p6">
+          This transforms the product from a budgeting tool into a behavioral awareness system.
+        </p>
+      </div>
+
+      <!-- EDUCATIONAL CONTENT -->
+      <div class="modal-media">
+        <img src="img/lumix-explora.jpg" alt="Lumix educational content">
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-label" data-i18n="m.lumix.l4">EDUCATION & GUIDANCE</div>
+        <p data-i18n="m.lumix.p7">
+          Instead of passive dashboards, Lumix includes an educational section designed to build financial literacy in a non-intimidating way.
+        </p>
+
+        <p data-i18n="m.lumix.p8">
+          Content focuses on practical micro-habits, mindset shifts and long-term clarity.
+        </p>
+      </div>
+
+      <!-- AI ASSISTANT -->
+      <div class="modal-media">
+        <img src="img/lumix-chat.jpg" alt="Lumix conversational assistant">
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-label" data-i18n="m.lumix.l5">CONVERSATIONAL SUPPORT</div>
+        <p data-i18n="m.lumix.p9">
+          A conversational assistant translates financial data into actionable insights and empathetic feedback.
+        </p>
+
+        <p data-i18n="m.lumix.p10">
+          The goal is to reduce avoidance behavior and create a safe interaction layer when facing financial data.
+        </p>
+      </div>
+
+      <!-- MY ROLE -->
+      <div class="modal-section">
+        <div class="modal-section-label" data-i18n="m.lumix.l6">MY ROLE</div>
+        <p data-i18n="m.lumix.p11">
+          I led research synthesis, defined behavioral opportunity areas and structured the MVP experience.
+          I designed core interaction flows and contributed to visual hierarchy decisions to reduce cognitive load.
+        </p>
+      </div>
+
+      <!-- LEARNINGS -->
+      <div class="modal-section">
+        <div class="modal-section-label" data-i18n="m.lumix.l7">KEY LEARNINGS</div>
+        <p data-i18n="m.lumix.p12">
+          Financial products do not only communicate data — they communicate safety.
+        </p>
+
+        <p data-i18n="m.lumix.p13">
+          Simplicity increases perceived control.
+          Emotional tone influences behavioral consistency.
+          Reducing cognitive load can directly impact trust.
+        </p>
+      </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-logo">vanesa<span class="blue">frz</span></div>
+  <div class="footer-note" data-i18n="footer.note">Built with 🤍 vanesafrz · 2026</div>
+  <div class="footer-socials">
+    <a href="mailto:vanesafrz.ux@gmail.com" aria-label="Email">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M22 7l-10 7L2 7" stroke="currentColor" stroke-width="2"/></svg>
+    </a>
+    <a href="https://linkedin.com/in/vanesafrz" target="_blank" aria-label="LinkedIn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z" stroke="currentColor" stroke-width="2"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

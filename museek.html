@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Museek — Case Study — vanesafrz</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">vanesa<span class="blue">frz</span></a>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+    <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
+    <li><a href="about.html" data-i18n="nav.about">About me</a></li>
+    <li><a href="cv.html" data-i18n="nav.cv">CV</a></li>
+    <li><a href="mailto:vanesafrz.ux@gmail.com" class="nav-cta" data-i18n="nav.cta">Let's talk!</a></li>
+    <li><button class="lang-toggle" onclick="toggleLang()">🇪🇸 ES</button></li>
+  </ul>
+</nav>
+
+<main class="case-wrap">
+  <a class="case-back" href="projects.html">← <span data-i18n="case.back">Back to projects</span></a>
+
+  <div class="case-card">
+    <div class="modal-hero">
+      <!-- ✏️ CAMBIAR SRC: Imagen cabecera del case study Museek (1720×960px recomendado) -->
+      <img src="img/museek-front.jpg" alt="Museek hero" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="modal-hero-placeholder" style="display:none">Imagen cabecera Museek<br><span style="font-size:11px">1720 × 960px</span></div>
+    </div>
+    <div class="case-content">
+      <h2 class="modal-project-name" data-i18n="m.museek.name">Museek — Designing behavioral engagement through gamification</h2>
+      <p class="modal-project-sub" data-i18n="m.museek.sub">A mobile product concept that transforms traditional museum visits into interactive, challenge-based experiences to increase local cultural engagement among young adults.</p>
+
+      <!-- Domain tags (for filters) -->
+      <div class="case-domain-tags" data-tags="Cultura, Ocio" aria-label="Project tags">
+        <span class="chip chip-static" data-i18n="tag.domain.cultura">Cultura</span>
+        <span class="chip chip-static" data-i18n="tag.domain.ocio">Ocio</span>
+      </div>
+
+      <!-- Etiquetas -->
+      <div class="modal-tags">
+        <span class="modal-tag tag-team"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M23 21v-2a4 4 0 00-3-3.87" stroke="currentColor" stroke-width="2"/><path d="M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="m.museek.tag.team">3 teammates</span></span>
+        <span class="modal-tag tag-sector"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="m.museek.tag.sector">Leisure / Culture</span></span>
+        <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="tag.skill.uxresearch">UX Research</span></span>
+        <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="tag.skill.app">App</span></span>
+        <span class="modal-tag tag-type"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor" stroke-width="2"/><line x1="12" y1="18" x2="12" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-i18n="m.museek.tag.time">8 days</span></span>
+      </div>
+      <div class="case-sections">
+
+        <!-- APARTADO 1 -->
+        <section class="case-block">
+          <div class="case-block-text">
+            <div class="modal-section">
+              <div class="modal-section-label" data-i18n="m.museek.l1">THE CHALLENGE</div>
+              <p data-i18n="m.museek.p1">While young adults actively consume cultural experiences when traveling, they rarely visit museums in their own cities. <b>Our research revealed a behavioral gap between cultural interest and local participation.</b></p>
+              <p data-i18n="m.museek.p2">Through 5 qualitative interviews (ages 25–35, urban and rural), we identified three consistent patterns:</p>
+              <ol class="list-number" data-i18n="m.museek.ol1">
+                <li>Museums are perceived as passive and static experiences.</li>
+                <li>Cultural events lack discoverability and clarity.</li>
+                <li>Social influence and novelty strongly drive decision-making.</li>
+              </ol>
+              <p data-i18n="m.museek.p3">This reframed the opportunity from “promoting museums” to <b>redesigning the experience to create intrinsic motivation and emotional engagement.</b></p>
+            </div>
+          </div>
+
+          <div class="modal-media">
+            <img src="img/interviews-museek.jpg" alt="Museek imagen 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="modal-media-placeholder" style="display:none">📷 Imagen 1 del case study<span>Recomendado: 1600×1000px</span></div>
+          </div>
+        </section>
+
+        <!-- APARTADO 2 -->
+        <section class="case-block">
+          <div class="case-block-text">
+            <div class="modal-section">
+              <div class="modal-section-label" data-i18n="m.museek.l2">PRODUCT STRATEGY</div>
+              <p data-i18n="m.museek.p4">Instead of designing another event listing app, we focused on solving two structural friction points:</p>
+              <ol class="list-number" data-i18n="m.museek.ol2">
+                <li><b>Discovery</b> — Reducing cognitive effort when finding relevant cultural activities.</li>
+                <li><b>Engagement</b> — Transforming passive visits into interactive, goal-driven experiences.</li>
+              </ol>
+              <p data-i18n="m.museek.p5">Inspired by escape-room mechanics, we introduced a challenge-based system to increase perceived value, session duration and social motivation.</p>
+              <p data-i18n="m.museek.p6">The goal was not gamification for aesthetics, but as a behavioral nudge to drive participation.</p>
+            </div>
+          </div>
+
+          <div class="modal-media">
+            <img src="img/museek-testing.jpg" alt="Museek imagen 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="modal-media-placeholder" style="display:none">📷 Imagen 2 del case study<span>Recomendado: 1600×1000px</span></div>
+          </div>
+        </section>
+
+        <!-- APARTADO 3 -->
+        <section class="case-block">
+          <div class="case-block-text">
+            <div class="modal-section">
+              <div class="modal-section-label" data-i18n="m.museek.l3">INTERACTION DESIGN DECISIONS</div>
+              <p data-i18n="m.museek.p7">To ensure clarity and reduce friction, key design decisions included:</p>
+              <ol class="list-number" data-i18n="m.museek.ol3">
+                <li>Minimizing onboarding steps to reduce entry friction.</li>
+                <li>Using progressive disclosure to avoid cognitive overload.</li>
+                <li>Structuring navigation around challenges instead of static listings.</li>
+                <li>Designing clear visual hierarchy to support task completion.</li>
+              </ol>
+              <p data-i18n="m.museek.p8">These decisions aimed to balance excitement with usability — ensuring engagement without sacrificing clarity.</p>
+            </div>
+
+            <div class="modal-section">
+              <div class="modal-section-label" data-i18n="m.museek.l4">MY ROLE</div>
+              <p data-i18n="m.museek.p9">I led user interviews, synthesized research insights into opportunity areas, and defined the primary user flow. I designed low-fidelity wireframes and developed the high-fidelity interactive prototype in Figma.</p>
+            </div>
+          </div>
+
+          <div class="modal-media">
+            <img src="img/museek-prototype.gif" alt="Museek gif" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="modal-media-placeholder" style="display:none">🎬 GIF del prototipo / interacción<span>Formato: .gif · Recomendado: 1600×1000px</span></div>
+          </div>
+        </section>
+
+        <!-- APARTADO 4 -->
+        <section class="case-block case-block--full">
+          <div class="case-block-text">
+            <div class="modal-section">
+              <div class="modal-section-label" data-i18n="m.museek.l5">VALIDATION & LEARNINGS</div>
+              <p data-i18n="m.museek.p10">During usability testing, users responded positively to the challenge-based concept, highlighting increased perceived excitement and clarity of purpose.</p>
+              <p data-i18n="m.museek.p11">However, early testing revealed confusion around progression mechanics. We iterated by simplifying the task flow and clarifying reward feedback.</p>
+              <p data-i18n="m.museek.p13"><b>Key learning:</b> Gamification increases engagement only when supported by strong information architecture and clear feedback systems.</p>
+              <p data-i18n="m.museek.p12">In future iterations, I would validate behavioral impact through measurable metrics such as completion rate, session duration and return visits.</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-logo">vanesa<span class="blue">frz</span></div>
+  <div class="footer-note" data-i18n="footer.note">Built with 🤍 vanesafrz · 2026</div>
+  <div class="footer-socials">
+    <a href="mailto:vanesafrz.ux@gmail.com" aria-label="Email">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M22 7l-10 7L2 7" stroke="currentColor" stroke-width="2"/></svg>
+    </a>
+    <a href="https://linkedin.com/in/vanesafrz" target="_blank" aria-label="LinkedIn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z" stroke="currentColor" stroke-width="2"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

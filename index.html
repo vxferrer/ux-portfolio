@@ -15,9 +15,10 @@
   <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html" class="active" data-i18n="nav.home">Home</a></li>
+    <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
     <li><a href="about.html" data-i18n="nav.about">About me</a></li>
     <li><a href="cv.html" data-i18n="nav.cv">CV</a></li>
-    <li><a href="mailto:vanesafrz.ux@gmail.com" class="nav-cta">Let's talk!</a></li>
+    <li><a href="mailto:vanesafrz.ux@gmail.com" class="nav-cta" data-i18n="nav.cta">Let's talk!</a></li>
     <li><button class="lang-toggle" onclick="toggleLang()">🇪🇸 ES</button></li>
   </ul>
 </nav>
@@ -30,7 +31,7 @@
     <div class="hero-name">vanesa<span class="blue">frz</span></div>
     <div class="hero-buttons">
       <a href="#work" class="btn-primary" data-i18n="hero.btn.work"> My work <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="/cdn-cgi/l/email-protection#3741565952445651454d19424f77505a565e5b1954585a" class="btn-ghost"> Wanna chat? </a>
+      <a href="/cdn-cgi/l/email-protection#3741565952445651454d19424f77505a565e5b1954585a" class="btn-ghost" data-i18n="hero.btn.chat"> Wanna chat? </a>
     </div>
   </div>
   <div class="hero-frizi">
@@ -51,33 +52,51 @@
   <div class="projects-grid">
 
        <!-- ✦ LUMIX -->
-    <div class="project-card reveal" onclick="openModal('lumix')">
+    <div class="project-card reveal" onclick="window.location.href='lumix.html'">
       <div class="project-img-wrap">
         <!-- ✏️ CAMBIAR SRC: Pon la ruta de tu imagen de portada de Korean Air -->
         <img class="project-thumb" src="img/lumix-portada.jpg" alt="Finances App - Lumix" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="project-placeholder" style="display:none">Lumix Case Study<br><span style="font-size:11px">Recomendado: 800×600px</span></div>
       </div>
-      <div class="project-body"><h3 class="project-name" data-i18n="card.lumix.name">Lumix - Finances and wellness app</h3><p class="project-meta" data-i18n="card.lumix.meta"> UX Research · UX / UI Design · Accessibility </p></div>
+      <div class="project-body">
+        <h3 class="project-name" data-i18n="card.lumix.name">Lumix - Finances and wellness app</h3>
+        <p class="project-meta" data-i18n="card.lumix.meta"> UX Research · UX / UI Design · Accessibility </p>
+        <div class="project-actions">
+          <a class="btn-case" href="lumix.html" data-i18n="card.btn.case" onclick="event.stopPropagation()">Ver case study</a>
+        </div>
+      </div>
     </div>
 
     <!-- ✦ KOREAN AIR -->
-    <div class="project-card reveal" onclick="openModal('korean')">
+    <div class="project-card reveal" onclick="window.location.href='korean-air.html'">
       <div class="project-img-wrap">
         <!-- ✏️ CAMBIAR SRC: Pon la ruta de tu imagen de portada de Korean Air -->
         <img class="project-thumb" src="img/koreanair-cover.jpg" alt="Korean Air" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="project-placeholder" style="display:none">Imagen portada Korean Air<br><span style="font-size:11px">Recomendado: 800×600px</span></div>
       </div>
-      <div class="project-body"><h3 class="project-name">Korean Air</h3><p class="project-meta" data-i18n="card.korean.meta">Heuristics Evaluation · UI Redesign · Usability </p></div>
+      <div class="project-body">
+        <h3 class="project-name">Korean Air</h3>
+        <p class="project-meta" data-i18n="card.korean.meta">Heuristics Evaluation · UI Redesign · Usability </p>
+        <div class="project-actions">
+          <a class="btn-case" href="korean-air.html" data-i18n="card.btn.case" onclick="event.stopPropagation()">Ver case study</a>
+        </div>
+      </div>
     </div>
 
     <!-- ✦ MUSEEK -->
-    <div class="project-card reveal" onclick="openModal('museek')">
+    <div class="project-card reveal" onclick="window.location.href='museek.html'">
       <div class="project-img-wrap">
         <!-- ✏️ CAMBIAR SRC: Pon la ruta de tu imagen de portada de Museek -->
         <img class="project-thumb" src="img/museek-cover.jpg" alt="Museek" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="project-placeholder" style="display:none">Leisure App<br><span style="font-size:11px">Recomendado: 800×600px</span></div>
       </div>
-      <div class="project-body"><h3 class="project-name">Museek</h3><p class="project-meta" data-i18n="card.museek.meta">UX Research · Gamification · Low-fi Prototype</p></div>
+      <div class="project-body">
+        <h3 class="project-name">Museek</h3>
+        <p class="project-meta" data-i18n="card.museek.meta">UX Research · Gamification · Low-fi Prototype</p>
+        <div class="project-actions">
+          <a class="btn-case" href="museek.html" data-i18n="card.btn.case" onclick="event.stopPropagation()">Ver case study</a>
+        </div>
+      </div>
     </div>
    
    
@@ -87,422 +106,17 @@
 <!-- ═══════════════════════════════════════════ -->
 <!-- MODAL: MUSEEK -->
 <!-- ═══════════════════════════════════════════ -->
-<div class="modal-overlay" id="modal-museek" onclick="if(event.target===this)closeModal()">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">✕</button>
 
-    <div class="modal-hero">
-      <!-- ✏️ CAMBIAR SRC: Imagen cabecera del case study Museek (1720×960px recomendado) -->
-      <img src="img/museek-front.jpg" alt="Museek hero" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="modal-hero-placeholder" style="display:none">Imagen cabecera Museek<br><span style="font-size:11px">1720 × 960px</span></div>
-    </div>
-
-    <div class="modal-content">
-      <h2 class="modal-project-name" data-i18n="m.museek.name">Museek — Designing behavioral engagement through gamification</h2>
-      <p class="modal-project-sub" data-i18n="m.museek.sub">A mobile product concept that transforms traditional museum visits into interactive, challenge-based experiences to increase local cultural engagement among young adults.</p>
-
-      <!-- Etiquetas -->
-      <div class="modal-tags">
-        <span class="modal-tag tag-team"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M23 21v-2a4 4 0 00-3-3.87" stroke="currentColor" stroke-width="2"/><path d="M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2"/></svg data-i18n="m.museek.tag.team"> 3 teammates</span>
-        <span class="modal-tag tag-sector"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="2"/></svg data-i18n="m.museek.tag.sector"> Leisure / Culture </span>
-        <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg>UX Research</span>
-        <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg>App</span>
-        <span class="modal-tag tag-type"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor" stroke-width="2"/><line x1="12" y1="18" x2="12" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg data-i18n="m.museek.tag.time">8 days</span>
-      </div>
-
-      <!-- INTRO -->
-      <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.museek.l1">THE CHALLENGE</div>
-        <p> While young adults actively consume cultural experiences when traveling, they rarely visit museums in their own cities.
-          <b>Our research revealed a behavioral gap between cultural interest and local participation.</b>
-        </p>
-         <p data-i18n="m.museek.p2">
-          Through 5 qualitative interviews (ages 25–35, urban and rural), we identified three consistent patterns:
-        </p>
-
-        <ol class="list-number" data-i18n="m.museek.ol1">
-          <li>Museums are perceived as passive and static experiences.</li>
-          <li>Cultural events lack discoverability and clarity.</li>
-          <li>Social influence and novelty strongly drive decision-making.</li>
-        </ol>
-        <p data-i18n="m.museek.p3">
-          This reframed the opportunity from “promoting museums” to 
-          <b>redesigning the experience to create intrinsic motivation and emotional engagement.</b>
-        </p>
-      </div>
-
-      <!-- Foto 1 -->
-      <div class="modal-media">
-        <!-- ✏️ CAMBIAR SRC: Primera imagen del case study -->
-        <img src="img/interviews-museek.jpg" alt="Museek imagen 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="modal-media-placeholder" style="display:none">📷 Imagen 1 del case study<span>Recomendado: 1600×1000px</span></div>
-      </div>
-
-      <!-- DESARROLLO -->
-      <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.museek.l2">PRODUCT STRATEGY</div>
-       <p data-i18n="m.museek.p4">
-          Instead of designing another event listing app, we focused on solving two structural friction points:
-        </p>
-
-        <ol class="list-number" data-i18n="m.museek.ol2">
-          <li><b>Discovery</b> — Reducing cognitive effort when finding relevant cultural activities.</li>
-          <li><b>Engagement</b> — Transforming passive visits into interactive, goal-driven experiences.</li>
-        </ol>
-
-        <p data-i18n="m.museek.p5">
-          Inspired by escape-room mechanics, we introduced a challenge-based system to increase perceived value, session duration and social motivation.
-        </p>
-
-        <p data-i18n="m.museek.p6">
-          The goal was not gamification for aesthetics, but as a behavioral nudge to drive participation.
-        </p>
-      </div>
-
-       <!-- Foto 2 -->
-      <div class="modal-media">
-        <!-- ✏️ CAMBIAR SRC: Segunda imagen del case study -->
-        <img src="img/museek-testing.jpg" alt="Museek imagen 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="modal-media-placeholder" style="display:none">📷 Imagen 2 del case study<span>Recomendado: 1600×1000px</span></div>
-      </div>
-
-        <!-- DESARROLLO -->
-      <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.museek.l3">INTERACTION DESIGN DECISIONS</div>
-        <p data-i18n="m.museek.p7">
-          To ensure clarity and reduce friction, key design decisions included:
-        </p>
-
-        <ol class="list-number" data-i18n="m.museek.ol3">
-          <li>Minimizing onboarding steps to reduce entry friction.</li>
-          <li>Using progressive disclosure to avoid cognitive overload.</li>
-          <li>Structuring navigation around challenges instead of static listings.</li>
-          <li>Designing clear visual hierarchy to support task completion.</li>
-        </ol>
-
-        <p data-i18n="m.museek.p8">
-          These decisions aimed to balance excitement with usability — ensuring engagement without sacrificing clarity.
-        </p>
-      </div>
-
-      <!-- DESARROLLO -->
-      <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.museek.l4">MY ROLE</div>
-        <p data-i18n="m.museek.p9">
-          I led user interviews, synthesized research insights into opportunity areas, and defined the primary user flow.
-          I designed low-fidelity wireframes and developed the high-fidelity interactive prototype in Figma.
-        </p>
-      </div>
-
-      <!-- GIF -->
-      <div class="modal-media">
-        <!-- ✏️ CAMBIAR SRC: GIF animado del prototipo o interacción -->
-        <img src="img/museek-prototype.gif" alt="Museek gif" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="modal-media-placeholder" style="display:none">🎬 GIF del prototipo / interacción<span>Formato: .gif · Recomendado: 1600×1000px</span></div>
-      </div>
-
-
-      <!-- CONCLUSIÓN -->
-      <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.museek.l5">VALIDATION & LEARNINGS</div>
-         <p data-i18n="m.museek.p10">
-          During usability testing, users responded positively to the challenge-based concept, highlighting increased perceived excitement and clarity of purpose.
-        </p>
-
-        <p data-i18n="m.museek.p11">
-          However, early testing revealed confusion around progression mechanics. We iterated by simplifying the task flow and clarifying reward feedback.
-        </p>
-
-        <p data-i18n="m.museek.p13">
-          <b>Key learning:</b> Gamification increases engagement only when supported by strong information architecture and clear feedback systems.
-        </p>
-
-        <p data-i18n="m.museek.p12">
-          In future iterations, I would validate behavioral impact through measurable metrics such as completion rate, session duration and return visits.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- ═══════════════════════════════════════════ -->
 <!-- MODAL: KOREAN AIR -->
 <!-- ═══════════════════════════════════════════ -->
-<div class="modal-overlay" id="modal-korean" onclick="if(event.target===this)closeModal()">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">✕</button>
 
-    <div class="modal-hero">
-      <!-- ✏️ CAMBIAR SRC: Imagen cabecera del case study Korean Air (1720×960px recomendado) -->
-      <img src="img/koreanair-front.jpg" alt="Korean Air hero" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="modal-hero-placeholder" style="display:none">Imagen cabecera Korean Air<br><span style="font-size:11px">1720 × 960px</span></div>
-    </div>
-
-    <div class="modal-content">
-      <h2 class="modal-project-name" data-i18n="m.korean.name">Korean Air — Redesigning clarity and trust in a high-cognitive-load app</h2>
-      <p class="modal-project-sub" data-i18n="m.korean.sub">Concept redesign based on a heuristic audit to reduce cognitive overload, clarify primary actions, and establish a scalable visual system for a travel product.</p>
-
-      <div class="modal-tags">
-        <span class="modal-tag tag-team"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M23 21v-2a4 4 0 00-3-3.87" stroke="currentColor" stroke-width="2"/><path d="M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2"/></svg data-i18n="m.korean.tag.team">Solo project</span>
-        <span class="modal-tag tag-sector"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="2"/></svg data-i18n="m.korean.tag.sector">Travel</span>
-        <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg>Heuristics / Redesign</span>
-        <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg>App Mobile</span>
-        <span class="modal-tag tag-type"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor" stroke-width="2"/><line x1="12" y1="18" x2="12" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg data-i18n="m.korean.tag.time">3 days</span>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.korean.l1">THE CHALLENGE</div>
-        <p data-i18n="m.korean.p1">Airline apps are high-stakes and high-cognitive-load environments: users need to find critical information fast,
-          complete tasks confidently, and understand what the system is doing at all times.</p>
-          <p data-i18n="m.korean.p2">
-          In the original Korean Air app, multiple UI blocks compete for attention, CTAs are unclear, and the hierarchy doesn’t reflect user intent.
-          The result is a home screen that feels “busy” and workflows that require extra effort to understand.
-        </p>
-        <p data-i18n="m.korean.p8">
-          <b>Goal:</b> reduce cognitive overload, clarify primary actions (e.g., trips and reservations), and create a consistent UI system that can scale.
-        </p>
-      </div>
-
-      <div class="modal-media">
-        <!-- ✏️ CAMBIAR SRC: Primera imagen del case study -->
-        <img src="img/old korean.jpg" alt="Korean Air imagen 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="modal-media-placeholder" style="display:none">📷 Imagen 1 del case study<span>Recomendado: 1600×1000px</span></div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.korean.l2">HEURISTIC AUDIT</div>
-        <p data-i18n="m.korean.p3">
-          I ran a heuristic evaluation to identify usability issues, assess severity, and prioritize fixes based on impact and ease of implementation.
-          Key findings clustered into a few recurring themes:
-        </p>
-        <ol class="list-number" data-i18n="m.korean.ol1">
-          <li><b>Unclear primary CTA:</b> “Continue” doesn’t communicate the next step clearly.</li>
-          <li><b>Low visual hierarchy:</b> many blocks compete; everything feels equally important.</li>
-          <li><b>Inconsistent language and copy:</b> mixed languages reduce cohesion and trust.</li>
-          <li><b>Information without context:</b> e.g., miles appear without explanation or guidance.</li>
-          <li><b>Help not embedded:</b> lack of microcopy/tooltips for complex actions.</li>
-        </ol>
-      </div>
-      <div class="modal-media">
-        <!-- ✏️ CAMBIAR SRC: Segunda imagen del case study -->
-        <img src="img/heuristics-koreanair.jpg" alt="Korean Air imagen 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="modal-media-placeholder" style="display:none">📷 Imagen 2 del case study<span>Recomendado: 1600×1000px</span></div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.korean.l3">REDESIGN STRATEGY</div>
-        <p data-i18n="m.korean.p4">
-          Instead of redesigning screens “by taste”, I reframed the UI around task priority and decision clarity.
-          The strategy focused on three pillars:
-        </p>
-        <ol class="list-number" data-i18n="m.korean.ol2">
-          <li><b>Task-first hierarchy</b> → design the home around what users need to do (not what the brand wants to show).</li>
-          <li><b>Clarity of actions</b> → explicit CTAs and predictable next steps, with supportive microcopy.</li>
-          <li><b>System consistency</b> → reusable typography, spacing and components to scale without drift.</li>
-        </ol>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.korean.l4">KEY DESIGN MOVES</div>
-        <p data-i18n="m.korean.p5">
-          Here are the most impactful design decisions mapped to the problems found:
-        </p>
-        <ol class="list-number" data-i18n="m.korean.ol3">
-          <li><b>Explicit logged-in state:</b> added a clear welcome header to confirm status and personalize the experience.</li>
-          <li><b>Primary CTA clarity:</b> separated “Continue search” and “New search” to restore user control.</li>
-          <li><b>Information hierarchy:</b> reduced competing blocks; grouped content into clear categories.</li>
-          <li><b>Progress + feedback:</b> introduced clearer flow steps for “Add reservation” and reduced form ambiguity.</li>
-          <li><b>Contextual help:</b> added short descriptions where users typically hesitate (documents, baggage, alerts).</li>
-        </ol>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.korean.l5">VISUAL SYSTEM</div>
-        <p data-i18n="m.korean.p6">
-          To prevent inconsistencies and make the redesign scalable, I created lightweight UI guidelines:
-          spacing scale, typography hierarchy, iconography and a refined blue palette aligned with the brand.
-        </p>
-        <ol class="list-number" data-i18n="m.korean.ol4">
-          <li><b>Typography:</b> consistent hierarchy for headings/body to improve scanability.</li>
-          <li><b>Spacing:</b> 8/16/24/32px rhythm for predictable layouts.</li>
-          <li><b>Icons:</b> unified stroke and style for navigation and actions.</li>
-          <li><b>Color:</b> structured blues for states, emphasis, and readability.</li>
-        </ol>
-      </div>
-       <div class="modal-media">
-        <!-- ✏️ CAMBIAR SRC: GIF animado del prototipo o interacción -->
-        <img src="img/koreanair-prototype.gif" alt="Korean Air gif" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="modal-media-placeholder" style="display:none">🎬 GIF del prototipo / interacción<span>Formato: .gif · Recomendado: 1600×1000px</span></div>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.korean.l6">OUTCOME & NEXT STEPS</div>
-        <p data-i18n="m.korean.p7">
-          This redesign focuses on clarity and trust: fewer competing elements, more explicit actions, and a scalable system.
-          If I continued the project, I would validate improvements with usability testing and measurable product metrics:
-          task completion rate (Add reservation), time on task, and drop-offs on key flows.
-        </p>
-        <p data-i18n="m.korean.p9">
-          <b>Key learning:</b> In complex products (travel, banking, fintech), UX issues are often structural — hierarchy, system feedback and clarity
-          matter as much as visual polish.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- ═══════════════════════════════════════════ -->
 <!-- MODAL: LUMIX -->
 <!-- ═══════════════════════════════════════════ -->
-<div class="modal-overlay" id="modal-lumix" onclick="if(event.target===this)closeModal()">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">✕</button>
 
-    <div class="modal-hero">
-      <!-- ✏️ CAMBIAR SRC: Imagen cabecera del case study Museek (1720×960px recomendado) -->
-      <img src="img/lumix-case-study.jpg" alt="Lumix hero" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="modal-hero-placeholder" style="display:none">Imagen cabecera Lumix<br><span style="font-size:11px">1720 × 960px</span></div>
-    </div>
-
-    <div class="modal-content">
-      <h2 class="modal-project-name" data-i18n="m.lumix.name">Lumix — Designing financial clarity through emotional regulation</h2>
-      <p class="modal-project-sub" data-i18n="m.lumix.sub">A behavioral fintech concept that integrates real financial data with emotional support to reduce anxiety and increase perceived control among young professionals.</p>
-
-      <!-- Etiquetas -->
-      <div class="modal-tags">
-        <span class="modal-tag tag-team"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M23 21v-2a4 4 0 00-3-3.87" stroke="currentColor" stroke-width="2"/><path d="M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2"/></svg data-i18n="m.lumix.tag.team"> 4 teammates</span>
-        <span class="modal-tag tag-sector"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="2"/></svg data-i18n="m.lumix.tag.sector"> Fintech / Wellness </span>
-        <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg>Product Design</span>
-        <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg>App</span>
-        <span class="modal-tag tag-type"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor" stroke-width="2"/><line x1="12" y1="18" x2="12" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg data-i18n="m.lumix.tag.time">10 days</span>
-      </div>
-
-      <!-- INTRO -->
-       <!-- VIDEO (VIMEO) -->
-<div class="modal-media">
-  <div style="position:relative;padding:56.25% 0 0 0;overflow:hidden;border-radius:16px;">
-    <iframe
-      src="https://player.vimeo.com/video/1167375942?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-      frameborder="0"
-      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      style="position:absolute;top:0;left:0;width:100%;height:100%;"
-      title="Lumix — Designing financial clarity through emotional regulation">
-    </iframe>
-  </div>
-</div>
-      <!-- THE CHALLENGE -->
-      <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.lumix.l1">THE CHALLENGE</div>
-        <p data-i18n="m.lumix.p1">
-          Many young professionals with stable income still experience persistent financial stress.
-          Traditional financial apps often amplify anxiety through dense dashboards and data-heavy interfaces.
-        </p>
-
-        <p data-i18n="m.lumix.p2">
-          Our research showed that financial stress is less about numbers and more about perceived lack of control.
-        </p>
-
-        <p data-i18n="m.lumix.p14">
-          The opportunity was clear:
-          <b>Design a financial experience that prioritizes clarity and emotional regulation over feature density.</b>
-        </p>
-      </div>
-
-      <!-- PRODUCT OVERVIEW -->
-      <div class="modal-media">
-        <img src="img/lumix-control.jpg" alt="Lumix financial overview screens">
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.lumix.l2">FINANCIAL CLARITY</div>
-        <p data-i18n="m.lumix.p3">
-          Instead of overwhelming users with complex graphs, Lumix provides a simplified monthly overview and focused savings tracking.
-        </p>
-
-        <p data-i18n="m.lumix.p4">
-          Key principles:
-        </p>
-
-        <ol class="list-number" data-i18n="m.lumix.ol1">
-          <li>One active savings goal to reduce decision fatigue.</li>
-          <li>Clear progress visualization with predictive guidance.</li>
-          <li>Reduced visual noise and structured hierarchy.</li>
-        </ol>
-      </div>
-
-      <!-- MOOD TRACKING -->
-      <div class="modal-media">
-        <img src="img/lumix-mood.jpg" alt="Lumix mood tracking feature">
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.lumix.l3">EMOTIONAL TRACKING</div>
-        <p data-i18n="m.lumix.p5">
-          Financial decisions are deeply emotional. Lumix integrates daily mood tracking to identify patterns between spending behavior and emotional states.
-        </p>
-
-        <p data-i18n="m.lumix.p6">
-          This transforms the product from a budgeting tool into a behavioral awareness system.
-        </p>
-      </div>
-
-      <!-- EDUCATIONAL CONTENT -->
-      <div class="modal-media">
-        <img src="img/lumix-explora.jpg" alt="Lumix educational content">
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.lumix.l4">EDUCATION & GUIDANCE</div>
-        <p data-i18n="m.lumix.p7">
-          Instead of passive dashboards, Lumix includes an educational section designed to build financial literacy in a non-intimidating way.
-        </p>
-
-        <p data-i18n="m.lumix.p8">
-          Content focuses on practical micro-habits, mindset shifts and long-term clarity.
-        </p>
-      </div>
-
-      <!-- AI ASSISTANT -->
-      <div class="modal-media">
-        <img src="img/lumix-chat.jpg" alt="Lumix conversational assistant">
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.lumix.l5">CONVERSATIONAL SUPPORT</div>
-        <p data-i18n="m.lumix.p9">
-          A conversational assistant translates financial data into actionable insights and empathetic feedback.
-        </p>
-
-        <p data-i18n="m.lumix.p10">
-          The goal is to reduce avoidance behavior and create a safe interaction layer when facing financial data.
-        </p>
-      </div>
-
-      <!-- MY ROLE -->
-      <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.lumix.l6">MY ROLE</div>
-        <p data-i18n="m.lumix.p11">
-          I led research synthesis, defined behavioral opportunity areas and structured the MVP experience.
-          I designed core interaction flows and contributed to visual hierarchy decisions to reduce cognitive load.
-        </p>
-      </div>
-
-      <!-- LEARNINGS -->
-      <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.lumix.l7">KEY LEARNINGS</div>
-        <p data-i18n="m.lumix.p12">
-          Financial products do not only communicate data — they communicate safety.
-        </p>
-
-        <p data-i18n="m.lumix.p13">
-          Simplicity increases perceived control.
-          Emotional tone influences behavioral consistency.
-          Reducing cognitive load can directly impact trust.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</div>
 
 <!-- LET'S TALK -->
 <section class="talk-section">

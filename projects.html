@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>vanesafrz — Projects</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">vanesa<span class="blue">frz</span></a>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+    <li><a href="projects.html" class="active" data-i18n="nav.projects">Projects</a></li>
+    <li><a href="about.html" data-i18n="nav.about">About me</a></li>
+    <li><a href="cv.html" data-i18n="nav.cv">CV</a></li>
+    <li><a href="mailto:vanesafrz.ux@gmail.com" class="nav-cta" data-i18n="nav.cta">Let's talk!</a></li>
+    <li><button class="lang-toggle" onclick="toggleLang()">🇪🇸 ES</button></li>
+  </ul>
+</nav>
+
+<!-- PAGE -->
+<main id="projectsPage" class="projects-page">
+  <div class="projects-wrap">
+    <div class="reveal">
+      <div class="section-label">PORTFOLIO</div>
+      <h1 class="projects-title" data-i18n="projects.page.title">All projects</h1>
+      <p class="projects-sub" data-i18n="projects.page.sub">Browse by category and filter by tags.</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="projects-tabs reveal">
+      <button class="tab-btn active" type="button" data-tab="ux" data-i18n="projects.tab.ux">UX designs</button>
+      <button class="tab-btn" type="button" data-tab="video" data-i18n="projects.tab.video">Videos</button>
+    </div>
+
+    <!-- Filters -->
+    <section class="projects-filters reveal" aria-label="Filters">
+      <div class="filters-head">
+        <h2 class="filters-title" data-i18n="projects.filter.title">Filter by tags</h2>
+        <button class="filters-clear" id="clearFilters" type="button" data-i18n="projects.filter.clear">Clear filters</button>
+      </div>
+
+      <div class="filters-chips" id="tagFilters">
+        <button class="chip" type="button" data-tag="Viajes" data-i18n="tag.domain.viajes">Viajes</button>
+        <button class="chip" type="button" data-tag="Finanzas" data-i18n="tag.domain.finanzas">Finanzas</button>
+        <button class="chip" type="button" data-tag="Bienestar" data-i18n="tag.domain.bienestar">Bienestar</button>
+        <button class="chip" type="button" data-tag="Ocio" data-i18n="tag.domain.ocio">Ocio</button>
+        <button class="chip" type="button" data-tag="Ecommerce" data-i18n="tag.domain.ecommerce">Ecommerce</button>
+        <button class="chip" type="button" data-tag="Saas" data-i18n="tag.domain.saas">Saas</button>
+        <button class="chip" type="button" data-tag="Fintech" data-i18n="tag.domain.fintech">Fintech</button>
+        <button class="chip" type="button" data-tag="Cultura" data-i18n="tag.domain.cultura">Cultura</button>
+      </div>
+    </section>
+
+    <!-- Panels -->
+    <section class="projects-panel active" data-tab-panel="ux">
+      <div class="projects-grid">
+
+        <!-- LUMIX (UX) -->
+        <div class="project-card reveal" data-tags="Fintech, Finanzas, Bienestar" onclick="window.location.href='lumix.html'">
+          <div class="project-img-wrap">
+            <img class="project-thumb" src="img/lumix-portada.jpg" alt="Lumix" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="project-placeholder" style="display:none">Lumix Case Study<br><span style="font-size:11px">Recomendado: 800×600px</span></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-name" data-i18n="card.lumix.name">Lumix - Finances and wellness app</h3>
+            <p class="project-meta" data-i18n="card.lumix.meta">UX Research · UX / UI Design · Accessibility</p>
+            <div class="project-actions">
+              <a class="btn-case" href="lumix.html" data-i18n="card.btn.case" onclick="event.stopPropagation()">Ver case study</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- KOREAN AIR (UX) -->
+        <div class="project-card reveal" data-tags="Viajes" onclick="window.location.href='korean-air.html'">
+          <div class="project-img-wrap">
+            <img class="project-thumb" src="img/koreanair-cover.jpg" alt="Korean Air" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="project-placeholder" style="display:none">Imagen portada Korean Air<br><span style="font-size:11px">Recomendado: 800×600px</span></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-name">Korean Air</h3>
+            <p class="project-meta" data-i18n="card.korean.meta">Heuristics Evaluation · UI Redesign · Usability</p>
+            <div class="project-actions">
+              <a class="btn-case" href="korean-air.html" data-i18n="card.btn.case" onclick="event.stopPropagation()">Ver case study</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- MUSEEK (UX) -->
+        <div class="project-card reveal" data-tags="Cultura, Ocio" onclick="window.location.href='museek.html'">
+          <div class="project-img-wrap">
+            <img class="project-thumb" src="img/museek-cover.jpg" alt="Museek" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="project-placeholder" style="display:none">Leisure App<br><span style="font-size:11px">Recomendado: 800×600px</span></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-name">Museek</h3>
+            <p class="project-meta" data-i18n="card.museek.meta">UX Research · Gamification · Low-fi Prototype</p>
+            <div class="project-actions">
+              <a class="btn-case" href="museek.html" data-i18n="card.btn.case" onclick="event.stopPropagation()">Ver case study</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <p class="projects-empty" id="emptyUx" data-i18n="projects.empty" style="display:none">No projects match the selected tags.</p>
+    </section>
+
+    <section class="projects-panel" data-tab-panel="video">
+      <div class="projects-grid"></div>
+      <p class="projects-empty" id="emptyVideo" data-i18n="projects.video.empty">Video projects coming soon.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-logo">vanesa<span class="blue">frz</span></div>
+  <div class="footer-note" data-i18n="footer.note">Built with 🤍 vanesafrz · 2026</div>
+  <div class="footer-socials">
+    <a href="#" aria-label="Behance">B</a>
+    <a href="#" aria-label="LinkedIn">in</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

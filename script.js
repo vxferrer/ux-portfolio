@@ -22,17 +22,6 @@ document.querySelectorAll('.reveal').forEach(el=>{new IntersectionObserver(e=>{e
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
 
-// Modal
-function openModal(id){
-  const m=document.getElementById('modal-'+id);
-  if(m){m.classList.add('active');document.body.classList.add('modal-open')}
-}
-function closeModal(){
-  document.querySelectorAll('.modal-overlay').forEach(m=>m.classList.remove('active'));
-  document.body.classList.remove('modal-open');
-}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
-
 // CV download dropdown
 document.addEventListener('click',e=>{if(!e.target.closest('.btn-download-wrap')){document.querySelectorAll('.btn-download-wrap').forEach(w=>w.classList.remove('open'))}});
 
@@ -46,8 +35,11 @@ const T = {
   // ─── NAV ───
   'nav.home':        { en: 'Home',       es: 'Inicio' },
   'nav.about':       { en: 'About me',   es: 'Sobre mí' },
+  'nav.projects':    { en: 'Projects',   es: 'Proyectos' },
   'nav.cv':          { en: 'Resume',     es: 'CV' },
   'nav.cta':         { en: "Let's talk!", es: '¡Hablemos!' },
+
+  'case.back':       { en: 'Back to projects', es: 'Volver a proyectos' },
 
   // ─── INDEX: Hero ───
   'hero.title':      { en: "I'm a <em>Product Designer</em> and strategic, goal oriented thinker focused in turn ideas into desirable products.",
@@ -61,6 +53,34 @@ const T = {
   'card.lumix.meta': { en: 'UX Research · UX / UI Design · Accessibility', es: 'UX Research · UX / UI Design · Accesibilidad' },
   'card.korean.meta':{ en: 'Heuristics Evaluation · UI Redesign · Usability', es: 'Evaluación Heurística · UI Redesign · Usabilidad' },
   'card.museek.meta':{ en: 'UX Research · Gamification · Low-fi Prototype', es: 'UX Research · Gamificación · Prototipo Low-fi' },
+  'card.btn.case':   { en: 'View case study', es: 'Ver case study' },
+
+  // ─── PROJECTS PAGE ───
+  'projects.page.title': { en: 'All projects', es: 'Todos los proyectos' },
+  'projects.page.sub':   { en: 'Browse by category and filter by tags.', es: 'Explora por categoría y filtra por etiquetas.' },
+  'projects.tab.ux':     { en: 'UX designs', es: 'Diseños UX' },
+  'projects.tab.video':  { en: 'Videos',     es: 'Vídeos' },
+  'projects.filter.title': { en: 'Filter by tags', es: 'Filtrar por etiquetas' },
+  'projects.filter.clear': { en: 'Clear filters', es: 'Limpiar filtros' },
+  'projects.empty':      { en: 'No projects match the selected tags.', es: 'No hay proyectos que coincidan con las etiquetas seleccionadas.' },
+  'projects.video.empty':{ en: 'Video projects coming soon.', es: 'Proyectos de vídeo próximamente.' },
+
+  // ─── DOMAIN TAGS (for filters + case studies) ───
+  'tag.domain.viajes':     { en: 'Travel',    es: 'Viajes' },
+  'tag.domain.finanzas':   { en: 'Finance',   es: 'Finanzas' },
+  'tag.domain.bienestar':  { en: 'Wellness',  es: 'Bienestar' },
+  'tag.domain.ocio':       { en: 'Leisure',   es: 'Ocio' },
+  'tag.domain.ecommerce':  { en: 'Ecommerce', es: 'Ecommerce' },
+  'tag.domain.saas':       { en: 'SaaS',      es: 'SaaS' },
+  'tag.domain.fintech':    { en: 'Fintech',   es: 'Fintech' },
+  'tag.domain.cultura':    { en: 'Culture',   es: 'Cultura' },
+
+  // ─── Common tags ───
+  'tag.skill.app':         { en: 'App', es: 'App' },
+  'tag.skill.mobileapp':   { en: 'Mobile App', es: 'App móvil' },
+  'tag.skill.uxresearch':  { en: 'UX Research', es: 'UX Research' },
+  'tag.skill.productdesign': { en: 'Product Design', es: 'Product Design' },
+  'tag.skill.heuristics':  { en: 'Heuristics / Redesign', es: 'Heurísticas / Rediseño' },
 
   // ─── INDEX: Talk + Footer ───
   'talk.title':      { en: "Let's Talk",  es: 'Hablemos' },
@@ -211,9 +231,96 @@ function toggleLang(){
   setLang(getLang() === 'en' ? 'es' : 'en');
 }
 
+// ═══════════════════════════════════════
+// PROJECTS PAGE — TABS + TAG FILTERS
+// ═══════════════════════════════════════
+
+function normalizeTag(t){
+  return (t || '').trim().toLowerCase();
+}
+
+function initProjectsPage(){
+  const root = document.getElementById('projectsPage');
+  if(!root) return;
+
+  const tabBtns = Array.from(document.querySelectorAll('[data-tab]'));
+  const tabPanels = Array.from(document.querySelectorAll('[data-tab-panel]'));
+  const filterWrap = document.getElementById('tagFilters');
+  const clearBtn = document.getElementById('clearFilters');
+  const emptyUx = document.getElementById('emptyUx');
+  const emptyVideo = document.getElementById('emptyVideo');
+
+  const selected = new Set();
+
+  const chips = Array.from(filterWrap?.querySelectorAll('[data-tag]') || []);
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const tag = normalizeTag(chip.getAttribute('data-tag'));
+      if(!tag) return;
+      if(selected.has(tag)) selected.delete(tag);
+      else selected.add(tag);
+      chip.classList.toggle('active', selected.has(tag));
+      applyFilters();
+    });
+  });
+
+  clearBtn?.addEventListener('click', () => {
+    selected.clear();
+    chips.forEach(c => c.classList.remove('active'));
+    applyFilters();
+  });
+
+  function showTab(tab){
+    tabBtns.forEach(b => b.classList.toggle('active', b.getAttribute('data-tab') === tab));
+    tabPanels.forEach(p => p.classList.toggle('active', p.getAttribute('data-tab-panel') === tab));
+  }
+
+  tabBtns.forEach(btn => btn.addEventListener('click', () => {
+    showTab(btn.getAttribute('data-tab'));
+  }));
+
+  function cardMatches(card){
+    if(selected.size === 0) return true;
+    const tags = (card.getAttribute('data-tags') || '')
+      .split(',')
+      .map(normalizeTag)
+      .filter(Boolean);
+    for(const s of selected){
+      if(tags.includes(s)) return true;
+    }
+    return false;
+  }
+
+  function applyFilters(){
+    const uxPanel = document.querySelector('[data-tab-panel="ux"]');
+    const uxCards = Array.from(uxPanel?.querySelectorAll('.project-card') || []);
+    let uxVisible = 0;
+    uxCards.forEach(card => {
+      const ok = cardMatches(card);
+      card.style.display = ok ? '' : 'none';
+      if(ok) uxVisible += 1;
+    });
+    if(emptyUx) emptyUx.style.display = (uxCards.length && uxVisible === 0) ? 'block' : 'none';
+
+    const videoPanel = document.querySelector('[data-tab-panel="video"]');
+    const videoCards = Array.from(videoPanel?.querySelectorAll('.project-card') || []);
+    let videoVisible = 0;
+    videoCards.forEach(card => {
+      const ok = cardMatches(card);
+      card.style.display = ok ? '' : 'none';
+      if(ok) videoVisible += 1;
+    });
+    if(emptyVideo) emptyVideo.style.display = (videoCards.length === 0) ? 'block' : (videoVisible === 0 ? 'block' : 'none');
+  }
+
+  showTab('ux');
+  applyFilters();
+}
+
 // Apply saved language on load
 if(document.readyState === 'loading'){
-  document.addEventListener('DOMContentLoaded', () => applyLang(getLang()));
+  document.addEventListener('DOMContentLoaded', () => { applyLang(getLang()); initProjectsPage(); });
 } else {
   applyLang(getLang());
+  initProjectsPage();
 }
