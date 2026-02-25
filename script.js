@@ -290,12 +290,7 @@ function getPortfolioProjectCount(){
   return 3;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const expEl = document.getElementById('experienceCounter');
-  const projEl = document.getElementById('projectsCounter');
 
-  if(expEl){
-    animateCounter(expEl, yearsSinceJuly2017(), { prefix: '+', duration: 1400 });
   }
 
   if(projEl){
@@ -307,4 +302,164 @@ document.addEventListener('DOMContentLoaded', () => {
   if(!document.querySelectorAll('.project-card').length && indexCards.length){
     localStorage.setItem('vanesafrz-project-count', String(indexCards.length));
   }
+});
+
+
+// ═══════════════════════════════════════
+// PROJECTS PAGE — TABS + TAG FILTERS
+// ═══════════════════════════════════════
+
+function initProjectsPage(){
+  const page = document.getElementById('projectsPage');
+  if(!page) return;
+
+  const tabButtons = Array.from(document.querySelectorAll('.tab-btn[data-tab]'));
+  const panels = Array.from(document.querySelectorAll('[data-tab-panel]'));
+  const chipWrap = document.getElementById('tagFilters');
+  const chips = chipWrap ? Array.from(chipWrap.querySelectorAll('.chip[data-tag]')) : [];
+  const clearBtn = document.getElementById('clearFilters');
+
+  let activeTab = (tabButtons.find(b=>b.classList.contains('active'))?.dataset.tab) || 'ux';
+  const selected = new Set();
+
+  function normalizeTag(t){
+    return (t||'').toString().trim().toLowerCase();
+  }
+
+  function setActiveTab(tab){
+    activeTab = tab;
+    tabButtons.forEach(b=>b.classList.toggle('active', b.dataset.tab===tab));
+    panels.forEach(p=>p.classList.toggle('active', p.dataset.tabPanel===tab));
+    applyFilters();
+  }
+
+  function getActivePanel(){
+    return panels.find(p=>p.dataset.tabPanel===activeTab) || panels[0];
+  }
+
+  function parseTags(attr){
+    return (attr||'')
+      .split(',')
+      .map(x=>normalizeTag(x))
+      .filter(Boolean);
+  }
+
+  function matchesSelected(cardTags){
+    if(selected.size===0) return true;
+    for(const s of selected){
+      if(cardTags.includes(s)) return true;
+    }
+    return false;
+  }
+
+  function applyFilters(){
+    const panel = getActivePanel();
+    if(!panel) return;
+
+    const cards = Array.from(panel.querySelectorAll('.project-card[data-tags]'));
+    let visibleCount = 0;
+
+    cards.forEach(card=>{
+      const tags = parseTags(card.getAttribute('data-tags'));
+      const ok = matchesSelected(tags);
+      card.style.display = ok ? '' : 'none';
+      if(ok) visibleCount++;
+    });
+
+    const emptyUx = document.getElementById('emptyUx');
+    const emptyVideo = document.getElementById('emptyVideo');
+
+    if(activeTab === 'ux' && emptyUx){
+      emptyUx.style.display = (visibleCount===0 && cards.length>0) ? '' : 'none';
+    }
+
+    if(activeTab === 'video' && emptyVideo){
+      const panelCards = Array.from(panel.querySelectorAll('.project-card'));
+      const noCards = panelCards.length===0;
+      emptyVideo.style.display = (noCards && selected.size===0) ? '' : 'none';
+    }
+
+    if(clearBtn){
+      clearBtn.style.opacity = selected.size ? '1' : '.6';
+    }
+  }
+
+  tabButtons.forEach(btn=>{
+    btn.addEventListener('click', ()=> setActiveTab(btn.dataset.tab));
+  });
+
+  chips.forEach(chip=>{
+    chip.addEventListener('click', ()=>{
+      const tag = normalizeTag(chip.dataset.tag);
+      if(!tag) return;
+      if(selected.has(tag)){
+        selected.delete(tag);
+        chip.classList.remove('active');
+      }else{
+        selected.add(tag);
+        chip.classList.add('active');
+      }
+      applyFilters();
+    });
+  });
+
+  if(clearBtn){
+    clearBtn.addEventListener('click', ()=>{
+      selected.clear();
+      chips.forEach(c=>c.classList.remove('active'));
+      applyFilters();
+    });
+  }
+
+  // Store project count for CV
+  try{
+    const allCards = Array.from(document.querySelectorAll('.project-card'));
+    localStorage.setItem('portfolioProjectsCount', String(allCards.length));
+  }catch(e){}
+
+  setActiveTab(activeTab);
+}
+
+// ═══════════════════════════════════════
+// CV — COUNTERS (Experience + Projects)
+// ═══════════════════════════════════════
+
+
+function animateCounter(el, finalValue, opts={}){
+  const prefix = opts.prefix ?? '';
+  const duration = opts.duration ?? 1000;
+
+  let start = null;
+  function step(ts){
+    if(start === null) start = ts;
+    const t = Math.min(1, (ts - start) / duration);
+    const val = Math.floor(t * finalValue);
+    el.textContent = prefix + String(val);
+    if(t < 1) requestAnimationFrame(step);
+    else el.textContent = prefix + String(finalValue);
+  }
+  requestAnimationFrame(step);
+}
+
+function initCvCounters(){
+  const expEl = document.getElementById('experienceCounter');
+  if(expEl){
+    const startDate = new Date(2017, 6, 1); // July 2017
+    const now = new Date();
+    const diffYears = (now - startDate) / (1000*60*60*24*365.25);
+    const finalValue = Math.max(0, Math.floor(diffYears));
+    animateCounter(expEl, finalValue, { prefix: '+', duration: 1100 });
+  }
+
+  const projectsEl = document.getElementById('projectsCounter');
+  if(projectsEl){
+    let total = 0;
+    try{ total = parseInt(localStorage.getItem('portfolioProjectsCount') || '0', 10) || 0; }catch(e){}
+    animateCounter(projectsEl, total, { prefix: '', duration: 900 });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', ()=>{
+  initProjectsPage();
+  initCvCounters();
 });
