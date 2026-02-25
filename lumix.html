@@ -6,417 +6,237 @@
 <title>Lumix — Case Study — vanesafrz</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lumix-case.css">
 </head>
 <body>
-
-<!-- NAV -->
 <nav class="nav" id="nav">
   <a href="index.html" class="nav-logo">vanesa<span class="blue">frz</span></a>
   <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   <ul class="nav-links" id="navLinks">
-    <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-    <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
-    <li><a href="about.html" data-i18n="nav.about">About me</a></li>
-    <li><a href="cv.html" data-i18n="nav.cv">CV</a></li>
-    <li><a href="mailto:vanesafrz.ux@gmail.com" class="nav-cta" data-i18n="nav.cta">Let's talk!</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="about.html">About me</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="mailto:vanesafrz.ux@gmail.com" class="nav-cta">Let's talk!</a></li>
     <li><button class="lang-toggle" onclick="toggleLang()">🇪🇸 ES</button></li>
   </ul>
 </nav>
-
 <main class="case-wrap">
-  <a class="case-back" href="projects.html">← <span data-i18n="case.back">Back to projects</span></a>
-
+  <a class="case-back" href="projects.html">← Back to projects</a>
   <div class="case-card">
     <div class="modal-hero">
-      <img src="img/lumix-case-study.jpg" alt="Lumix — Designing financial clarity through emotional regulation" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <img src="img/lumix-case-study.jpg" alt="Lumix hero" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="modal-hero-placeholder" style="display:none">Lumix Case Study Hero<br><span style="font-size:11px">1720 × 960px</span></div>
     </div>
     <div class="case-content">
-
-      <!-- TITLE & SUBTITLE -->
-      <h2 class="modal-project-name" data-i18n="m.lumix.name">Lumix — Designing financial clarity through emotional regulation</h2>
-      <p class="modal-project-sub" data-i18n="m.lumix.sub">How might we help young professionals who earn enough but still feel financially anxious? We designed a behavioral fintech app that connects real bank data with emotional awareness — replacing overwhelm with clarity.</p>
-
-      <!-- Domain tags -->
-      <div class="case-domain-tags" data-tags="Fintech, Finanzas, Bienestar" aria-label="Project tags">
-        <span class="chip chip-static" data-i18n="tag.domain.fintech">Fintech</span>
-        <span class="chip chip-static" data-i18n="tag.domain.finanzas">Finance</span>
-        <span class="chip chip-static" data-i18n="tag.domain.bienestar">Wellness</span>
-      </div>
-
-      <!-- Tags -->
+      <h2 class="modal-project-name">Lumix — Designing financial clarity through emotional regulation</h2>
+      <p class="modal-project-sub">How might we help young professionals who earn enough but still feel financially anxious? We designed a behavioral fintech app that connects real bank data with emotional awareness — replacing overwhelm with clarity.</p>
+      <div class="case-domain-tags" data-tags="Fintech, Finanzas, Bienestar"><span class="chip chip-static">Fintech</span><span class="chip chip-static">Finance</span><span class="chip chip-static">Wellness</span></div>
       <div class="modal-tags">
-        <span class="modal-tag tag-team"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M23 21v-2a4 4 0 00-3-3.87" stroke="currentColor" stroke-width="2"/><path d="M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="m.lumix.tag.team">4 teammates</span></span>
-        <span class="modal-tag tag-sector"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="m.lumix.tag.sector">Fintech / Wellness</span></span>
-        <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="tag.skill.uxresearch">UX Research</span></span>
-        <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="tag.skill.productdesign">Product Design</span></span>
-        <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="tag.skill.app">Mobile App</span></span>
-        <span class="modal-tag tag-type"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor" stroke-width="2"/><line x1="12" y1="18" x2="12" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-i18n="m.lumix.tag.time">10 days</span></span>
+        <span class="modal-tag tag-team"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M23 21v-2a4 4 0 00-3-3.87" stroke="currentColor" stroke-width="2"/><path d="M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2"/></svg>4 teammates</span>
+        <span class="modal-tag tag-sector"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="2"/></svg>Fintech / Wellness</span>
+        <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg>UX Research</span>
+        <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg>Product Design</span>
+        <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg>Mobile App</span>
+        <span class="modal-tag tag-type"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor" stroke-width="2"/><line x1="12" y1="18" x2="12" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>10 days</span>
       </div>
-
-      <!-- ════════════════════════════════════════ -->
-      <!-- CASE STUDY CONTENT -->
-      <!-- ════════════════════════════════════════ -->
 
       <div class="case-sections">
-
-        <!-- ───────────────────────────────────── -->
         <!-- 1. OVERVIEW -->
-        <!-- ───────────────────────────────────── -->
         <section class="case-block case-block--full">
           <div class="case-block-text">
             <div class="modal-section">
-              <div class="modal-section-label" data-i18n="m.lumix.l.overview">OVERVIEW</div>
-              <p data-i18n="m.lumix.p.overview1">
-                Lumix is a behavioral fintech concept designed during a 10-day design sprint at Ironhack. The brief was open: identify a real problem and design a mobile product from scratch — from research to hi-fi prototype.
-              </p>
-              <p data-i18n="m.lumix.p.overview2">
-                Our team of four chose to explore the intersection of <b>personal finance and mental health</b> after noticing that most financial tools on the market focus on numbers and dashboards, while the real barrier for many users is emotional — anxiety, guilt, and avoidance.
-              </p>
-              <p data-i18n="m.lumix.p.overview3">
-                <b>My role:</b> I led research synthesis, proposed the core product concept (emotional calendar, daily challenges, and the Discover section), defined the information architecture, and designed key interaction flows and UI screens in Figma. I also shaped the product's emotional tone — friendly language, no technical jargon, no punitive feedback.
-              </p>
+              <div class="modal-section-label">OVERVIEW</div>
+              <p>Lumix is a behavioral fintech concept designed during a 10-day design sprint at Ironhack. The brief was open: identify a real problem and design a mobile product from scratch — from research to hi-fi prototype.</p>
+              <p>Our team of four chose to explore the intersection of <b>personal finance and mental health</b> after noticing that most financial tools focus on numbers and dashboards, while the real barrier is emotional — anxiety, guilt, and avoidance.</p>
+            </div>
+            <div class="cs-role-card">
+              <div class="cs-role-label">My Role</div>
+              <div class="cs-role-grid">
+                <div class="cs-role-item"><span class="cs-role-icon">💡</span><div><strong>Core concept</strong><span>Emotional calendar, daily challenges, Discover section, mascot chatbot</span></div></div>
+                <div class="cs-role-item"><span class="cs-role-icon">🔍</span><div><strong>Research synthesis</strong><span>Led insight extraction from 85-person survey + expert interview</span></div></div>
+                <div class="cs-role-item"><span class="cs-role-icon">🗂️</span><div><strong>Information architecture</strong><span>App structure, nav system, onboarding flow</span></div></div>
+                <div class="cs-role-item"><span class="cs-role-icon">🎨</span><div><strong>UI design & tone</strong><span>Friendly language, non-punitive feedback, key screens in Figma</span></div></div>
+              </div>
             </div>
           </div>
         </section>
 
-        <!-- ───────────────────────────────────── -->
         <!-- 2. THE CHALLENGE -->
-        <!-- ───────────────────────────────────── -->
         <section class="case-block">
           <div class="case-block-text">
             <div class="modal-section">
-              <div class="modal-section-label" data-i18n="m.lumix.l.challenge">THE CHALLENGE</div>
-              <p data-i18n="m.lumix.p.challenge1">
-                We started with a hypothesis: <b>young professionals with stable income shouldn't feel financially stressed — but they do.</b>
-              </p>
-              <p data-i18n="m.lumix.p.challenge2">
-                Secondary research confirmed the scale of the problem: 31% of young adults (20–34) in Spain are at risk of depression or anxiety due to economic insecurity. 58% feel anxiety when they receive a spending notification. And 64% spend beyond their means and feel guilty about it.
-              </p>
-              <p data-i18n="m.lumix.p.challenge3">
-                The data pointed to a paradox: <b>having income doesn't guarantee feeling at peace.</b> The problem isn't financial literacy alone — it's emotional. And the tools that exist today were making it worse, not better.
-              </p>
+              <div class="modal-section-label">THE CHALLENGE</div>
+              <p>We started with a hypothesis: <b>young professionals with stable income shouldn't feel financially stressed — but they do.</b></p>
+              <p>Secondary research confirmed the scale of the problem. The data pointed to a paradox: having income doesn't guarantee feeling at peace. And the tools that exist were making it worse.</p>
+            </div>
+            <div class="cs-stats-row">
+              <div class="cs-stat-card cs-stat--alert"><span class="cs-stat-number" data-count="31">0</span><span class="cs-stat-symbol">%</span><span class="cs-stat-desc">of young adults (20–34) at risk of depression due to economic insecurity</span></div>
+              <div class="cs-stat-card cs-stat--warn"><span class="cs-stat-number" data-count="58">0</span><span class="cs-stat-symbol">%</span><span class="cs-stat-desc">feel anxiety when receiving a spending notification</span></div>
+              <div class="cs-stat-card cs-stat--info"><span class="cs-stat-number" data-count="64">0</span><span class="cs-stat-symbol">%</span><span class="cs-stat-desc">spend beyond their means and feel guilty about it</span></div>
             </div>
           </div>
-
-          <div class="modal-media">
-            <img src="img/lumix-control.jpg" alt="The paradox: income doesn't equal financial peace">
-          </div>
+          <div class="modal-media"><img src="img/lumix-control.jpg" alt="Income doesn't equal financial peace"></div>
         </section>
 
-        <!-- ───────────────────────────────────── -->
         <!-- 3. RESEARCH & DISCOVERY -->
-        <!-- ───────────────────────────────────── -->
-        <section class="case-block">
+        <section class="case-block case-block--full">
           <div class="case-block-text">
             <div class="modal-section">
-              <div class="modal-section-label" data-i18n="m.lumix.l.research">RESEARCH & DISCOVERY</div>
-              <p data-i18n="m.lumix.p.research1">
-                We ran a multi-method research approach to understand not just what people do with money, but <b>how they feel about it</b>:
-              </p>
-              <ol class="list-number" data-i18n="m.lumix.ol.research">
-                <li><b>Quantitative survey</b> — 85 respondents, active workers aged 22–35. Focused on financial stress frequency, emotional triggers, tool usage, and savings behavior.</li>
-                <li><b>Expert interview</b> — A clinical psychologist specializing in the emotional relationship with money. This was critical to understanding the behavioral patterns behind financial avoidance.</li>
-                <li><b>Secondary research</b> — Studies on financial stress among Spanish youth, mental health data, and behavioral finance patterns.</li>
-              </ol>
+              <div class="modal-section-label">RESEARCH & DISCOVERY</div>
+              <p>We ran a multi-method research approach to understand not just what people do with money, but <b>how they feel about it</b>:</p>
             </div>
-          </div>
-
-          <div class="modal-media">
-            <img src="img/lumix-research.jpg" alt="Research methods: survey, expert interview, secondary research" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-            <div class="modal-media-placeholder" style="display:none">📷 Research overview image<span>Recommended: 1600×1000px</span></div>
+            <div class="cs-method-grid">
+              <div class="cs-method-card"><div class="cs-method-icon">📊</div><div class="cs-method-name">Quantitative Survey</div><div class="cs-method-detail">85 respondents · Ages 22–35</div><p>Financial stress frequency, emotional triggers, tool usage, and savings behavior among active workers.</p></div>
+              <div class="cs-method-card"><div class="cs-method-icon">🧠</div><div class="cs-method-name">Expert Interview</div><div class="cs-method-detail">Clinical psychologist</div><p>Emotional relationship with money. Behavioral patterns behind financial avoidance and self-protection.</p></div>
+              <div class="cs-method-card"><div class="cs-method-icon">📚</div><div class="cs-method-name">Secondary Research</div><div class="cs-method-detail">Multiple sources</div><p>Financial stress among Spanish youth, mental health data, behavioral finance, and literacy rates.</p></div>
+            </div>
           </div>
         </section>
 
-        <!-- ───────────────────────────────────── -->
         <!-- 4. KEY INSIGHTS -->
-        <!-- ───────────────────────────────────── -->
         <section class="case-block case-block--full">
           <div class="case-block-text">
             <div class="modal-section">
-              <div class="modal-section-label" data-i18n="m.lumix.l.insights">KEY INSIGHTS</div>
-              <p data-i18n="m.lumix.p.insights0">
-                The research revealed four insights that fundamentally shaped our product direction:
-              </p>
-              <ol class="list-number" data-i18n="m.lumix.ol.insights">
-                <li><b>Anxiety is persistent, not situational.</b> 46% feel financial stress frequently. Only 5.8% never feel anxiety about money. Even with stable jobs, the stress doesn't disappear — it's structural, not temporary.</li>
-                <li><b>The future is the biggest emotional trigger.</b> 18.5% named "thinking about the future" as their primary source of financial distress — more than unexpected expenses (11.4%) or checking their balance (8.5%). The opportunity: transform uncertainty into predictability.</li>
-                <li><b>People want to save but can't sustain the habit.</b> 56% associate saving with peace of mind, but a third can't maintain it. 16.7% abandon financial apps because they don't help change behavior. Users don't need more data — they need behavioral support.</li>
-                <li><b>Financial apps fail emotionally.</b> Only 3.9% use dedicated budgeting apps. 15.3% say seeing numbers triggers anxiety. 8.3% say apps make them feel guilty. 36% have never used a financial app because they're afraid of facing their own numbers. The problem isn't the concept of managing money — it's how it's presented.</li>
-              </ol>
+              <div class="modal-section-label">KEY INSIGHTS</div>
+              <p>The research revealed four insights that fundamentally shaped our product direction:</p>
             </div>
-
-            <div class="modal-section">
-              <div class="modal-section-label" data-i18n="m.lumix.l.expert">EXPERT PERSPECTIVE</div>
-              <p data-i18n="m.lumix.p.expert1">
-                The psychologist interview added a critical layer: <b>financial anxiety is an identity threat, not just a budget problem.</b> Money activates shame, low self-esteem, and fear because people experience it as a measure of their personal worth and adult capability.
-              </p>
-              <p data-i18n="m.lumix.p.expert2">
-                Key takeaways for design: avoidance (not checking balances) is a self-protection strategy, not laziness. Saving is an emotional skill, not just a rational one. And financial management can become a form of self-care — but only if the experience feels safe, supportive, and non-judgmental.
-              </p>
-              <p data-i18n="m.lumix.p.expert3">
-                This reframed our entire approach. We weren't designing a budgeting tool — <b>we were designing for emotional regulation.</b>
-              </p>
+            <div class="cs-insight-grid">
+              <div class="cs-insight-card"><div class="cs-insight-header"><span class="cs-insight-num">01</span><span class="cs-insight-title">Anxiety is persistent, not situational</span></div><div class="cs-insight-stats"><div class="cs-mini-stat"><strong>46%</strong> feel frequent financial stress</div><div class="cs-mini-stat"><strong>5.8%</strong> never feel anxiety</div><div class="cs-mini-stat"><strong>48%</strong> only mid-level control</div></div><div class="cs-insight-takeaway"><span class="cs-insight-arrow">→</span> Even with stable jobs, stress doesn't disappear. The problem is structural.</div></div>
+              <div class="cs-insight-card"><div class="cs-insight-header"><span class="cs-insight-num">02</span><span class="cs-insight-title">The future is the biggest trigger</span></div><div class="cs-insight-stats"><div class="cs-mini-stat"><strong>18.5%</strong> "thinking about the future"</div><div class="cs-mini-stat"><strong>11.4%</strong> unexpected expenses</div><div class="cs-mini-stat"><strong>8.5%</strong> checking their balance</div></div><div class="cs-insight-takeaway"><span class="cs-insight-arrow">→</span> Opportunity: transform uncertainty into predictability.</div></div>
+              <div class="cs-insight-card"><div class="cs-insight-header"><span class="cs-insight-num">03</span><span class="cs-insight-title">People want to save but can't sustain it</span></div><div class="cs-insight-stats"><div class="cs-mini-stat"><strong>56%</strong> saving = peace of mind</div><div class="cs-mini-stat"><strong>1/3</strong> can't maintain the habit</div><div class="cs-mini-stat"><strong>16.7%</strong> abandon apps</div></div><div class="cs-insight-takeaway"><span class="cs-insight-arrow">→</span> Users don't need more data. They need behavioral support.</div></div>
+              <div class="cs-insight-card"><div class="cs-insight-header"><span class="cs-insight-num">04</span><span class="cs-insight-title">Financial apps fail emotionally</span></div><div class="cs-insight-stats"><div class="cs-mini-stat"><strong>3.9%</strong> use budgeting apps</div><div class="cs-mini-stat"><strong>15.3%</strong> numbers trigger anxiety</div><div class="cs-mini-stat"><strong>36%</strong> never used one — fear</div></div><div class="cs-insight-takeaway"><span class="cs-insight-arrow">→</span> The problem isn't managing money. It's how tools present it.</div></div>
             </div>
           </div>
         </section>
 
-        <!-- ───────────────────────────────────── -->
-        <!-- 5. DEFINING THE PROBLEM -->
-        <!-- ───────────────────────────────────── -->
-        <section class="case-block">
-          <div class="case-block-text">
-            <div class="modal-section">
-              <div class="modal-section-label" data-i18n="m.lumix.l.define">DEFINING THE PROBLEM</div>
-              <p data-i18n="m.lumix.p.define1">
-                We synthesized the research into a user persona and a clear problem statement:
-              </p>
-              <p data-i18n="m.lumix.p.define2">
-                <b>Verónica, 30.</b> Primary school teacher in Valencia. Stable job, can pay bills and save a bit each month. But she lives with constant financial pressure. She's tried budgeting apps but abandons them because they create more stress than they solve. She checks her banking app daily — she's not sure if it's control or anxiety. She doesn't want to be rich. She just wants to feel like she's making progress.
-              </p>
-              <p data-i18n="m.lumix.p.define3">
-                <b>Problem statement:</b> Young professionals with stable employment experience financial anxiety not from lack of income, but from lack of predictability. They need a structured, emotionally intelligent way to understand their money — to transform income into a real sense of security.
-              </p>
-            </div>
-          </div>
-
-          <div class="modal-media">
-            <img src="img/lumix-persona.jpg" alt="User persona: Verónica Pozo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-            <div class="modal-media-placeholder" style="display:none">📷 User persona image<span>Recommended: 1600×1000px</span></div>
-          </div>
-        </section>
-
-        <!-- ───────────────────────────────────── -->
-        <!-- 6. PRODUCT STRATEGY -->
-        <!-- ───────────────────────────────────── -->
+        <!-- 5. EXPERT PERSPECTIVE -->
         <section class="case-block case-block--full">
           <div class="case-block-text">
             <div class="modal-section">
-              <div class="modal-section-label" data-i18n="m.lumix.l.strategy">PRODUCT STRATEGY</div>
-              <p data-i18n="m.lumix.p.strategy1">
-                Instead of building another dashboard-heavy finance app, we defined four product pillars directly derived from our research:
-              </p>
-              <ol class="list-number" data-i18n="m.lumix.ol.pillars">
-                <li><b>Clarity</b> — Simplified financial overviews that reduce cognitive load instead of adding to it. No complex graphs, no jargon.</li>
-                <li><b>Automation</b> — Bank account connection with automatic categorization, so users don't need to manually track every expense.</li>
-                <li><b>Projection</b> — Predictive guidance that transforms future uncertainty into visible progress. Savings goals with clear timelines.</li>
-                <li><b>Safety</b> — Emotionally intelligent feedback, supportive language, and a companion that makes facing financial data feel like self-care rather than punishment.</li>
-              </ol>
+              <div class="modal-section-label">EXPERT PERSPECTIVE</div>
+              <p>The psychologist interview added a critical layer that reframed our entire approach:</p>
             </div>
-
-            <div class="modal-section">
-              <div class="modal-section-label" data-i18n="m.lumix.l.prioritization">FEATURE PRIORITIZATION</div>
-              <p data-i18n="m.lumix.p.prioritization1">
-                We used the MoSCoW method and an impact/effort matrix to define what would make it into our MVP. The core principle was deliberate restraint: <b>what we leave out matters as much as what we include.</b>
-              </p>
-              <p data-i18n="m.lumix.p.prioritization2">
-                <b>Must have:</b> Emotional + financial onboarding, clean home screen, weekly calendar with mood tracking, savings goal visualization, Discover section (articles, podcasts, meditations), and the AI companion chatbot.
-              </p>
-              <p data-i18n="m.lumix.p.prioritization3">
-                <b>Deliberately excluded:</b> Complex dashboards, technical graphs, data tables, investment planning, and professional-grade financial tools. If it could trigger anxiety or cognitive overload, it didn't make the cut.
-              </p>
+            <div class="cs-quote-grid">
+              <div class="cs-quote-card"><div class="cs-quote-mark">"</div><p>Financial anxiety is an identity threat. Money activates shame because people experience it as a measure of personal worth.</p><div class="cs-quote-design-action"><span>Design action →</span> Protect user dignity. Never punitive.</div></div>
+              <div class="cs-quote-card"><div class="cs-quote-mark">"</div><p>Not checking the balance isn't laziness — it's avoiding intense emotional discomfort. A self-protection strategy.</p><div class="cs-quote-design-action"><span>Design action →</span> Reduce activation, don't increase pressure.</div></div>
+              <div class="cs-quote-card"><div class="cs-quote-mark">"</div><p>Saving is an emotional skill. Many adults haven't developed the internal maturity to sustain it.</p><div class="cs-quote-design-action"><span>Design action →</span> Micro-habits + positive reinforcement.</div></div>
+              <div class="cs-quote-card"><div class="cs-quote-mark">"</div><p>Financial management can become self-care — when reframed as taking responsibility for your time and energy.</p><div class="cs-quote-design-action"><span>Design action →</span> Empathetic, regulatory tone throughout.</div></div>
             </div>
+            <div class="cs-reframe-banner"><span class="cs-reframe-emoji">💡</span><div><strong>The reframe that changed everything</strong><p>We weren't designing a budgeting tool — we were designing for emotional regulation.</p></div></div>
           </div>
         </section>
 
-        <!-- ───────────────────────────────────── -->
-        <!-- 7. INFORMATION ARCHITECTURE -->
-        <!-- ───────────────────────────────────── -->
+        <!-- 6. DEFINING THE PROBLEM -->
         <section class="case-block">
           <div class="case-block-text">
-            <div class="modal-section">
-              <div class="modal-section-label" data-i18n="m.lumix.l.ia">INFORMATION ARCHITECTURE</div>
-              <p data-i18n="m.lumix.p.ia1">
-                The app structure was designed around five core areas, each mapped to a specific user need identified in research:
-              </p>
-              <ol class="list-number" data-i18n="m.lumix.ol.ia">
-                <li><b>Home</b> — The emotional anchor. Daily challenge, mood check-in, weekly summary. Designed to be the first thing users see — calm, personal, actionable.</li>
-                <li><b>Management</b> — Monthly financial overview with categorized expenses and income. Simplified visualization, no complex charts.</li>
-                <li><b>Savings</b> — One active goal at a time (to reduce decision fatigue), with clear progress and predictive timeline.</li>
-                <li><b>Discover</b> — Educational content: articles, podcasts, meditations, quizzes. Built to improve financial literacy without intimidation.</li>
-                <li><b>Lumix</b> — The AI companion. A conversational assistant that translates bank data into friendly, actionable advice. Designed as a mascot to lower the psychological barrier of facing financial information.</li>
-              </ol>
-              <p data-i18n="m.lumix.p.ia2">
-                We mapped detailed user flows for each section: app onboarding, financial dashboard navigation, chatbot consultation, content discovery, and profile management.
-              </p>
+            <div class="modal-section"><div class="modal-section-label">DEFINING THE PROBLEM</div><p>We synthesized the research into a user persona and a clear problem statement:</p></div>
+            <div class="cs-persona-card">
+              <div class="cs-persona-header"><div class="cs-persona-avatar">V</div><div><div class="cs-persona-name">Verónica Pozo</div><div class="cs-persona-role">30 · Teacher · Valencia</div></div></div>
+              <div class="cs-persona-quotes"><span>"I can afford it... but I feel guilty."</span><span>"I check my app daily — control or anxiety?"</span></div>
+              <div class="cs-persona-bio">Stable job, pays bills, saves monthly. But lives with constant financial pressure. Tried budgeting apps — abandoned them. <b>Just wants to feel she's making progress.</b></div>
+              <div class="cs-persona-bottom"><div class="cs-persona-tag">😰 Persistent anxiety</div><div class="cs-persona-tag">😔 Guilt on spending</div><div class="cs-persona-tag">📉 "Never enough"</div><div class="cs-persona-tag">🏠 Big goal overwhelm</div></div>
             </div>
+            <div class="cs-problem-statement"><div class="cs-ps-label">Problem Statement</div><p>Young professionals with stable employment experience financial anxiety not from lack of income, but from <b>lack of predictability</b>. They need a structured, emotionally intelligent way to understand their money — to transform income into a real sense of security.</p></div>
           </div>
-
-          <div class="modal-media">
-            <img src="img/lumix-sitemap.jpg" alt="Lumix information architecture and sitemap" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-            <div class="modal-media-placeholder" style="display:none">📷 Sitemap / IA image<span>Recommended: 1600×1000px</span></div>
-          </div>
+          <div class="modal-media"><img src="img/lumix-persona.jpg" alt="User persona" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="modal-media-placeholder" style="display:none">📷 User persona<span>1600×1000px</span></div></div>
         </section>
 
-        <!-- ───────────────────────────────────── -->
-        <!-- 8. DESIGN DECISIONS -->
-        <!-- ───────────────────────────────────── -->
-        <section class="case-block">
-          <div class="case-block-text">
-            <div class="modal-section">
-              <div class="modal-section-label" data-i18n="m.lumix.l.decisions">KEY DESIGN DECISIONS</div>
-              <p data-i18n="m.lumix.p.decisions1">
-                Every design choice was mapped back to a research insight. Here are the most impactful ones:
-              </p>
-              <ol class="list-number" data-i18n="m.lumix.ol.decisions">
-                <li><b>Emotional calendar on the home screen.</b> Our psychologist told us that being present with emotions while facing financial data is key to regulation. The daily mood check-in connects how users feel to what they spend — making patterns visible without judgment.</li>
-                <li><b>Daily challenges instead of to-do lists.</b> Saving is an emotional skill, not a rational one. Micro-challenges ("Do you really need that purchase?") build habits through small wins, not pressure.</li>
-                <li><b>One savings goal at a time.</b> Research showed decision fatigue increases anxiety. By limiting active goals, we reduce cognitive load and increase perceived progress.</li>
-                <li><b>A mascot as the AI interface.</b> 36% of users avoid financial apps because facing numbers is emotionally painful. A friendly character creates a psychologically safe layer between the user and their data.</li>
-                <li><b>Discover section with curated content.</b> Only 19% of Spanish people have high financial literacy. Instead of overwhelming users with tools, we offer digestible content (articles, podcasts, meditations) to build knowledge gradually.</li>
-              </ol>
-            </div>
-          </div>
-
-          <div class="modal-media">
-            <img src="img/lumix-mood.jpg" alt="Lumix emotional calendar and mood tracking">
-          </div>
-        </section>
-
-        <!-- ───────────────────────────────────── -->
-        <!-- VIDEO PROTOTYPE -->
-        <!-- ───────────────────────────────────── -->
+        <!-- 7. PRODUCT STRATEGY -->
         <section class="case-block case-block--full">
           <div class="case-block-text">
-            <div class="modal-section">
-              <div class="modal-section-label" data-i18n="m.lumix.l.prototype">THE PROTOTYPE</div>
-              <p data-i18n="m.lumix.p.prototype1">
-                We built a hi-fi interactive prototype in Figma covering the complete user journey: onboarding, home with emotional calendar, financial overview, savings tracking, content discovery, and the AI companion chatbot.
-              </p>
+            <div class="modal-section"><div class="modal-section-label">PRODUCT STRATEGY</div><p>Instead of another dashboard-heavy finance app, we defined four product pillars from our research:</p></div>
+            <div class="cs-pillar-grid">
+              <div class="cs-pillar-card"><span class="cs-pillar-icon">🔍</span><strong>Clarity</strong><p>Simplified overviews. No complex graphs, no jargon.</p></div>
+              <div class="cs-pillar-card"><span class="cs-pillar-icon">⚙️</span><strong>Automation</strong><p>Bank connection with auto-categorization. No manual tracking.</p></div>
+              <div class="cs-pillar-card"><span class="cs-pillar-icon">📈</span><strong>Projection</strong><p>Predictive guidance. Uncertainty → visible progress.</p></div>
+              <div class="cs-pillar-card"><span class="cs-pillar-icon">🛡️</span><strong>Safety</strong><p>Emotionally intelligent feedback. Data feels like self-care.</p></div>
+            </div>
+            <div class="modal-section"><div class="modal-section-label">FEATURE PRIORITIZATION</div><p>We used the <b>MoSCoW method</b> and an impact/effort matrix. Core principle: deliberate restraint — what we leave out matters as much as what we include.</p></div>
+            <div class="cs-moscow-grid">
+              <div class="cs-moscow-col cs-moscow--must"><div class="cs-moscow-label">✅ Must Have</div><span>Emotional + financial onboarding</span><span>Clean home screen</span><span>Weekly calendar + mood tracking</span><span>Savings goal visualization</span><span>Discover section</span><span>AI companion chatbot (mascot)</span></div>
+              <div class="cs-moscow-col cs-moscow--wont"><div class="cs-moscow-label">🚫 Deliberately Excluded</div><span>Complex dashboards</span><span>Technical graphs & data tables</span><span>Investment planning</span><span>Professional financial tools</span><span>Anything triggering cognitive overload</span></div>
             </div>
           </div>
         </section>
 
-        <!-- VIDEO (VIMEO) -->
-        <div class="modal-media">
-          <div style="position:relative;padding:56.25% 0 0 0;overflow:hidden;border-radius:16px;">
-            <iframe
-              src="https://player.vimeo.com/video/1167375942?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-              frameborder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              style="position:absolute;top:0;left:0;width:100%;height:100%;"
-              title="Lumix — Designing financial clarity through emotional regulation">
-            </iframe>
-          </div>
-        </div>
-
-        <!-- ───────────────────────────────────── -->
-        <!-- PRODUCT SCREENS -->
-        <!-- ───────────────────────────────────── -->
+        <!-- 8. IA -->
         <section class="case-block">
           <div class="case-block-text">
-            <div class="modal-section">
-              <div class="modal-section-label" data-i18n="m.lumix.l.screens1">FINANCIAL CLARITY</div>
-              <p data-i18n="m.lumix.p.screens1">
-                The financial overview replaces dense dashboards with a simplified monthly summary. Expenses are shown as categorized bubbles — visually light, easy to scan. No tables, no overwhelming numbers. The goal: users should understand their situation in under 5 seconds.
-              </p>
-            </div>
-
-            <div class="modal-section">
-              <div class="modal-section-label" data-i18n="m.lumix.l.screens2">CONVERSATIONAL SUPPORT</div>
-              <p data-i18n="m.lumix.p.screens2">
-                The AI companion "Lumix" translates financial data into clear, friendly recommendations. When a user asks "Can I afford this?", the chatbot doesn't just show numbers — it provides context, reassurance, and actionable next steps. The tone is warm, never punitive.
-              </p>
+            <div class="modal-section"><div class="modal-section-label">INFORMATION ARCHITECTURE</div><p>Five core areas, each mapped to a user need:</p></div>
+            <div class="cs-ia-list">
+              <div class="cs-ia-item"><div class="cs-ia-icon">🏠</div><div><strong>Home</strong><p>Emotional anchor. Daily challenge, mood check-in, weekly summary.</p></div></div>
+              <div class="cs-ia-item"><div class="cs-ia-icon">📊</div><div><strong>Management</strong><p>Monthly overview. Categorized expenses, simplified visualization.</p></div></div>
+              <div class="cs-ia-item"><div class="cs-ia-icon">🎯</div><div><strong>Savings</strong><p>One active goal. Clear progress, predictive timeline.</p></div></div>
+              <div class="cs-ia-item"><div class="cs-ia-icon">🧭</div><div><strong>Discover</strong><p>Articles, podcasts, meditations, quizzes. Literacy without intimidation.</p></div></div>
+              <div class="cs-ia-item"><div class="cs-ia-icon">💬</div><div><strong>Lumix AI</strong><p>Mascot chatbot. Translates bank data into friendly advice.</p></div></div>
             </div>
           </div>
+          <div class="modal-media"><img src="img/lumix-sitemap.jpg" alt="Information architecture" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="modal-media-placeholder" style="display:none">📷 Sitemap<span>1600×1000px</span></div></div>
+        </section>
 
-          <div class="modal-media">
-            <img src="img/lumix-chat.jpg" alt="Lumix AI conversational assistant">
+        <!-- 9. DESIGN DECISIONS -->
+        <section class="case-block case-block--full">
+          <div class="case-block-text">
+            <div class="modal-section"><div class="modal-section-label">KEY DESIGN DECISIONS</div><p>Every design choice was mapped back to a research insight:</p></div>
+            <div class="cs-decision-grid">
+              <div class="cs-decision-card"><div class="cs-decision-insight">Insight: Facing financial data activates emotional pain</div><div class="cs-decision-action"><strong>Emotional calendar on home screen</strong><p>Daily mood check-in connects feelings to spending — patterns visible without judgment.</p></div></div>
+              <div class="cs-decision-card"><div class="cs-decision-insight">Insight: Saving is an emotional skill, not rational</div><div class="cs-decision-action"><strong>Daily challenges instead of to-do lists</strong><p>Micro-challenges build habits through small wins, not pressure.</p></div></div>
+              <div class="cs-decision-card"><div class="cs-decision-insight">Insight: Decision fatigue increases anxiety</div><div class="cs-decision-action"><strong>One savings goal at a time</strong><p>Limiting goals reduces cognitive load, increases perceived progress.</p></div></div>
+              <div class="cs-decision-card"><div class="cs-decision-insight">Insight: 36% avoid apps — facing numbers is painful</div><div class="cs-decision-action"><strong>A mascot as the AI interface</strong><p>Friendly character = psychologically safe layer between user and data.</p></div></div>
+              <div class="cs-decision-card"><div class="cs-decision-insight">Insight: Only 19% have high financial literacy</div><div class="cs-decision-action"><strong>Discover section with curated content</strong><p>Articles, podcasts, meditations. Gradual knowledge, not overwhelming.</p></div></div>
+            </div>
           </div>
         </section>
 
+        <!-- 10. PROTOTYPE -->
+        <section class="case-block case-block--full">
+          <div class="case-block-text"><div class="modal-section"><div class="modal-section-label">THE PROTOTYPE</div><p>Hi-fi interactive prototype in Figma covering the complete journey: onboarding, emotional calendar, financial overview, savings tracking, content discovery, and the AI companion.</p></div></div>
+        </section>
+        <div class="modal-media"><div style="position:relative;padding:56.25% 0 0 0;overflow:hidden;border-radius:16px;"><iframe src="https://player.vimeo.com/video/1167375942?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Lumix prototype"></iframe></div></div>
+
+        <!-- SCREENS -->
         <section class="case-block">
           <div class="case-block-text">
-            <div class="modal-section">
-              <div class="modal-section-label" data-i18n="m.lumix.l.screens3">EDUCATION & GUIDANCE</div>
-              <p data-i18n="m.lumix.p.screens3">
-                The Discover section offers articles, podcasts, and meditations — not as filler content, but as a core product feature. Each piece is designed to build financial literacy through micro-habits and mindset shifts, making the user's relationship with money healthier over time.
-              </p>
-            </div>
+            <div class="modal-section"><div class="modal-section-label">FINANCIAL CLARITY</div><p>The overview replaces dense dashboards with a simplified monthly summary. Categorized bubbles — visually light, easy to scan. Understand your situation in under 5 seconds.</p></div>
+            <div class="modal-section"><div class="modal-section-label">CONVERSATIONAL SUPPORT</div><p>The AI companion translates data into friendly recommendations. Context, reassurance, actionable steps. Warm, never punitive.</p></div>
           </div>
-
-          <div class="modal-media">
-            <img src="img/lumix-explora.jpg" alt="Lumix educational content and Discover section">
-          </div>
+          <div class="modal-media"><img src="img/lumix-chat.jpg" alt="Lumix AI assistant"></div>
+        </section>
+        <section class="case-block">
+          <div class="case-block-text"><div class="modal-section"><div class="modal-section-label">EMOTIONAL TRACKING</div><p>Daily mood check-in connects emotional states to spending. From the psychologist: being present with emotions while facing financial data is key to regulation.</p></div></div>
+          <div class="modal-media"><img src="img/lumix-mood.jpg" alt="Mood tracking"></div>
+        </section>
+        <section class="case-block">
+          <div class="case-block-text"><div class="modal-section"><div class="modal-section-label">EDUCATION & GUIDANCE</div><p>Discover offers articles, podcasts, meditations — not filler, but a core feature. Micro-habits and mindset shifts that make the relationship with money healthier over time.</p></div></div>
+          <div class="modal-media"><img src="img/lumix-explora.jpg" alt="Discover section"></div>
         </section>
 
-        <!-- ───────────────────────────────────── -->
-        <!-- 9. MY ROLE (DETAILED) -->
-        <!-- ───────────────────────────────────── -->
+        <!-- 11. LEARNINGS -->
         <section class="case-block case-block--full">
           <div class="case-block-text">
-            <div class="modal-section">
-              <div class="modal-section-label" data-i18n="m.lumix.l.role">MY ROLE IN DEPTH</div>
-              <p data-i18n="m.lumix.p.role1">
-                In a team of four, I took ownership of several key areas:
-              </p>
-              <ol class="list-number" data-i18n="m.lumix.ol.role">
-                <li><b>Core concept ideation.</b> I proposed the central ideas that defined the product: the emotional calendar with daily mood tracking, the daily financial challenges, the Discover section (articles, podcasts, meditations), and the decision to make the AI chatbot a mascot character.</li>
-                <li><b>Research synthesis.</b> I led the analysis of our 85-person survey and helped extract the four key insights that shaped the product direction. I also contributed to defining the user persona's personality traits and pain points.</li>
-                <li><b>Information architecture.</b> I designed the app structure, navigation system, and the onboarding flow — including the emotional + financial initial setup.</li>
-                <li><b>Product tone.</b> I pushed for friendly language with subtle humor, no technical jargon, and non-punitive feedback throughout the experience. This came directly from the psychologist's insight that financial tools need to protect user dignity.</li>
-                <li><b>UI design.</b> I designed key screens including the dashboard, savings section, and Discover section in Figma.</li>
-              </ol>
+            <div class="modal-section"><div class="modal-section-label">KEY LEARNINGS</div></div>
+            <div class="cs-learnings-grid">
+              <div class="cs-learning-card"><span class="cs-learning-icon">🔒</span><strong>Financial products communicate safety</strong><p>The barrier isn't knowledge — it's emotional. People avoid finances because numbers feel like personal failure.</p></div>
+              <div class="cs-learning-card"><span class="cs-learning-icon">✂️</span><strong>What you exclude matters</strong><p>Simplicity increases perceived control. Deliberate restraint is a design decision.</p></div>
+              <div class="cs-learning-card"><span class="cs-learning-icon">🧠</span><strong>Talk to experts early</strong><p>The psychologist shifted us from "show data better" to "make people feel safe." That reframe changed everything.</p></div>
             </div>
+            <div class="modal-section"><div class="modal-section-label">NEXT STEPS</div><p>If I continued: <b>usability testing</b> to validate emotional calendar impact, <b>behavioral metrics</b> (session frequency, mood tracking consistency, savings completion), <b>accessibility audit</b>, and a <b>content strategy</b> for Discover with expert-backed financial literacy content.</p></div>
           </div>
         </section>
-
-        <!-- ───────────────────────────────────── -->
-        <!-- 10. LEARNINGS & NEXT STEPS -->
-        <!-- ───────────────────────────────────── -->
-        <section class="case-block case-block--full">
-          <div class="case-block-text">
-            <div class="modal-section">
-              <div class="modal-section-label" data-i18n="m.lumix.l.learnings">KEY LEARNINGS</div>
-              <p data-i18n="m.lumix.p.learnings1">
-                <b>Financial products don't just communicate data — they communicate safety.</b> The biggest shift in this project was understanding that the barrier to financial wellness isn't knowledge or tools. It's emotional. People avoid their finances because facing numbers feels like facing personal failure.
-              </p>
-              <p data-i18n="m.lumix.p.learnings2">
-                Designing for emotional regulation means simplicity increases perceived control, tone influences behavioral consistency, and reducing cognitive load directly impacts trust. What you deliberately exclude from the product matters as much as what you include.
-              </p>
-              <p data-i18n="m.lumix.p.learnings3">
-                Talking to a psychologist was a turning point. It shifted our perspective from "how do we show financial data better" to "how do we make people feel safe enough to engage with their own finances." That reframe changed everything.
-              </p>
-            </div>
-
-            <div class="modal-section">
-              <div class="modal-section-label" data-i18n="m.lumix.l.next">NEXT STEPS</div>
-              <p data-i18n="m.lumix.p.next1">
-                If I continued this project, I would focus on:
-              </p>
-              <ol class="list-number" data-i18n="m.lumix.ol.next">
-                <li><b>Usability testing</b> to validate whether the emotional calendar and daily challenges actually reduce financial anxiety over time.</li>
-                <li><b>Behavioral metrics</b> — measuring session frequency, mood tracking consistency, savings goal completion rate, and whether users stop avoiding their financial data.</li>
-                <li><b>Accessibility audit</b> — ensuring the product works for users with different cognitive and emotional needs.</li>
-                <li><b>Content strategy</b> — developing a sustainable pipeline for the Discover section with expert-backed financial literacy content.</li>
-              </ol>
-            </div>
-          </div>
-        </section>
-
       </div>
-      <!-- end case-sections -->
-
     </div>
-    <!-- end case-content -->
   </div>
-  <!-- end case-card -->
 </main>
-
 <footer class="footer">
   <div class="footer-logo">vanesa<span class="blue">frz</span></div>
-  <div class="footer-note" data-i18n="footer.note">Built with 🤍 vanesafrz · 2026</div>
+  <div class="footer-note">Built with 🤍 vanesafrz · 2026</div>
   <div class="footer-socials">
-    <a href="mailto:vanesafrz.ux@gmail.com" aria-label="Email">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M22 7l-10 7L2 7" stroke="currentColor" stroke-width="2"/></svg>
-    </a>
-    <a href="https://linkedin.com/in/vanesafrz" target="_blank" aria-label="LinkedIn">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z" stroke="currentColor" stroke-width="2"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/></svg>
-    </a>
+    <a href="mailto:vanesafrz.ux@gmail.com" aria-label="Email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M22 7l-10 7L2 7" stroke="currentColor" stroke-width="2"/></svg></a>
+    <a href="https://linkedin.com/in/vanesafrz" target="_blank" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z" stroke="currentColor" stroke-width="2"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/></svg></a>
   </div>
 </footer>
-
 <script src="script.js"></script>
+<script src="lumix-case.js"></script>
 </body>
 </html>
