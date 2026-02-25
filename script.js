@@ -34,8 +34,8 @@ const T = {
 
   // ─── NAV ───
   'nav.home':        { en: 'Home',       es: 'Inicio' },
-  'nav.projects':    { en: 'Projects',   es: 'Proyectos' },
   'nav.about':       { en: 'About me',   es: 'Sobre mí' },
+  'nav.projects':    { en: 'Projects',   es: 'Proyectos' },
   'nav.cv':          { en: 'Resume',     es: 'CV' },
   'nav.cta':         { en: "Let's talk!", es: '¡Hablemos!' },
 
@@ -56,25 +56,24 @@ const T = {
   'card.btn.case':   { en: 'View case study', es: 'Ver case study' },
 
   // ─── PROJECTS PAGE ───
-  'projects.page.title':  { en: 'All projects', es: 'Todos los proyectos' },
-  'projects.page.sub':    { en: 'Browse by category and filter by tags.', es: 'Explora por categoría y filtra por etiquetas.' },
-  'projects.tab.ux':      { en: 'UX designs', es: 'Diseños UX' },
-  'projects.tab.video':   { en: 'Videos', es: 'Vídeos' },
-  'projects.filter.title':{ en: 'Filter by tags', es: 'Filtrar por etiquetas' },
-  'projects.filter.clear':{ en: 'Clear filters', es: 'Borrar filtros' },
-  'projects.empty':       { en: 'No projects match the selected tags.', es: 'No hay proyectos que coincidan con las etiquetas seleccionadas.' },
-  'projects.video.empty': { en: 'Video projects coming soon.', es: 'Proyectos de vídeo próximamente.' },
+  'projects.page.title': { en: 'All projects', es: 'Todos los proyectos' },
+  'projects.page.sub':   { en: 'Browse by category and filter by tags.', es: 'Explora por categoría y filtra por etiquetas.' },
+  'projects.tab.ux':     { en: 'UX designs', es: 'Diseños UX' },
+  'projects.tab.video':  { en: 'Videos',     es: 'Vídeos' },
+  'projects.filter.title': { en: 'Filter by tags', es: 'Filtrar por etiquetas' },
+  'projects.filter.clear': { en: 'Clear filters', es: 'Limpiar filtros' },
+  'projects.empty':      { en: 'No projects match the selected tags.', es: 'No hay proyectos que coincidan con las etiquetas seleccionadas.' },
+  'projects.video.empty':{ en: 'Video projects coming soon.', es: 'Proyectos de vídeo próximamente.' },
 
-  // ─── TAGS ───
-  'tag.domain.viajes':     { en: 'Travel',     es: 'Viajes' },
-  'tag.domain.finanzas':   { en: 'Finance',    es: 'Finanzas' },
-  'tag.domain.bienestar':  { en: 'Wellness',   es: 'Bienestar' },
-  'tag.domain.ocio':       { en: 'Leisure',    es: 'Ocio' },
-  'tag.domain.ecommerce':  { en: 'Ecommerce',  es: 'Ecommerce' },
-  'tag.domain.saas':       { en: 'SaaS',       es: 'Saas' },
-  'tag.domain.fintech':    { en: 'Fintech',    es: 'Fintech' },
-  'tag.domain.cultura':    { en: 'Culture',    es: 'Cultura' },
-  'card.btn.case':   { en: 'View case study', es: 'Ver case study' },
+  // ─── DOMAIN TAGS (for filters + case studies) ───
+  'tag.domain.viajes':     { en: 'Travel',    es: 'Viajes' },
+  'tag.domain.finanzas':   { en: 'Finance',   es: 'Finanzas' },
+  'tag.domain.bienestar':  { en: 'Wellness',  es: 'Bienestar' },
+  'tag.domain.ocio':       { en: 'Leisure',   es: 'Ocio' },
+  'tag.domain.ecommerce':  { en: 'Ecommerce', es: 'Ecommerce' },
+  'tag.domain.saas':       { en: 'SaaS',      es: 'SaaS' },
+  'tag.domain.fintech':    { en: 'Fintech',   es: 'Fintech' },
+  'tag.domain.cultura':    { en: 'Culture',   es: 'Cultura' },
 
   // ─── Common tags ───
   'tag.skill.app':         { en: 'App', es: 'App' },
@@ -118,8 +117,6 @@ const T = {
   'cv.languages':    { en: 'Language',         es: 'Idiomas' },
   'cv.lang.mother':  { en: 'Mother tongue',   es: 'Lengua materna' },
   'cv.lang.beginner':{ en: 'Beginner',        es: 'Principiante' },
-  'cv.years':        { en: 'Years of experience', es: 'Años de experiencia' },
-  'cv.projects':     { en: 'Projects',            es: 'Proyectos' },
 
   // ─── MUSEEK MODAL ───
   'm.museek.name': { en: 'Museek — Designing behavioral engagement through gamification', es: 'Museek — Diseñando engagement conductual a través de la gamificación' },
@@ -234,232 +231,96 @@ function toggleLang(){
   setLang(getLang() === 'en' ? 'es' : 'en');
 }
 
-// Apply saved language on load
-if(document.readyState === 'loading'){
-  document.addEventListener('DOMContentLoaded', () => applyLang(getLang()));
-} else {
-  applyLang(getLang());
-}
-
-
-// ═══════════════════════════════════════
-// CV STATS — DYNAMIC COUNTERS
-// ═══════════════════════════════════════
-
-function yearsSinceJuly2017(){
-  const start = new Date(2017, 6, 1); // July (0-indexed)
-  const now = new Date();
-  const diff = now.getTime() - start.getTime();
-  const years = diff / (1000 * 60 * 60 * 24 * 365.25);
-  return Math.max(0, Math.floor(years));
-}
-
-function animateCounter(el, finalValue, opts = {}){
-  if(!el) return;
-  const prefix = opts.prefix ?? '+';
-  const duration = opts.duration ?? 1200;
-  const startTime = performance.now();
-
-  function easeOutCubic(t){
-    return 1 - Math.pow(1 - t, 3);
-  }
-
-  function frame(now){
-    const p = Math.min(1, (now - startTime) / duration);
-    const eased = easeOutCubic(p);
-    const current = Math.round(finalValue * eased);
-    el.textContent = `${prefix}${current}`;
-    if(p < 1) requestAnimationFrame(frame);
-  }
-
-  requestAnimationFrame(frame);
-}
-
-function getPortfolioProjectCount(){
-  // If we're on a page that has project cards, store count for other pages (e.g. CV)
-  const cards = document.querySelectorAll('.project-card');
-  if(cards.length){
-    localStorage.setItem('vanesafrz-project-count', String(cards.length));
-    return cards.length;
-  }
-
-  const stored = parseInt(localStorage.getItem('vanesafrz-project-count') || '0', 10);
-  if(stored) return stored;
-
-  // Fallback: known UX case studies
-  return 3;
-}
-
-
-  }
-
-  if(projEl){
-    animateCounter(projEl, getPortfolioProjectCount(), { prefix: '+', duration: 1100 });
-  }
-
-  // Also store count when visiting index (cards there may use different classes)
-  const indexCards = document.querySelectorAll('.work-card, .project');
-  if(!document.querySelectorAll('.project-card').length && indexCards.length){
-    localStorage.setItem('vanesafrz-project-count', String(indexCards.length));
-  }
-});
-
-
 // ═══════════════════════════════════════
 // PROJECTS PAGE — TABS + TAG FILTERS
 // ═══════════════════════════════════════
 
+function normalizeTag(t){
+  return (t || '').trim().toLowerCase();
+}
+
 function initProjectsPage(){
-  const page = document.getElementById('projectsPage');
-  if(!page) return;
+  const root = document.getElementById('projectsPage');
+  if(!root) return;
 
-  const tabButtons = Array.from(document.querySelectorAll('.tab-btn[data-tab]'));
-  const panels = Array.from(document.querySelectorAll('[data-tab-panel]'));
-  const chipWrap = document.getElementById('tagFilters');
-  const chips = chipWrap ? Array.from(chipWrap.querySelectorAll('.chip[data-tag]')) : [];
+  const tabBtns = Array.from(document.querySelectorAll('[data-tab]'));
+  const tabPanels = Array.from(document.querySelectorAll('[data-tab-panel]'));
+  const filterWrap = document.getElementById('tagFilters');
   const clearBtn = document.getElementById('clearFilters');
+  const emptyUx = document.getElementById('emptyUx');
+  const emptyVideo = document.getElementById('emptyVideo');
 
-  let activeTab = (tabButtons.find(b=>b.classList.contains('active'))?.dataset.tab) || 'ux';
   const selected = new Set();
 
-  function normalizeTag(t){
-    return (t||'').toString().trim().toLowerCase();
-  }
+  const chips = Array.from(filterWrap?.querySelectorAll('[data-tag]') || []);
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const tag = normalizeTag(chip.getAttribute('data-tag'));
+      if(!tag) return;
+      if(selected.has(tag)) selected.delete(tag);
+      else selected.add(tag);
+      chip.classList.toggle('active', selected.has(tag));
+      applyFilters();
+    });
+  });
 
-  function setActiveTab(tab){
-    activeTab = tab;
-    tabButtons.forEach(b=>b.classList.toggle('active', b.dataset.tab===tab));
-    panels.forEach(p=>p.classList.toggle('active', p.dataset.tabPanel===tab));
+  clearBtn?.addEventListener('click', () => {
+    selected.clear();
+    chips.forEach(c => c.classList.remove('active'));
     applyFilters();
+  });
+
+  function showTab(tab){
+    tabBtns.forEach(b => b.classList.toggle('active', b.getAttribute('data-tab') === tab));
+    tabPanels.forEach(p => p.classList.toggle('active', p.getAttribute('data-tab-panel') === tab));
   }
 
-  function getActivePanel(){
-    return panels.find(p=>p.dataset.tabPanel===activeTab) || panels[0];
-  }
+  tabBtns.forEach(btn => btn.addEventListener('click', () => {
+    showTab(btn.getAttribute('data-tab'));
+  }));
 
-  function parseTags(attr){
-    return (attr||'')
+  function cardMatches(card){
+    if(selected.size === 0) return true;
+    const tags = (card.getAttribute('data-tags') || '')
       .split(',')
-      .map(x=>normalizeTag(x))
+      .map(normalizeTag)
       .filter(Boolean);
-  }
-
-  function matchesSelected(cardTags){
-    if(selected.size===0) return true;
     for(const s of selected){
-      if(cardTags.includes(s)) return true;
+      if(tags.includes(s)) return true;
     }
     return false;
   }
 
   function applyFilters(){
-    const panel = getActivePanel();
-    if(!panel) return;
-
-    const cards = Array.from(panel.querySelectorAll('.project-card[data-tags]'));
-    let visibleCount = 0;
-
-    cards.forEach(card=>{
-      const tags = parseTags(card.getAttribute('data-tags'));
-      const ok = matchesSelected(tags);
+    const uxPanel = document.querySelector('[data-tab-panel="ux"]');
+    const uxCards = Array.from(uxPanel?.querySelectorAll('.project-card') || []);
+    let uxVisible = 0;
+    uxCards.forEach(card => {
+      const ok = cardMatches(card);
       card.style.display = ok ? '' : 'none';
-      if(ok) visibleCount++;
+      if(ok) uxVisible += 1;
     });
+    if(emptyUx) emptyUx.style.display = (uxCards.length && uxVisible === 0) ? 'block' : 'none';
 
-    const emptyUx = document.getElementById('emptyUx');
-    const emptyVideo = document.getElementById('emptyVideo');
-
-    if(activeTab === 'ux' && emptyUx){
-      emptyUx.style.display = (visibleCount===0 && cards.length>0) ? '' : 'none';
-    }
-
-    if(activeTab === 'video' && emptyVideo){
-      const panelCards = Array.from(panel.querySelectorAll('.project-card'));
-      const noCards = panelCards.length===0;
-      emptyVideo.style.display = (noCards && selected.size===0) ? '' : 'none';
-    }
-
-    if(clearBtn){
-      clearBtn.style.opacity = selected.size ? '1' : '.6';
-    }
+    const videoPanel = document.querySelector('[data-tab-panel="video"]');
+    const videoCards = Array.from(videoPanel?.querySelectorAll('.project-card') || []);
+    let videoVisible = 0;
+    videoCards.forEach(card => {
+      const ok = cardMatches(card);
+      card.style.display = ok ? '' : 'none';
+      if(ok) videoVisible += 1;
+    });
+    if(emptyVideo) emptyVideo.style.display = (videoCards.length === 0) ? 'block' : (videoVisible === 0 ? 'block' : 'none');
   }
 
-  tabButtons.forEach(btn=>{
-    btn.addEventListener('click', ()=> setActiveTab(btn.dataset.tab));
-  });
-
-  chips.forEach(chip=>{
-    chip.addEventListener('click', ()=>{
-      const tag = normalizeTag(chip.dataset.tag);
-      if(!tag) return;
-      if(selected.has(tag)){
-        selected.delete(tag);
-        chip.classList.remove('active');
-      }else{
-        selected.add(tag);
-        chip.classList.add('active');
-      }
-      applyFilters();
-    });
-  });
-
-  if(clearBtn){
-    clearBtn.addEventListener('click', ()=>{
-      selected.clear();
-      chips.forEach(c=>c.classList.remove('active'));
-      applyFilters();
-    });
-  }
-
-  // Store project count for CV
-  try{
-    const allCards = Array.from(document.querySelectorAll('.project-card'));
-    localStorage.setItem('portfolioProjectsCount', String(allCards.length));
-  }catch(e){}
-
-  setActiveTab(activeTab);
+  showTab('ux');
+  applyFilters();
 }
 
-// ═══════════════════════════════════════
-// CV — COUNTERS (Experience + Projects)
-// ═══════════════════════════════════════
-
-
-function animateCounter(el, finalValue, opts={}){
-  const prefix = opts.prefix ?? '';
-  const duration = opts.duration ?? 1000;
-
-  let start = null;
-  function step(ts){
-    if(start === null) start = ts;
-    const t = Math.min(1, (ts - start) / duration);
-    const val = Math.floor(t * finalValue);
-    el.textContent = prefix + String(val);
-    if(t < 1) requestAnimationFrame(step);
-    else el.textContent = prefix + String(finalValue);
-  }
-  requestAnimationFrame(step);
-}
-
-function initCvCounters(){
-  const expEl = document.getElementById('experienceCounter');
-  if(expEl){
-    const startDate = new Date(2017, 6, 1); // July 2017
-    const now = new Date();
-    const diffYears = (now - startDate) / (1000*60*60*24*365.25);
-    const finalValue = Math.max(0, Math.floor(diffYears));
-    animateCounter(expEl, finalValue, { prefix: '+', duration: 1100 });
-  }
-
-  const projectsEl = document.getElementById('projectsCounter');
-  if(projectsEl){
-    let total = 0;
-    try{ total = parseInt(localStorage.getItem('portfolioProjectsCount') || '0', 10) || 0; }catch(e){}
-    animateCounter(projectsEl, total, { prefix: '', duration: 900 });
-  }
-}
-
-document.addEventListener('DOMContentLoaded', ()=>{
+// Apply saved language on load
+if(document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', () => { applyLang(getLang()); initProjectsPage(); });
+} else {
+  applyLang(getLang());
   initProjectsPage();
-  initCvCounters();
-});
+}
