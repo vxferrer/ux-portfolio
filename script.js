@@ -324,3 +324,65 @@ if(document.readyState === 'loading'){
   applyLang(getLang());
   initProjectsPage();
 }
+
+/* ═══════════════════════════════════════
+   LUMIX CASE STUDY — Animated counters
+   ═══════════════════════════════════════ */
+
+(function(){
+  // Animate numbers when they scroll into view
+  const counters = document.querySelectorAll('.cs-stat-number[data-count]');
+  if(!counters.length) return;
+
+  const animateCounter = (el) => {
+    const target = parseInt(el.dataset.count, 10);
+    const duration = 1200;
+    const start = performance.now();
+
+    const step = (now) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const ease = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(target * ease);
+      if(progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(c => observer.observe(c));
+
+  // Stagger-in animation for grids
+  const grids = document.querySelectorAll('.cs-insight-grid, .cs-quote-grid, .cs-method-grid, .cs-decision-grid, .cs-learnings-grid, .cs-pillar-grid');
+  
+  const gridObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const children = entry.target.children;
+        Array.from(children).forEach((child, i) => {
+          child.style.opacity = '0';
+          child.style.transform = 'translateY(20px)';
+          child.style.transition = `opacity 0.5s ease ${i * 0.1}s, transform 0.5s ease ${i * 0.1}s`;
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              child.style.opacity = '1';
+              child.style.transform = 'translateY(0)';
+            });
+          });
+        });
+        gridObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  grids.forEach(g => gridObserver.observe(g));
+})();
