@@ -34,8 +34,8 @@ const T = {
 
   // ─── NAV ───
   'nav.home':        { en: 'Home',       es: 'Inicio' },
-  'nav.about':       { en: 'About me',   es: 'Sobre mí' },
   'nav.projects':    { en: 'Projects',   es: 'Proyectos' },
+  'nav.about':       { en: 'About me',   es: 'Sobre mí' },
   'nav.cv':          { en: 'Resume',     es: 'CV' },
   'nav.cta':         { en: "Let's talk!", es: '¡Hablemos!' },
 
@@ -56,24 +56,25 @@ const T = {
   'card.btn.case':   { en: 'View case study', es: 'Ver case study' },
 
   // ─── PROJECTS PAGE ───
-  'projects.page.title': { en: 'All projects', es: 'Todos los proyectos' },
-  'projects.page.sub':   { en: 'Browse by category and filter by tags.', es: 'Explora por categoría y filtra por etiquetas.' },
-  'projects.tab.ux':     { en: 'UX designs', es: 'Diseños UX' },
-  'projects.tab.video':  { en: 'Videos',     es: 'Vídeos' },
-  'projects.filter.title': { en: 'Filter by tags', es: 'Filtrar por etiquetas' },
-  'projects.filter.clear': { en: 'Clear filters', es: 'Limpiar filtros' },
-  'projects.empty':      { en: 'No projects match the selected tags.', es: 'No hay proyectos que coincidan con las etiquetas seleccionadas.' },
-  'projects.video.empty':{ en: 'Video projects coming soon.', es: 'Proyectos de vídeo próximamente.' },
+  'projects.page.title':  { en: 'All projects', es: 'Todos los proyectos' },
+  'projects.page.sub':    { en: 'Browse by category and filter by tags.', es: 'Explora por categoría y filtra por etiquetas.' },
+  'projects.tab.ux':      { en: 'UX designs', es: 'Diseños UX' },
+  'projects.tab.video':   { en: 'Videos', es: 'Vídeos' },
+  'projects.filter.title':{ en: 'Filter by tags', es: 'Filtrar por etiquetas' },
+  'projects.filter.clear':{ en: 'Clear filters', es: 'Borrar filtros' },
+  'projects.empty':       { en: 'No projects match the selected tags.', es: 'No hay proyectos que coincidan con las etiquetas seleccionadas.' },
+  'projects.video.empty': { en: 'Video projects coming soon.', es: 'Proyectos de vídeo próximamente.' },
 
-  // ─── DOMAIN TAGS (for filters + case studies) ───
-  'tag.domain.viajes':     { en: 'Travel',    es: 'Viajes' },
-  'tag.domain.finanzas':   { en: 'Finance',   es: 'Finanzas' },
-  'tag.domain.bienestar':  { en: 'Wellness',  es: 'Bienestar' },
-  'tag.domain.ocio':       { en: 'Leisure',   es: 'Ocio' },
-  'tag.domain.ecommerce':  { en: 'Ecommerce', es: 'Ecommerce' },
-  'tag.domain.saas':       { en: 'SaaS',      es: 'SaaS' },
-  'tag.domain.fintech':    { en: 'Fintech',   es: 'Fintech' },
-  'tag.domain.cultura':    { en: 'Culture',   es: 'Cultura' },
+  // ─── TAGS ───
+  'tag.domain.viajes':     { en: 'Travel',     es: 'Viajes' },
+  'tag.domain.finanzas':   { en: 'Finance',    es: 'Finanzas' },
+  'tag.domain.bienestar':  { en: 'Wellness',   es: 'Bienestar' },
+  'tag.domain.ocio':       { en: 'Leisure',    es: 'Ocio' },
+  'tag.domain.ecommerce':  { en: 'Ecommerce',  es: 'Ecommerce' },
+  'tag.domain.saas':       { en: 'SaaS',       es: 'Saas' },
+  'tag.domain.fintech':    { en: 'Fintech',    es: 'Fintech' },
+  'tag.domain.cultura':    { en: 'Culture',    es: 'Cultura' },
+  'card.btn.case':   { en: 'View case study', es: 'Ver case study' },
 
   // ─── Common tags ───
   'tag.skill.app':         { en: 'App', es: 'App' },
@@ -117,6 +118,8 @@ const T = {
   'cv.languages':    { en: 'Language',         es: 'Idiomas' },
   'cv.lang.mother':  { en: 'Mother tongue',   es: 'Lengua materna' },
   'cv.lang.beginner':{ en: 'Beginner',        es: 'Principiante' },
+  'cv.years':        { en: 'Years of experience', es: 'Años de experiencia' },
+  'cv.projects':     { en: 'Projects',            es: 'Proyectos' },
 
   // ─── MUSEEK MODAL ───
   'm.museek.name': { en: 'Museek — Designing behavioral engagement through gamification', es: 'Museek — Diseñando engagement conductual a través de la gamificación' },
@@ -231,96 +234,77 @@ function toggleLang(){
   setLang(getLang() === 'en' ? 'es' : 'en');
 }
 
-// ═══════════════════════════════════════
-// PROJECTS PAGE — TABS + TAG FILTERS
-// ═══════════════════════════════════════
-
-function normalizeTag(t){
-  return (t || '').trim().toLowerCase();
-}
-
-function initProjectsPage(){
-  const root = document.getElementById('projectsPage');
-  if(!root) return;
-
-  const tabBtns = Array.from(document.querySelectorAll('[data-tab]'));
-  const tabPanels = Array.from(document.querySelectorAll('[data-tab-panel]'));
-  const filterWrap = document.getElementById('tagFilters');
-  const clearBtn = document.getElementById('clearFilters');
-  const emptyUx = document.getElementById('emptyUx');
-  const emptyVideo = document.getElementById('emptyVideo');
-
-  const selected = new Set();
-
-  const chips = Array.from(filterWrap?.querySelectorAll('[data-tag]') || []);
-  chips.forEach(chip => {
-    chip.addEventListener('click', () => {
-      const tag = normalizeTag(chip.getAttribute('data-tag'));
-      if(!tag) return;
-      if(selected.has(tag)) selected.delete(tag);
-      else selected.add(tag);
-      chip.classList.toggle('active', selected.has(tag));
-      applyFilters();
-    });
-  });
-
-  clearBtn?.addEventListener('click', () => {
-    selected.clear();
-    chips.forEach(c => c.classList.remove('active'));
-    applyFilters();
-  });
-
-  function showTab(tab){
-    tabBtns.forEach(b => b.classList.toggle('active', b.getAttribute('data-tab') === tab));
-    tabPanels.forEach(p => p.classList.toggle('active', p.getAttribute('data-tab-panel') === tab));
-  }
-
-  tabBtns.forEach(btn => btn.addEventListener('click', () => {
-    showTab(btn.getAttribute('data-tab'));
-  }));
-
-  function cardMatches(card){
-    if(selected.size === 0) return true;
-    const tags = (card.getAttribute('data-tags') || '')
-      .split(',')
-      .map(normalizeTag)
-      .filter(Boolean);
-    for(const s of selected){
-      if(tags.includes(s)) return true;
-    }
-    return false;
-  }
-
-  function applyFilters(){
-    const uxPanel = document.querySelector('[data-tab-panel="ux"]');
-    const uxCards = Array.from(uxPanel?.querySelectorAll('.project-card') || []);
-    let uxVisible = 0;
-    uxCards.forEach(card => {
-      const ok = cardMatches(card);
-      card.style.display = ok ? '' : 'none';
-      if(ok) uxVisible += 1;
-    });
-    if(emptyUx) emptyUx.style.display = (uxCards.length && uxVisible === 0) ? 'block' : 'none';
-
-    const videoPanel = document.querySelector('[data-tab-panel="video"]');
-    const videoCards = Array.from(videoPanel?.querySelectorAll('.project-card') || []);
-    let videoVisible = 0;
-    videoCards.forEach(card => {
-      const ok = cardMatches(card);
-      card.style.display = ok ? '' : 'none';
-      if(ok) videoVisible += 1;
-    });
-    if(emptyVideo) emptyVideo.style.display = (videoCards.length === 0) ? 'block' : (videoVisible === 0 ? 'block' : 'none');
-  }
-
-  showTab('ux');
-  applyFilters();
-}
-
 // Apply saved language on load
 if(document.readyState === 'loading'){
-  document.addEventListener('DOMContentLoaded', () => { applyLang(getLang()); initProjectsPage(); });
+  document.addEventListener('DOMContentLoaded', () => applyLang(getLang()));
 } else {
   applyLang(getLang());
-  initProjectsPage();
 }
+
+
+// ═══════════════════════════════════════
+// CV STATS — DYNAMIC COUNTERS
+// ═══════════════════════════════════════
+
+function yearsSinceJuly2017(){
+  const start = new Date(2017, 6, 1); // July (0-indexed)
+  const now = new Date();
+  const diff = now.getTime() - start.getTime();
+  const years = diff / (1000 * 60 * 60 * 24 * 365.25);
+  return Math.max(0, Math.floor(years));
+}
+
+function animateCounter(el, finalValue, opts = {}){
+  if(!el) return;
+  const prefix = opts.prefix ?? '+';
+  const duration = opts.duration ?? 1200;
+  const startTime = performance.now();
+
+  function easeOutCubic(t){
+    return 1 - Math.pow(1 - t, 3);
+  }
+
+  function frame(now){
+    const p = Math.min(1, (now - startTime) / duration);
+    const eased = easeOutCubic(p);
+    const current = Math.round(finalValue * eased);
+    el.textContent = `${prefix}${current}`;
+    if(p < 1) requestAnimationFrame(frame);
+  }
+
+  requestAnimationFrame(frame);
+}
+
+function getPortfolioProjectCount(){
+  // If we're on a page that has project cards, store count for other pages (e.g. CV)
+  const cards = document.querySelectorAll('.project-card');
+  if(cards.length){
+    localStorage.setItem('vanesafrz-project-count', String(cards.length));
+    return cards.length;
+  }
+
+  const stored = parseInt(localStorage.getItem('vanesafrz-project-count') || '0', 10);
+  if(stored) return stored;
+
+  // Fallback: known UX case studies
+  return 3;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const expEl = document.getElementById('experienceCounter');
+  const projEl = document.getElementById('projectsCounter');
+
+  if(expEl){
+    animateCounter(expEl, yearsSinceJuly2017(), { prefix: '+', duration: 1400 });
+  }
+
+  if(projEl){
+    animateCounter(projEl, getPortfolioProjectCount(), { prefix: '+', duration: 1100 });
+  }
+
+  // Also store count when visiting index (cards there may use different classes)
+  const indexCards = document.querySelectorAll('.work-card, .project');
+  if(!document.querySelectorAll('.project-card').length && indexCards.length){
+    localStorage.setItem('vanesafrz-project-count', String(indexCards.length));
+  }
+});
