@@ -6,10 +6,9 @@
 <title>Korean Air — Case Study — vanesafrz</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="lumix-case.css">
 </head>
 <body>
-
-<!-- NAV -->
 <nav class="nav" id="nav">
   <a href="index.html" class="nav-logo">vanesa<span class="blue">frz</span></a>
   <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
@@ -22,146 +21,207 @@
     <li><button class="lang-toggle" onclick="toggleLang()">🇪🇸 ES</button></li>
   </ul>
 </nav>
-
 <main class="case-wrap">
   <a class="case-back" href="projects.html">← <span data-i18n="case.back">Back to projects</span></a>
-
   <div class="case-card">
     <div class="modal-hero">
-      <!-- ✏️ CAMBIAR SRC: Imagen cabecera del case study Korean Air (1720×960px recomendado) -->
-      <img src="img/koreanair-front.jpg" alt="Korean Air hero" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="modal-hero-placeholder" style="display:none">Imagen cabecera Korean Air<br><span style="font-size:11px">1720 × 960px</span></div>
+      <img src="img/korean-case-study.jpg" alt="Korean Air case study hero" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="modal-hero-placeholder" style="display:none">Korean Air Case Study Hero<br><span style="font-size:11px">1720 × 960px</span></div>
     </div>
     <div class="case-content">
-      <h2 class="modal-project-name" data-i18n="m.korean.name">Korean Air — Redesigning clarity and trust in a high-cognitive-load app</h2>
-      <p class="modal-project-sub" data-i18n="m.korean.sub">Concept redesign based on a heuristic audit to reduce cognitive overload, clarify primary actions, and establish a scalable visual system for a travel product.</p>
-
-      <!-- Domain tags (for filters) -->
-      <div class="case-domain-tags" data-tags="Viajes" aria-label="Project tags">
-        <span class="chip chip-static" data-i18n="tag.domain.viajes">Viajes</span>
-      </div>
-
+      <h2 class="modal-project-name" data-i18n="m.korean.c.name">Korean Air — Redesigning clarity and trust in a high-cognitive-load app</h2>
+      <p class="modal-project-sub" data-i18n="m.korean.c.sub">As a real user of Korean Air, I noticed that every time I opened the app, I struggled to find what I needed. This project started from genuine frustration — and became a structured exercise in heuristic evaluation, task-first hierarchy, and scalable UI systems.</p>
+      <div class="case-domain-tags" data-tags="Viajes"><span class="chip chip-static" data-i18n="tag.domain.viajes">Travel</span></div>
       <div class="modal-tags">
-        <span class="modal-tag tag-team"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M23 21v-2a4 4 0 00-3-3.87" stroke="currentColor" stroke-width="2"/><path d="M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="m.korean.tag.team">Solo project</span></span>
+        <span class="modal-tag tag-team"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="m.korean.tag.team">Solo project</span></span>
         <span class="modal-tag tag-sector"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="m.korean.tag.sector">Travel</span></span>
         <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="tag.skill.heuristics">Heuristics / Redesign</span></span>
-        <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="tag.skill.mobileapp">App Mobile</span></span>
+        <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="tag.skill.productdesign">Product Design</span></span>
+        <span class="modal-tag tag-skill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="tag.skill.mobileapp">Mobile App</span></span>
         <span class="modal-tag tag-type"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor" stroke-width="2"/><line x1="12" y1="18" x2="12" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-i18n="m.korean.tag.time">3 days</span></span>
       </div>
-      <div class="case-grid">
-        <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.korean.l1">THE CHALLENGE</div>
-        <p data-i18n="m.korean.p1">Airline apps are high-stakes and high-cognitive-load environments: users need to find critical information fast,
-          complete tasks confidently, and understand what the system is doing at all times.</p>
-          <p data-i18n="m.korean.p2">
-          In the original Korean Air app, multiple UI blocks compete for attention, CTAs are unclear, and the hierarchy doesn’t reflect user intent.
-          The result is a home screen that feels “busy” and workflows that require extra effort to understand.
-        </p>
-        <p data-i18n="m.korean.p8">
-          <b>Goal:</b> reduce cognitive overload, clarify primary actions (e.g., trips and reservations), and create a consistent UI system that can scale.
-        </p>
-      </div>
 
-      <div class="modal-media">
-        <!-- ✏️ CAMBIAR SRC: Primera imagen del case study -->
-        <img src="img/old korean.jpg" alt="Korean Air imagen 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="modal-media-placeholder" style="display:none">📷 Imagen 1 del case study<span>Recomendado: 1600×1000px</span></div>
-      </div>
+      <div class="case-sections">
 
-      <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.korean.l2">HEURISTIC AUDIT</div>
-        <p data-i18n="m.korean.p3">
-          I ran a heuristic evaluation to identify usability issues, assess severity, and prioritize fixes based on impact and ease of implementation.
-          Key findings clustered into a few recurring themes:
-        </p>
-        <ol class="list-number" data-i18n="m.korean.ol1">
-          <li><b>Unclear primary CTA:</b> “Continue” doesn’t communicate the next step clearly.</li>
-          <li><b>Low visual hierarchy:</b> many blocks compete; everything feels equally important.</li>
-          <li><b>Inconsistent language and copy:</b> mixed languages reduce cohesion and trust.</li>
-          <li><b>Information without context:</b> e.g., miles appear without explanation or guidance.</li>
-          <li><b>Help not embedded:</b> lack of microcopy/tooltips for complex actions.</li>
-        </ol>
-      </div>
-      <div class="modal-media">
-        <!-- ✏️ CAMBIAR SRC: Segunda imagen del case study -->
-        <img src="img/heuristics-koreanair.jpg" alt="Korean Air imagen 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="modal-media-placeholder" style="display:none">📷 Imagen 2 del case study<span>Recomendado: 1600×1000px</span></div>
-      </div>
+        <!-- 1. OVERVIEW -->
+        <section class="case-block case-block--full">
+          <div class="case-block-text">
+            <div class="modal-section">
+              <div class="modal-section-label" data-i18n="m.korean.c.l.overview">OVERVIEW</div>
+              <p data-i18n="m.korean.c.overview1">Korean Air is one of the airlines I use regularly. Over time, I noticed that the app consistently failed me at critical moments: I couldn't find my reservation quickly, CTAs were confusing, and the interface felt cluttered with competing elements.</p>
+              <p data-i18n="m.korean.c.overview2">When the Ironhack bootcamp brief asked us to choose an existing app and perform a heuristic evaluation + UI redesign in 3 days, I saw the opportunity to <b>turn real user frustration into a structured design exercise</b>.</p>
+            </div>
+            <div class="cs-role-card">
+              <div class="cs-role-label" data-i18n="m.korean.c.role.label">My Role</div>
+              <div class="cs-role-grid">
+                <div class="cs-role-item"><span class="cs-role-icon">🔍</span><div><strong data-i18n="m.korean.c.role.t1">Heuristic evaluation</strong><span data-i18n="m.korean.c.role.d1">Full audit using Nielsen's 10 heuristics, severity + ease of fix scoring</span></div></div>
+                <div class="cs-role-item"><span class="cs-role-icon">🧩</span><div><strong data-i18n="m.korean.c.role.t2">Redesign strategy</strong><span data-i18n="m.korean.c.role.d2">Task-first hierarchy, CTA clarity, information grouping</span></div></div>
+                <div class="cs-role-item"><span class="cs-role-icon">🎨</span><div><strong data-i18n="m.korean.c.role.t3">UI design</strong><span data-i18n="m.korean.c.role.d3">Hi-fi screens: Home, My Trips, Add reservation, More menu</span></div></div>
+                <div class="cs-role-item"><span class="cs-role-icon">📐</span><div><strong data-i18n="m.korean.c.role.t4">Visual system</strong><span data-i18n="m.korean.c.role.d4">Typography, spacing scale (8/16/24/32px), color palette, iconography</span></div></div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-      <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.korean.l3">REDESIGN STRATEGY</div>
-        <p data-i18n="m.korean.p4">
-          Instead of redesigning screens “by taste”, I reframed the UI around task priority and decision clarity.
-          The strategy focused on three pillars:
-        </p>
-        <ol class="list-number" data-i18n="m.korean.ol2">
-          <li><b>Task-first hierarchy</b> → design the home around what users need to do (not what the brand wants to show).</li>
-          <li><b>Clarity of actions</b> → explicit CTAs and predictable next steps, with supportive microcopy.</li>
-          <li><b>System consistency</b> → reusable typography, spacing and components to scale without drift.</li>
-        </ol>
-      </div>
+        <!-- 2. THE CHALLENGE -->
+        <section class="case-block case-block--full">
+          <div class="case-block-text">
+            <div class="modal-section">
+              <div class="modal-section-label" data-i18n="m.korean.c.l.challenge">THE CHALLENGE</div>
+              <p data-i18n="m.korean.c.challenge1">Airline apps are high-stakes, high-cognitive-load environments. Users need to find critical information fast, complete complex tasks under time pressure, and feel confident about irreversible decisions like payments and bookings.</p>
+              <p data-i18n="m.korean.c.challenge2">The Korean Air app failed on these fronts. As a user, I experienced this firsthand — and the heuristic audit confirmed it systematically.</p>
+            </div>
 
-      <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.korean.l4">KEY DESIGN MOVES</div>
-        <p data-i18n="m.korean.p5">
-          Here are the most impactful design decisions mapped to the problems found:
-        </p>
-        <ol class="list-number" data-i18n="m.korean.ol3">
-          <li><b>Explicit logged-in state:</b> added a clear welcome header to confirm status and personalize the experience.</li>
-          <li><b>Primary CTA clarity:</b> separated “Continue search” and “New search” to restore user control.</li>
-          <li><b>Information hierarchy:</b> reduced competing blocks; grouped content into clear categories.</li>
-          <li><b>Progress + feedback:</b> introduced clearer flow steps for “Add reservation” and reduced form ambiguity.</li>
-          <li><b>Contextual help:</b> added short descriptions where users typically hesitate (documents, baggage, alerts).</li>
-        </ol>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.korean.l5">VISUAL SYSTEM</div>
-        <p data-i18n="m.korean.p6">
-          To prevent inconsistencies and make the redesign scalable, I created lightweight UI guidelines:
-          spacing scale, typography hierarchy, iconography and a refined blue palette aligned with the brand.
-        </p>
-        <ol class="list-number" data-i18n="m.korean.ol4">
-          <li><b>Typography:</b> consistent hierarchy for headings/body to improve scanability.</li>
-          <li><b>Spacing:</b> 8/16/24/32px rhythm for predictable layouts.</li>
-          <li><b>Icons:</b> unified stroke and style for navigation and actions.</li>
-          <li><b>Color:</b> structured blues for states, emphasis, and readability.</li>
-        </ol>
-      </div>
-       <div class="modal-media">
-        <!-- ✏️ CAMBIAR SRC: GIF animado del prototipo o interacción -->
-        <img src="img/koreanair-prototype.gif" alt="Korean Air gif" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="modal-media-placeholder" style="display:none">🎬 GIF del prototipo / interacción<span>Formato: .gif · Recomendado: 1600×1000px</span></div>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-label" data-i18n="m.korean.l6">OUTCOME & NEXT STEPS</div>
-        <p data-i18n="m.korean.p7">
-          This redesign focuses on clarity and trust: fewer competing elements, more explicit actions, and a scalable system.
-          If I continued the project, I would validate improvements with usability testing and measurable product metrics:
-          task completion rate (Add reservation), time on task, and drop-offs on key flows.
-        </p>
-        <p data-i18n="m.korean.p9">
-          <b>Key learning:</b> In complex products (travel, banking, fintech), UX issues are often structural — hierarchy, system feedback and clarity
-          matter as much as visual polish.
-        </p>
-      </div>
+            <div class="cs-stats-row">
+              <div class="cs-stat-card cs-stat--alert"><span class="cs-stat-number" data-count="14">0</span><span class="cs-stat-desc" data-i18n="m.korean.c.stat1">usability issues identified across 7 of Nielsen's 10 heuristics</span></div>
+              <div class="cs-stat-card cs-stat--warn"><span class="cs-stat-number" data-count="5">0</span><span class="cs-stat-desc" data-i18n="m.korean.c.stat2">screens analyzed in the existing app</span></div>
+              <div class="cs-stat-card cs-stat--info"><span class="cs-stat-number" data-count="4">0</span><span class="cs-stat-desc" data-i18n="m.korean.c.stat3">screens fully redesigned in hi-fi</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. ORIGINAL APP -->
+        <section class="case-block">
+          <div class="case-block-text">
+            <div class="modal-section">
+              <div class="modal-section-label" data-i18n="m.korean.c.l.original">THE ORIGINAL APP</div>
+              <p data-i18n="m.korean.c.original1">Before redesigning anything, I documented the current state. The original home screen shows the core issues at a glance: the user's name appears next to a QR code without greeting, a large hero card pushes a previous search with a single ambiguous "Continue" button, and the bottom navigation uses mixed languages ("My" instead of a clear label).</p>
+            </div>
+          </div>
+          <div class="modal-media"><img src="img/korean-original.jpg" alt="Korean Air original app" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="modal-media-placeholder" style="display:none">📷 Original app screenshot<span>Recommended: 1600×1000px</span></div></div>
+        </section>
+
+        <!-- 4. HEURISTIC AUDIT -->
+        <section class="case-block case-block--full">
+          <div class="case-block-text">
+            <div class="modal-section">
+              <div class="modal-section-label" data-i18n="m.korean.c.l.audit">HEURISTIC AUDIT</div>
+              <p data-i18n="m.korean.c.audit.intro">I applied Nielsen's 10 usability heuristics to evaluate the app systematically, scoring each issue by severity and ease of fix. The audit revealed 14 real problems across 7 heuristics:</p>
+            </div>
+
+            <div class="cs-insight-grid">
+              <div class="cs-insight-card"><div class="cs-insight-header"><span class="cs-insight-num">H1</span><span class="cs-insight-title" data-i18n="m.korean.c.h1.t">Visibility of system status</span></div><div class="cs-insight-stats"><div class="cs-mini-stat" data-i18n="m.korean.c.h1.s1">CTA "Continue" doesn't communicate the next step</div><div class="cs-mini-stat" data-i18n="m.korean.c.h1.s2">Login state is implied but never confirmed</div></div><div class="cs-insight-takeaway"><span class="cs-insight-arrow">→</span><span data-i18n="m.korean.c.h1.take"> User doesn't know where they are or where they're going.</span></div></div>
+
+              <div class="cs-insight-card"><div class="cs-insight-header"><span class="cs-insight-num">H2–3</span><span class="cs-insight-title" data-i18n="m.korean.c.h23.t">Match & user control</span></div><div class="cs-insight-stats"><div class="cs-mini-stat" data-i18n="m.korean.c.h23.s1">Mixed languages break the user's flow</div><div class="cs-mini-stat" data-i18n="m.korean.c.h23.s2">System forces continuing a previous search — no alternative</div></div><div class="cs-insight-takeaway"><span class="cs-insight-arrow">→</span><span data-i18n="m.korean.c.h23.take"> The app decides for the user instead of offering choices.</span></div></div>
+
+              <div class="cs-insight-card"><div class="cs-insight-header"><span class="cs-insight-num">H4</span><span class="cs-insight-title" data-i18n="m.korean.c.h4.t">Consistency & standards</span></div><div class="cs-insight-stats"><div class="cs-mini-stat" data-i18n="m.korean.c.h4.s1">Inconsistent typography — same font, different spacing</div><div class="cs-mini-stat" data-i18n="m.korean.c.h4.s2">Poor visual hierarchy between content blocks</div><div class="cs-mini-stat" data-i18n="m.korean.c.h4.s3">No help, tooltips, or contextual microcopy</div></div><div class="cs-insight-takeaway"><span class="cs-insight-arrow">→</span><span data-i18n="m.korean.c.h4.take"> No design system — every screen feels like a different app.</span></div></div>
+
+              <div class="cs-insight-card"><div class="cs-insight-header"><span class="cs-insight-num">H6–8</span><span class="cs-insight-title" data-i18n="m.korean.c.h68.t">Recognition, flexibility & minimalism</span></div><div class="cs-insight-stats"><div class="cs-mini-stat" data-i18n="m.korean.c.h68.s1">Trip recalled without date or passengers</div><div class="cs-mini-stat" data-i18n="m.korean.c.h68.s2">Miles appear without explanation (what are they for? do they expire?)</div><div class="cs-mini-stat" data-i18n="m.korean.c.h68.s3">Too many blocks compete — QR is prominent but rarely the main action</div></div><div class="cs-insight-takeaway"><span class="cs-insight-arrow">→</span><span data-i18n="m.korean.c.h68.take"> Information without context creates confusion, not clarity.</span></div></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. REDESIGN STRATEGY -->
+        <section class="case-block case-block--full">
+          <div class="case-block-text">
+            <div class="modal-section">
+              <div class="modal-section-label" data-i18n="m.korean.c.l.strategy">REDESIGN STRATEGY</div>
+              <p data-i18n="m.korean.c.strategy.intro">Instead of redesigning screens "by taste", I reframed the UI around <b>task priority and decision clarity</b>. The strategy was built on three pillars:</p>
+            </div>
+
+            <div class="cs-pillar-grid" style="grid-template-columns:repeat(3,1fr)">
+              <div class="cs-pillar-card"><span class="cs-pillar-icon">🎯</span><strong data-i18n="m.korean.c.pillar1.t">Task-first hierarchy</strong><p data-i18n="m.korean.c.pillar1.d">Design the home around what users need to do — not what the brand wants to show.</p></div>
+              <div class="cs-pillar-card"><span class="cs-pillar-icon">✅</span><strong data-i18n="m.korean.c.pillar2.t">Clarity of actions</strong><p data-i18n="m.korean.c.pillar2.d">Explicit CTAs, predictable next steps, and supportive microcopy.</p></div>
+              <div class="cs-pillar-card"><span class="cs-pillar-icon">📐</span><strong data-i18n="m.korean.c.pillar3.t">System consistency</strong><p data-i18n="m.korean.c.pillar3.d">Reusable typography, spacing, and components that scale without drift.</p></div>
+            </div>
+
+            <div class="cs-reframe-banner"><span class="cs-reframe-emoji">💡</span><div><strong data-i18n="m.korean.c.reframe.t">The guiding principle</strong><p data-i18n="m.korean.c.reframe.p">In high-stakes apps, every unclear element erodes trust. Clarity is not a visual preference — it's a functional requirement.</p></div></div>
+          </div>
+        </section>
+
+        <!-- 6. KEY DESIGN DECISIONS -->
+        <section class="case-block case-block--full">
+          <div class="case-block-text">
+            <div class="modal-section"><div class="modal-section-label" data-i18n="m.korean.c.l.decisions">KEY DESIGN DECISIONS</div><p data-i18n="m.korean.c.decisions.intro">Each redesign decision was mapped to a specific problem found in the audit:</p></div>
+            <div class="cs-decision-grid">
+              <div class="cs-decision-card"><div class="cs-decision-insight" data-i18n="m.korean.c.dec1.insight">Problem: Login state is implied but never confirmed</div><div class="cs-decision-action"><strong data-i18n="m.korean.c.dec1.t">Explicit welcome header</strong><p data-i18n="m.korean.c.dec1.d">"¡Bienvenida, Sandra!" — a clear greeting confirms the user is logged in and personalizes the experience immediately.</p></div></div>
+              <div class="cs-decision-card"><div class="cs-decision-insight" data-i18n="m.korean.c.dec2.insight">Problem: Only one CTA — "Continue" — no choice</div><div class="cs-decision-action"><strong data-i18n="m.korean.c.dec2.t">Dual CTA: Continue search + New search</strong><p data-i18n="m.korean.c.dec2.d">Restoring user control. The previous search now shows full context (dates, route) plus the option to start fresh.</p></div></div>
+              <div class="cs-decision-card"><div class="cs-decision-insight" data-i18n="m.korean.c.dec3.insight">Problem: Trip recalled without essential information</div><div class="cs-decision-action"><strong data-i18n="m.korean.c.dec3.t">Rich trip cards with dates and countdown</strong><p data-i18n="m.korean.c.dec3.d">My Trips shows destination photos, exact dates, and D-countdown badges — all the context users need at a glance.</p></div></div>
+              <div class="cs-decision-card"><div class="cs-decision-insight" data-i18n="m.korean.c.dec4.insight">Problem: No help or contextual guidance anywhere</div><div class="cs-decision-action"><strong data-i18n="m.korean.c.dec4.t">Microcopy and descriptions on every action</strong><p data-i18n="m.korean.c.dec4.d">"Planifica tu próximo viaje" menu with descriptive subtitles: what each option does, in plain language.</p></div></div>
+              <div class="cs-decision-card"><div class="cs-decision-insight" data-i18n="m.korean.c.dec5.insight">Problem: Many blocks compete, no clear hierarchy</div><div class="cs-decision-action"><strong data-i18n="m.korean.c.dec5.t">Grouped content with visual hierarchy</strong><p data-i18n="m.korean.c.dec5.d">Reduced competing elements. News section pushed below the fold. Primary actions (search, trips) elevated.</p></div></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. REDESIGNED SCREENS -->
+        <section class="case-block case-block--full">
+          <div class="case-block-text"><div class="modal-section"><div class="modal-section-label" data-i18n="m.korean.c.l.screens">THE REDESIGN</div><p data-i18n="m.korean.c.screens.intro">Four key screens redesigned in hi-fi, each solving specific problems from the audit:</p></div></div>
+        </section>
+
+        <section class="case-block">
+          <div class="case-block-text">
+            <div class="modal-section"><div class="modal-section-label" data-i18n="m.korean.c.l.home">HOME</div><p data-i18n="m.korean.c.home.p">Personalized welcome, search with full context (route + dates), dual CTA, mascot with clear purpose ("¡Pregúntame!"), and news deprioritized below the fold.</p></div>
+          </div>
+          <div class="modal-media"><img src="img/korean-home.jpg" alt="Korean Air redesigned home" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="modal-media-placeholder" style="display:none">📷 Home redesign<span>Figma screen</span></div></div>
+        </section>
+
+        <section class="case-block">
+          <div class="case-block-text">
+            <div class="modal-section"><div class="modal-section-label" data-i18n="m.korean.c.l.trips">MY TRIPS</div><p data-i18n="m.korean.c.trips.p">Visual trip cards with destination imagery, exact dates, and D-countdown badges. Clear "add trip" button and help text for users who don't see their flights.</p></div>
+          </div>
+          <div class="modal-media"><img src="img/korean-trips.jpg" alt="Korean Air My Trips" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="modal-media-placeholder" style="display:none">📷 My Trips redesign<span>Figma screen</span></div></div>
+        </section>
+
+        <section class="case-block">
+          <div class="case-block-text">
+            <div class="modal-section"><div class="modal-section-label" data-i18n="m.korean.c.l.addtrip">ADD RESERVATION</div><p data-i18n="m.korean.c.addtrip.p">Simplified form flow: barcode scanner as primary action, reference input with placeholder examples, and date picker — clear steps, reduced ambiguity.</p></div>
+          </div>
+          <div class="modal-media"><img src="img/korean-add.jpg" alt="Korean Air add reservation" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="modal-media-placeholder" style="display:none">📷 Add reservation flow<span>Figma screen</span></div></div>
+        </section>
+
+        <section class="case-block">
+          <div class="case-block-text">
+            <div class="modal-section"><div class="modal-section-label" data-i18n="m.korean.c.l.more">MORE MENU</div><p data-i18n="m.korean.c.more.p">Reorganized as "Planifica tu próximo viaje" with two primary quick actions (Contact support, Earn miles) and categorized options with descriptive microcopy — helping users understand what each action does before tapping.</p></div>
+          </div>
+          <div class="modal-media"><img src="img/korean-more.jpg" alt="Korean Air more menu" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="modal-media-placeholder" style="display:none">📷 More menu redesign<span>Figma screen</span></div></div>
+        </section>
+
+        <!-- 8. VISUAL SYSTEM -->
+        <section class="case-block case-block--full">
+          <div class="case-block-text">
+            <div class="modal-section"><div class="modal-section-label" data-i18n="m.korean.c.l.system">VISUAL SYSTEM</div><p data-i18n="m.korean.c.system.intro">To prevent inconsistencies and make the redesign scalable, I created lightweight UI guidelines aligned with the Korean Air brand:</p></div>
+
+            <div class="cs-pillar-grid">
+              <div class="cs-pillar-card"><span class="cs-pillar-icon">🔤</span><strong data-i18n="m.korean.c.sys1.t">Typography</strong><p data-i18n="m.korean.c.sys1.d">Poppins. Consistent hierarchy for headings and body to improve scanability.</p></div>
+              <div class="cs-pillar-card"><span class="cs-pillar-icon">📏</span><strong data-i18n="m.korean.c.sys2.t">Spacing</strong><p data-i18n="m.korean.c.sys2.d">8 / 16 / 24 / 32px rhythm for predictable, breathable layouts.</p></div>
+              <div class="cs-pillar-card"><span class="cs-pillar-icon">✏️</span><strong data-i18n="m.korean.c.sys3.t">Icons</strong><p data-i18n="m.korean.c.sys3.d">Unified stroke weight and style for navigation and actions.</p></div>
+              <div class="cs-pillar-card"><span class="cs-pillar-icon">🎨</span><strong data-i18n="m.korean.c.sys4.t">Color</strong><p data-i18n="m.korean.c.sys4.d">Structured blues for states, emphasis, and readability. Navy, sky, and ice.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- GUIDELINES IMAGE -->
+        <section class="case-block">
+          <div class="case-block-text">
+            <div class="modal-section"><div class="modal-section-label" data-i18n="m.korean.c.l.nav">NAVIGATION</div><p data-i18n="m.korean.c.nav.p">Redesigned navigation bar with 5 clear tabs (Home, My Trips, Book, Profile, Flights), replacing the original mixed-language labels. Unified iconography and active state indicators across all screens.</p></div>
+          </div>
+          <div class="modal-media"><img src="img/korean-nav.jpg" alt="Korean Air navigation system" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="modal-media-placeholder" style="display:none">📷 Navigation bar + states<span>Component sheet</span></div></div>
+        </section>
+
+        <!-- 9. LEARNINGS -->
+        <section class="case-block case-block--full">
+          <div class="case-block-text">
+            <div class="modal-section"><div class="modal-section-label" data-i18n="m.korean.c.l.learnings">KEY LEARNINGS</div></div>
+            <div class="cs-learnings-grid">
+              <div class="cs-learning-card"><span class="cs-learning-icon">🏗️</span><strong data-i18n="m.korean.c.learn1.t">UX issues are often structural</strong><p data-i18n="m.korean.c.learn1.d">In complex products (travel, banking, fintech), hierarchy and system feedback matter as much as visual polish.</p></div>
+              <div class="cs-learning-card"><span class="cs-learning-icon">🔍</span><strong data-i18n="m.korean.c.learn2.t">Heuristics give you leverage</strong><p data-i18n="m.korean.c.learn2.d">A structured audit turns subjective "this feels wrong" into actionable, prioritized recommendations.</p></div>
+              <div class="cs-learning-card"><span class="cs-learning-icon">✍️</span><strong data-i18n="m.korean.c.learn3.t">Microcopy is UX</strong><p data-i18n="m.korean.c.learn3.d">A one-line description under each menu option reduced ambiguity more than any layout change could.</p></div>
+            </div>
+            <div class="modal-section"><div class="modal-section-label" data-i18n="m.korean.c.l.next">NEXT STEPS</div><p data-i18n="m.korean.c.next.p">If I continued: <b>usability testing</b> to validate hierarchy improvements, measuring <b>task completion rate</b> for "Add reservation" flow, <b>time on task</b> comparisons before/after, and testing the <b>microcopy effectiveness</b> on the "More" menu.</p></div>
+          </div>
+        </section>
       </div>
     </div>
   </div>
 </main>
-
 <footer class="footer">
   <div class="footer-logo">vanesa<span class="blue">frz</span></div>
   <div class="footer-note" data-i18n="footer.note">Built with 🤍 vanesafrz · 2026</div>
   <div class="footer-socials">
-    <a href="mailto:vanesafrz.ux@gmail.com" aria-label="Email">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M22 7l-10 7L2 7" stroke="currentColor" stroke-width="2"/></svg>
-    </a>
-    <a href="https://linkedin.com/in/vanesafrz" target="_blank" aria-label="LinkedIn">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z" stroke="currentColor" stroke-width="2"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/></svg>
-    </a>
+    <a href="mailto:vanesafrz.ux@gmail.com" aria-label="Email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M22 7l-10 7L2 7" stroke="currentColor" stroke-width="2"/></svg></a>
+    <a href="https://linkedin.com/in/vanesafrz" target="_blank" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z" stroke="currentColor" stroke-width="2"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/></svg></a>
   </div>
 </footer>
-
 <script src="script.js"></script>
 </body>
 </html>
