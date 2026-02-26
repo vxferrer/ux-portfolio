@@ -66,8 +66,8 @@ const T = {
   'projects.video.empty':{ en: 'Video projects coming soon.', es: 'Proyectos de vídeo próximamente.' },
 
   // ─── VIDEO CARDS ───
-'card.video1.name': { en: 'Demo Video — Social Ad', es: 'Demo Video — Anuncio para redes' },
-'card.video1.meta': { en: 'Ads · Instagram/TikTok · Editing', es: 'Ads · Instagram/TikTok · Edición' },
+'card.video1.name': { en: 'Paula Rebollar · Mentor for Copywriters', es: 'Paula Rebollar · Mentora de copywriters' },
+'card.video1.meta': { en: 'Instagram · Editing', es: 'Instagram · Edición' },
 
 'card.video2.name': { en: 'Corporate Video — Demo', es: 'Vídeo corporativo — Demo' },
 'card.video2.meta': { en: 'Corporate · YouTube/Vimeo · Direction', es: 'Corporativo · YouTube/Vimeo · Dirección' },
