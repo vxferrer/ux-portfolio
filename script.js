@@ -207,6 +207,131 @@ const T = {
   // ─── LUMIX OL ───
   'm.lumix.ol1': { en: '<li>One active savings goal to reduce decision fatigue.</li><li>Clear progress visualization with predictive guidance.</li><li>Reduced visual noise and structured hierarchy.</li>', es: '<li>Un único objetivo de ahorro activo para reducir fatiga de decisión.</li><li>Visualización clara del progreso con orientación predictiva.</li><li>Reducción de ruido visual y jerarquía estructurada.</li>' },
 
+  // ─── KOREAN AIR CASE STUDY PAGE (korean.html) ───
+
+  'm.korean.c.name': { en: 'Korean Air — Redesigning clarity and trust in a high-cognitive-load app', es: 'Korean Air — Rediseñando claridad y confianza en una app de alta carga cognitiva' },
+  'm.korean.c.sub': { en: 'As a real user of Korean Air, I noticed that every time I opened the app, I struggled to find what I needed. This project started from genuine frustration — and became a structured exercise in heuristic evaluation, task-first hierarchy, and scalable UI systems.', es: 'Como usuaria real de Korean Air, noté que cada vez que abría la app me costaba encontrar lo que necesitaba. Este proyecto nació de una frustración real — y se convirtió en un ejercicio estructurado de evaluación heurística, jerarquía task-first y sistemas UI escalables.' },
+
+  // Section labels
+  'm.korean.c.l.overview':   { en: 'OVERVIEW',              es: 'CONTEXTO' },
+  'm.korean.c.l.challenge':  { en: 'THE CHALLENGE',         es: 'EL RETO' },
+  'm.korean.c.l.original':   { en: 'THE ORIGINAL APP',      es: 'LA APP ORIGINAL' },
+  'm.korean.c.l.audit':      { en: 'HEURISTIC AUDIT',       es: 'AUDITORÍA HEURÍSTICA' },
+  'm.korean.c.l.strategy':   { en: 'REDESIGN STRATEGY',     es: 'ESTRATEGIA DE REDISEÑO' },
+  'm.korean.c.l.decisions':  { en: 'KEY DESIGN DECISIONS',  es: 'DECISIONES CLAVE DE DISEÑO' },
+  'm.korean.c.l.screens':    { en: 'THE REDESIGN',          es: 'EL REDISEÑO' },
+  'm.korean.c.l.home':       { en: 'HOME',                  es: 'INICIO' },
+  'm.korean.c.l.trips':      { en: 'MY TRIPS',              es: 'MIS VIAJES' },
+  'm.korean.c.l.addtrip':    { en: 'ADD RESERVATION',       es: 'AÑADIR RESERVA' },
+  'm.korean.c.l.more':       { en: 'MORE MENU',             es: 'MENÚ MÁS' },
+  'm.korean.c.l.system':     { en: 'VISUAL SYSTEM',         es: 'SISTEMA VISUAL' },
+  'm.korean.c.l.nav':        { en: 'NAVIGATION',            es: 'NAVEGACIÓN' },
+  'm.korean.c.l.learnings':  { en: 'KEY LEARNINGS',         es: 'APRENDIZAJES CLAVE' },
+  'm.korean.c.l.next':       { en: 'NEXT STEPS',            es: 'PRÓXIMOS PASOS' },
+
+  // Overview
+  'm.korean.c.overview1': { en: 'Korean Air is one of the airlines I use regularly. Over time, I noticed that the app consistently failed me at critical moments: I couldn\'t find my reservation quickly, CTAs were confusing, and the interface felt cluttered with competing elements.', es: 'Korean Air es una de las aerolíneas que uso regularmente. Con el tiempo, noté que la app me fallaba consistentemente en momentos críticos: no encontraba mi reserva rápido, los CTAs eran confusos y la interfaz se sentía saturada con elementos compitiendo entre sí.' },
+  'm.korean.c.overview2': { en: 'When the Ironhack bootcamp brief asked us to choose an existing app and perform a heuristic evaluation + UI redesign in 3 days, I saw the opportunity to <b>turn real user frustration into a structured design exercise</b>.', es: 'Cuando el brief del bootcamp de Ironhack nos pidió elegir una app existente y hacer una evaluación heurística + rediseño UI en 3 días, vi la oportunidad de <b>convertir una frustración real de usuario en un ejercicio de diseño estructurado</b>.' },
+
+  // Role
+  'm.korean.c.role.label': { en: 'My Role', es: 'Mi Rol' },
+  'm.korean.c.role.t1': { en: 'Heuristic evaluation', es: 'Evaluación heurística' },
+  'm.korean.c.role.d1': { en: 'Full audit using Nielsen\'s 10 heuristics, severity + ease of fix scoring', es: 'Auditoría completa con las 10 heurísticas de Nielsen, puntuación de severidad + facilidad de corrección' },
+  'm.korean.c.role.t2': { en: 'Redesign strategy', es: 'Estrategia de rediseño' },
+  'm.korean.c.role.d2': { en: 'Task-first hierarchy, CTA clarity, information grouping', es: 'Jerarquía task-first, claridad de CTAs, agrupación de información' },
+  'm.korean.c.role.t3': { en: 'UI design', es: 'Diseño UI' },
+  'm.korean.c.role.d3': { en: 'Hi-fi screens: Home, My Trips, Add reservation, More menu', es: 'Pantallas hi-fi: Inicio, Mis viajes, Añadir reserva, Menú Más' },
+  'm.korean.c.role.t4': { en: 'Visual system', es: 'Sistema visual' },
+  'm.korean.c.role.d4': { en: 'Typography, spacing scale (8/16/24/32px), color palette, iconography', es: 'Tipografía, escala de espaciado (8/16/24/32px), paleta de color, iconografía' },
+
+  // Challenge
+  'm.korean.c.challenge1': { en: 'Airline apps are high-stakes, high-cognitive-load environments. Users need to find critical information fast, complete complex tasks under time pressure, and feel confident about irreversible decisions like payments and bookings.', es: 'Las apps de aerolíneas son entornos de alta complejidad cognitiva. Los usuarios necesitan encontrar información crítica rápido, completar tareas complejas bajo presión temporal y sentir confianza en decisiones irreversibles como pagos y reservas.' },
+  'm.korean.c.challenge2': { en: 'The Korean Air app failed on these fronts. As a user, I experienced this firsthand — and the heuristic audit confirmed it systematically.', es: 'La app de Korean Air fallaba en estos frentes. Como usuaria, lo experimenté de primera mano — y la auditoría heurística lo confirmó sistemáticamente.' },
+  'm.korean.c.stat1': { en: 'usability issues identified across 7 of Nielsen\'s 10 heuristics', es: 'problemas de usabilidad en 7 de las 10 heurísticas de Nielsen' },
+  'm.korean.c.stat2': { en: 'screens analyzed in the existing app', es: 'pantallas analizadas en la app existente' },
+  'm.korean.c.stat3': { en: 'screens fully redesigned in hi-fi', es: 'pantallas rediseñadas completamente en hi-fi' },
+
+  // Original app
+  'm.korean.c.original1': { en: 'Before redesigning anything, I documented the current state. The original home screen shows the core issues at a glance: the user\'s name appears next to a QR code without greeting, a large hero card pushes a previous search with a single ambiguous "Continue" button, and the bottom navigation uses mixed languages ("My" instead of a clear label).', es: 'Antes de rediseñar nada, documenté el estado actual. El home original muestra los problemas centrales de un vistazo: el nombre del usuario aparece junto a un QR sin saludo, una tarjeta hero empuja una búsqueda previa con un único botón ambiguo de "Continue", y la navegación inferior mezcla idiomas ("My" en vez de una etiqueta clara).' },
+
+  // Heuristic audit
+  'm.korean.c.audit.intro': { en: 'I applied Nielsen\'s 10 usability heuristics to evaluate the app systematically, scoring each issue by severity and ease of fix. The audit revealed 14 real problems across 7 heuristics:', es: 'Apliqué las 10 heurísticas de usabilidad de Nielsen para evaluar la app sistemáticamente, puntuando cada problema por severidad y facilidad de corrección. La auditoría reveló 14 problemas reales en 7 heurísticas:' },
+  'm.korean.c.h1.t': { en: 'Visibility of system status', es: 'Visibilidad del estado del sistema' },
+  'm.korean.c.h1.s1': { en: 'CTA "Continue" doesn\'t communicate the next step', es: 'El CTA "Continue" no comunica el siguiente paso' },
+  'm.korean.c.h1.s2': { en: 'Login state is implied but never confirmed', es: 'El estado de login se intuye pero nunca se confirma' },
+  'm.korean.c.h1.take': { en: ' User doesn\'t know where they are or where they\'re going.', es: ' El usuario no sabe dónde está ni a dónde va.' },
+  'm.korean.c.h23.t': { en: 'Match & user control', es: 'Correspondencia y control del usuario' },
+  'm.korean.c.h23.s1': { en: 'Mixed languages break the user\'s flow', es: 'La mezcla de idiomas rompe el flujo del usuario' },
+  'm.korean.c.h23.s2': { en: 'System forces continuing a previous search — no alternative', es: 'El sistema fuerza a continuar una búsqueda previa — sin alternativa' },
+  'm.korean.c.h23.take': { en: ' The app decides for the user instead of offering choices.', es: ' La app decide por el usuario en vez de ofrecer opciones.' },
+  'm.korean.c.h4.t': { en: 'Consistency & standards', es: 'Consistencia y estándares' },
+  'm.korean.c.h4.s1': { en: 'Inconsistent typography — same font, different spacing', es: 'Tipografía inconsistente — misma fuente, distinto espaciado' },
+  'm.korean.c.h4.s2': { en: 'Poor visual hierarchy between content blocks', es: 'Jerarquía visual pobre entre bloques de contenido' },
+  'm.korean.c.h4.s3': { en: 'No help, tooltips, or contextual microcopy', es: 'Sin ayuda, tooltips ni microcopy contextual' },
+  'm.korean.c.h4.take': { en: ' No design system — every screen feels like a different app.', es: ' Sin sistema de diseño — cada pantalla parece una app distinta.' },
+  'm.korean.c.h68.t': { en: 'Recognition, flexibility & minimalism', es: 'Reconocimiento, flexibilidad y minimalismo' },
+  'm.korean.c.h68.s1': { en: 'Trip recalled without date or passengers', es: 'Viaje recordado sin fecha ni pasajeros' },
+  'm.korean.c.h68.s2': { en: 'Miles appear without explanation (what are they for? do they expire?)', es: 'Las millas aparecen sin explicación (¿para qué sirven? ¿caducan?)' },
+  'm.korean.c.h68.s3': { en: 'Too many blocks compete — QR is prominent but rarely the main action', es: 'Demasiados bloques compiten — el QR destaca pero raramente es la acción principal' },
+  'm.korean.c.h68.take': { en: ' Information without context creates confusion, not clarity.', es: ' Información sin contexto crea confusión, no claridad.' },
+
+  // Strategy
+  'm.korean.c.strategy.intro': { en: 'Instead of redesigning screens "by taste", I reframed the UI around <b>task priority and decision clarity</b>. The strategy was built on three pillars:', es: 'En lugar de rediseñar pantallas "por gusto", replanteé la UI en torno a <b>prioridad de tareas y claridad de decisiones</b>. La estrategia se construyó sobre tres pilares:' },
+  'm.korean.c.pillar1.t': { en: 'Task-first hierarchy', es: 'Jerarquía task-first' },
+  'm.korean.c.pillar1.d': { en: 'Design the home around what users need to do — not what the brand wants to show.', es: 'Diseñar el home en torno a lo que el usuario necesita hacer — no lo que la marca quiere mostrar.' },
+  'm.korean.c.pillar2.t': { en: 'Clarity of actions', es: 'Claridad de acciones' },
+  'm.korean.c.pillar2.d': { en: 'Explicit CTAs, predictable next steps, and supportive microcopy.', es: 'CTAs explícitos, siguientes pasos predecibles y microcopy de apoyo.' },
+  'm.korean.c.pillar3.t': { en: 'System consistency', es: 'Consistencia del sistema' },
+  'm.korean.c.pillar3.d': { en: 'Reusable typography, spacing, and components that scale without drift.', es: 'Tipografía, espaciado y componentes reutilizables que escalan sin deriva.' },
+  'm.korean.c.reframe.t': { en: 'The guiding principle', es: 'El principio guía' },
+  'm.korean.c.reframe.p': { en: 'In high-stakes apps, every unclear element erodes trust. Clarity is not a visual preference — it\'s a functional requirement.', es: 'En apps de alta complejidad, cada elemento poco claro erosiona la confianza. La claridad no es una preferencia visual — es un requisito funcional.' },
+
+  // Design decisions
+  'm.korean.c.decisions.intro': { en: 'Each redesign decision was mapped to a specific problem found in the audit:', es: 'Cada decisión de rediseño se mapeó a un problema específico encontrado en la auditoría:' },
+  'm.korean.c.dec1.insight': { en: 'Problem: Login state is implied but never confirmed', es: 'Problema: el estado de login se intuye pero nunca se confirma' },
+  'm.korean.c.dec1.t': { en: 'Explicit welcome header', es: 'Header de bienvenida explícito' },
+  'm.korean.c.dec1.d': { en: '"¡Bienvenida, Sandra!" — a clear greeting confirms the user is logged in and personalizes the experience immediately.', es: '"¡Bienvenida, Sandra!" — un saludo claro confirma que el usuario está logueado y personaliza la experiencia de inmediato.' },
+  'm.korean.c.dec2.insight': { en: 'Problem: Only one CTA — "Continue" — no choice', es: 'Problema: un solo CTA — "Continue" — sin opción' },
+  'm.korean.c.dec2.t': { en: 'Dual CTA: Continue search + New search', es: 'Doble CTA: Continuar búsqueda + Nueva búsqueda' },
+  'm.korean.c.dec2.d': { en: 'Restoring user control. The previous search now shows full context (dates, route) plus the option to start fresh.', es: 'Devolviendo el control al usuario. La búsqueda previa ahora muestra contexto completo (fechas, ruta) más la opción de empezar de nuevo.' },
+  'm.korean.c.dec3.insight': { en: 'Problem: Trip recalled without essential information', es: 'Problema: viaje recordado sin información esencial' },
+  'm.korean.c.dec3.t': { en: 'Rich trip cards with dates and countdown', es: 'Tarjetas de viaje con fechas y cuenta atrás' },
+  'm.korean.c.dec3.d': { en: 'My Trips shows destination photos, exact dates, and D-countdown badges — all the context users need at a glance.', es: 'Mis Viajes muestra fotos de destino, fechas exactas y badges D-countdown — todo el contexto que el usuario necesita de un vistazo.' },
+  'm.korean.c.dec4.insight': { en: 'Problem: No help or contextual guidance anywhere', es: 'Problema: sin ayuda ni guía contextual' },
+  'm.korean.c.dec4.t': { en: 'Microcopy and descriptions on every action', es: 'Microcopy y descripciones en cada acción' },
+  'm.korean.c.dec4.d': { en: '"Planifica tu próximo viaje" menu with descriptive subtitles: what each option does, in plain language.', es: 'Menú "Planifica tu próximo viaje" con subtítulos descriptivos: qué hace cada opción, en lenguaje claro.' },
+  'm.korean.c.dec5.insight': { en: 'Problem: Many blocks compete, no clear hierarchy', es: 'Problema: muchos bloques compiten, sin jerarquía clara' },
+  'm.korean.c.dec5.t': { en: 'Grouped content with visual hierarchy', es: 'Contenido agrupado con jerarquía visual' },
+  'm.korean.c.dec5.d': { en: 'Reduced competing elements. News section pushed below the fold. Primary actions (search, trips) elevated.', es: 'Elementos compitiendo reducidos. Noticias empujadas bajo el fold. Acciones primarias (búsqueda, viajes) elevadas.' },
+
+  // Screens
+  'm.korean.c.screens.intro': { en: 'Four key screens redesigned in hi-fi, each solving specific problems from the audit:', es: 'Cuatro pantallas clave rediseñadas en hi-fi, cada una resolviendo problemas específicos de la auditoría:' },
+  'm.korean.c.home.p': { en: 'Personalized welcome, search with full context (route + dates), dual CTA, mascot with clear purpose ("¡Pregúntame!"), and news deprioritized below the fold.', es: 'Bienvenida personalizada, búsqueda con contexto completo (ruta + fechas), doble CTA, mascota con propósito claro ("¡Pregúntame!"), y noticias despriorizadas bajo el fold.' },
+  'm.korean.c.trips.p': { en: 'Visual trip cards with destination imagery, exact dates, and D-countdown badges. Clear "add trip" button and help text for users who don\'t see their flights.', es: 'Tarjetas visuales de viaje con imágenes del destino, fechas exactas y badges D-countdown. Botón claro de "añadir viaje" y texto de ayuda para quien no ve sus vuelos.' },
+  'm.korean.c.addtrip.p': { en: 'Simplified form flow: barcode scanner as primary action, reference input with placeholder examples, and date picker — clear steps, reduced ambiguity.', es: 'Flujo de formulario simplificado: escáner de código de barras como acción principal, campo de referencia con ejemplos placeholder, y selector de fecha — pasos claros, ambigüedad reducida.' },
+  'm.korean.c.more.p': { en: 'Reorganized as "Planifica tu próximo viaje" with two primary quick actions (Contact support, Earn miles) and categorized options with descriptive microcopy — helping users understand what each action does before tapping.', es: 'Reorganizado como "Planifica tu próximo viaje" con dos acciones rápidas principales (Contactar soporte, Ganar millas) y opciones categorizadas con microcopy descriptivo — ayudando a entender qué hace cada acción antes de tocar.' },
+
+  // Visual system
+  'm.korean.c.system.intro': { en: 'To prevent inconsistencies and make the redesign scalable, I created lightweight UI guidelines aligned with the Korean Air brand:', es: 'Para evitar inconsistencias y hacer el rediseño escalable, creé guías UI ligeras alineadas con la marca Korean Air:' },
+  'm.korean.c.sys1.t': { en: 'Typography', es: 'Tipografía' },
+  'm.korean.c.sys1.d': { en: 'Poppins. Consistent hierarchy for headings and body to improve scanability.', es: 'Poppins. Jerarquía consistente para títulos y cuerpo para mejorar la escaneabilidad.' },
+  'm.korean.c.sys2.t': { en: 'Spacing', es: 'Espaciado' },
+  'm.korean.c.sys2.d': { en: '8 / 16 / 24 / 32px rhythm for predictable, breathable layouts.', es: 'Ritmo de 8 / 16 / 24 / 32px para layouts predecibles y con respiro.' },
+  'm.korean.c.sys3.t': { en: 'Icons', es: 'Iconos' },
+  'm.korean.c.sys3.d': { en: 'Unified stroke weight and style for navigation and actions.', es: 'Grosor y estilo de trazo unificado para navegación y acciones.' },
+  'm.korean.c.sys4.t': { en: 'Color', es: 'Color' },
+  'm.korean.c.sys4.d': { en: 'Structured blues for states, emphasis, and readability. Navy, sky, and ice.', es: 'Azules estructurados para estados, énfasis y legibilidad. Navy, cielo y hielo.' },
+  'm.korean.c.nav.p': { en: 'Redesigned navigation bar with 5 clear tabs (Home, My Trips, Book, Profile, Flights), replacing the original mixed-language labels. Unified iconography and active state indicators across all screens.', es: 'Barra de navegación rediseñada con 5 pestañas claras (Inicio, Mis Viajes, Reserva, Mi Perfil, Vuelos), reemplazando las etiquetas con idiomas mezclados. Iconografía unificada e indicadores de estado activo en todas las pantallas.' },
+
+  // Learnings
+  'm.korean.c.learn1.t': { en: 'UX issues are often structural', es: 'Los problemas de UX suelen ser estructurales' },
+  'm.korean.c.learn1.d': { en: 'In complex products (travel, banking, fintech), hierarchy and system feedback matter as much as visual polish.', es: 'En productos complejos (viajes, banca, fintech), la jerarquía y el feedback del sistema importan tanto como el acabado visual.' },
+  'm.korean.c.learn2.t': { en: 'Heuristics give you leverage', es: 'Las heurísticas te dan palanca' },
+  'm.korean.c.learn2.d': { en: 'A structured audit turns subjective "this feels wrong" into actionable, prioritized recommendations.', es: 'Una auditoría estructurada convierte el subjetivo "esto no funciona" en recomendaciones accionables y priorizadas.' },
+  'm.korean.c.learn3.t': { en: 'Microcopy is UX', es: 'El microcopy es UX' },
+  'm.korean.c.learn3.d': { en: 'A one-line description under each menu option reduced ambiguity more than any layout change could.', es: 'Una línea de descripción bajo cada opción del menú redujo la ambigüedad más que cualquier cambio de layout.' },
+  'm.korean.c.next.p': { en: 'If I continued: <b>usability testing</b> to validate hierarchy improvements, measuring <b>task completion rate</b> for "Add reservation" flow, <b>time on task</b> comparisons before/after, and testing the <b>microcopy effectiveness</b> on the "More" menu.', es: 'Si continuara: <b>test de usabilidad</b> para validar las mejoras de jerarquía, medir la <b>tasa de completado</b> del flujo "Añadir reserva", comparaciones de <b>tiempo en tarea</b> antes/después, y probar la <b>efectividad del microcopy</b> en el menú "Más".' },
+
   // ─── LUMIX CASE STUDY PAGE (lumix.html) ───
 
   // Subtitle (updated for case page)
