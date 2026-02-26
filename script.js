@@ -65,6 +65,19 @@ const T = {
   'projects.empty':      { en: 'No projects match the selected tags.', es: 'No hay proyectos que coincidan con las etiquetas seleccionadas.' },
   'projects.video.empty':{ en: 'Video projects coming soon.', es: 'Proyectos de vídeo próximamente.' },
 
+  // ─── VIDEO CARDS ───
+'card.video1.name': { en: 'Demo Video — Social Ad', es: 'Demo Video — Anuncio para redes' },
+'card.video1.meta': { en: 'Ads · Instagram/TikTok · Editing', es: 'Ads · Instagram/TikTok · Edición' },
+
+'card.video2.name': { en: 'Corporate Video — Demo', es: 'Vídeo corporativo — Demo' },
+'card.video2.meta': { en: 'Corporate · YouTube/Vimeo · Direction', es: 'Corporativo · YouTube/Vimeo · Dirección' },
+
+'card.video3.name': { en: 'Case Study Video — Demo', es: 'Vídeo caso de éxito — Demo' },
+'card.video3.meta': { en: 'Case study · YouTube/Vimeo · Editing', es: 'Caso de éxito · YouTube/Vimeo · Edición' },
+
+// Botón genérico para videos (si no quieres reutilizar "View case study")
+'card.btn.view': { en: 'View', es: 'Ver' },
+ 
   // ─── DOMAIN TAGS (for filters + case studies) ───
   'tag.domain.viajes':     { en: 'Travel',    es: 'Viajes' },
   'tag.domain.finanzas':   { en: 'Finance',   es: 'Finanzas' },
