@@ -69,8 +69,8 @@ const T = {
 'card.video1.name': { en: 'Paula Rebollar · Mentor for Copywriters', es: 'Paula Rebollar · Mentora de copywriters' },
 'card.video1.meta': { en: 'Instagram · Editing', es: 'Instagram · Edición' },
 
-'card.video2.name': { en: 'Corporate Video — Demo', es: 'Vídeo corporativo — Demo' },
-'card.video2.meta': { en: 'Corporate · YouTube/Vimeo · Direction', es: 'Corporativo · YouTube/Vimeo · Dirección' },
+'card.video2.name': { en: 'Clientify · CRM All in One', es: 'Clientify · CRM Todo en uno' },
+'card.video2.meta': { en: 'Corporate · Motion Graphics · Videomaking · Education ', es: 'Motion Graphics · Edición de Vídeo · Eduación' },
 
 'card.video3.name': { en: 'Case Study Video — Demo', es: 'Vídeo caso de éxito — Demo' },
 'card.video3.meta': { en: 'Case study · YouTube/Vimeo · Editing', es: 'Caso de éxito · YouTube/Vimeo · Edición' },
