@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video Project — Demo — vanesafrz</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- NAV (igual que el resto del portfolio) -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">vanesa<span class="blue">frz</span></a>
+
+    <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+      <li><a href="projects.html" class="active" data-i18n="nav.projects">Projects</a></li>
+      <li><a href="about.html" data-i18n="nav.about">About me</a></li>
+      <li><a href="cv.html" data-i18n="nav.cv">CV</a></li>
+      <li><a href="mailto:vanesafrz.ux@gmail.com" class="nav-cta" data-i18n="nav.cta">Let's talk!</a></li>
+      <li><button class="lang-toggle" onclick="toggleLang()">🇪🇸 ES</button></li>
+    </ul>
+  </nav>
+
+  <main class="case-wrap">
+    <a class="case-back" href="projects.html">← <span>Back to projects</span></a>
+
+    <div class="case-card">
+      <!-- HERO -->
+      <div class="video-hero">
+        <!-- Sustituye la imagen por tu thumbnail/hero -->
+        <img src="img/video-demo-hero.jpg" alt="Video demo hero"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="video-hero-placeholder" style="display:none">
+          Video project hero<br><span style="font-size:11px">1720 × 960px</span>
+        </div>
+      </div>
+
+      <div class="case-content">
+        <h2 class="modal-project-name">Demo Video Project — Social Ad</h2>
+        <p class="modal-project-sub">
+          A short-form video piece designed to capture attention fast and communicate value in seconds.
+        </p>
+
+        <!-- TAGS (estilo similar a tus bubbles) -->
+        <div class="modal-tags">
+          <span class="modal-tag tag-sector">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+              <path d="M3 9h18" stroke="currentColor" stroke-width="2"/>
+              <path d="M9 21V9" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            Video / Content
+          </span>
+
+          <span class="modal-tag tag-type">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor" stroke-width="2"/>
+              <line x1="12" y1="18" x2="12" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Social Ad
+          </span>
+
+          <span class="modal-tag tag-team">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/>
+              <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            Solo
+          </span>
+        </div>
+
+        <!-- OVERVIEW (minimalista como quieres) -->
+        <section class="video-overview reveal">
+          <div class="modal-section-label">OVERVIEW</div>
+
+          <p class="video-overview-text">
+            Short-form ad optimized for scroll environments, focused on a strong opening hook and clear message hierarchy.
+          </p>
+
+          <div class="video-meta-grid">
+            <div class="video-meta-item">
+              <div class="video-meta-label">Type</div>
+              <div class="video-meta-value">Ads · Social media</div>
+            </div>
+
+            <div class="video-meta-item">
+              <div class="video-meta-label">Platform</div>
+              <div class="video-meta-value">Instagram · TikTok · YouTube Shorts</div>
+            </div>
+
+            <div class="video-meta-item">
+              <div class="video-meta-label">Role</div>
+              <div class="video-meta-value">Editing · Motion graphics · Creative direction</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- VIMEO EMBED -->
+        <section class="video-embed-wrap reveal" aria-label="Vimeo video">
+          <div class="modal-section-label">VIDEO</div>
+
+          <div class="video-embed">
+            <!-- Cambia 76979871 por tu VIDEO_ID de Vimeo -->
+            <iframe
+              src="https://player.vimeo.com/video/1161779234?h=0&title=0&byline=0&portrait=0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="video-embed-note">
+            Tip: si lo quieres sin sugerencias de Vimeo, mantén <code>title=0&byline=0&portrait=0</code>.
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- JS global del portfolio -->
+  <script src="script.js"></script>
+</body>
+</html>
