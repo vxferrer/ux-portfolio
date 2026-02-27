@@ -499,8 +499,14 @@ body.modal-open{overflow:hidden}
 .cs-learning-card strong{display:block;font-size:15px;margin-bottom:8px}
 .cs-learning-card p{font-size:13px;color:var(--gray-500);line-height:1.6}
 
+/* ─── GIF ROW ─── */
+.cs-gif-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 8px}
+.cs-gif-item{border-radius:var(--radius);overflow:hidden;background:var(--gray-100);border:1px solid var(--gray-200)}
+.cs-gif-item img{width:100%;display:block;border-radius:var(--radius)}
+
 /* ─── RESPONSIVE ─── */
 @media(max-width:900px){
+  .cs-gif-row{grid-template-columns:1fr}
   .cs-role-grid{grid-template-columns:1fr}
   .cs-stats-row{grid-template-columns:1fr}
   .cs-method-grid{grid-template-columns:1fr}
@@ -516,7 +522,6 @@ body.modal-open{overflow:hidden}
   .cs-pillar-grid{grid-template-columns:1fr}
   .cs-persona-bottom{flex-direction:column}
 }
-
 
 /* ─────────────────────────────────────────────
    VIDEO PROJECT (no hero) + Vimeo embed
