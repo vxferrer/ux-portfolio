@@ -499,15 +499,6 @@ body.modal-open{overflow:hidden}
 .cs-learning-card strong{display:block;font-size:15px;margin-bottom:8px}
 .cs-learning-card p{font-size:13px;color:var(--gray-500);line-height:1.6}
 
-/* ─── PITCH SCREENS ─── */
-.case-block--pitch{background:var(--gray-50);border-radius:var(--radius);padding:32px 0;margin:0 0 8px}
-.case-block--pitch .case-block-text{padding:0 32px}
-.cs-pitch-text{margin-bottom:8px}
-.cs-pitch-label{font-family:'Syne',sans-serif;font-size:clamp(1.25rem,2.5vw,1.6rem);font-weight:800;line-height:1.2;margin-bottom:8px;color:var(--primary)}
-.cs-pitch-text p{font-size:1.05rem;line-height:1.6;color:var(--text-secondary)}
-.case-block--pitch .modal-media{padding:0 32px}
-.case-block--pitch .modal-media img{border-radius:12px}
-
 /* ─── GIF ROW ─── */
 .cs-gif-row{display:grid;grid-template-columns:1fr;gap:16px;margin:0 0 8px}
 .cs-gif-item{border-radius:var(--radius);overflow:hidden;background:var(--gray-100);border:1px solid var(--gray-200)}
