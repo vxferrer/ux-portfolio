@@ -72,8 +72,11 @@ const T = {
 'card.video2.name': { en: 'Clientify · CRM All in One', es: 'Clientify · CRM Todo en uno' },
 'card.video2.meta': { en: 'Corporate · Motion Graphics · Videomaking · Education ', es: 'Motion Graphics · Edición de Vídeo · Eduación' },
 
-'card.video3.name': { en: 'Case Study Video — Demo', es: '101TV – (2017, first experience)' },
-'card.video3.meta': { en: 'Case study · YouTube/Vimeo · Editing', es: 'Television · Camerawoman · Show Director' },
+'card.video3.name': { en: '101TV · 2017, first experience', es: '101TV · 2017, first experience' },
+'card.video3.meta': { en: 'Television · Camerawoman · Show Director', es: 'Television · Cámara ENG · Realizadora' },
+
+'card.video4.name': { en: 'Play Ground · Enjoying times', es: 'El patio de las ideas' },
+'card.video4.meta': { en: 'Ideas on my mind for all platforms', es: 'Experimentando para todas las plataformas' },
 
 // Botón genérico para videos (si no quieres reutilizar "View case study")
 'card.btn.view': { en: 'View', es: 'Ver' },
