@@ -373,10 +373,30 @@ const T = {
   'm.lumix.c.role.t4': { en: 'UI design & tone', es: 'Diseño UI y tono' },
   'm.lumix.c.role.d4': { en: 'Friendly language, non-punitive feedback, key screens in Figma', es: 'Lenguaje friendly, feedback no punitivo, pantallas clave en Figma' },
 
-  // The Problem (synthesized)
-  'm.lumix.c.problem1': { en: '<b>Hypothesis:</b> young professionals with stable income shouldn\'t feel financially stressed — but they do. And the tools designed to help them are actually making it worse.', es: '<b>Hipótesis:</b> los jóvenes profesionales con ingresos estables no deberían sentir estrés financiero — pero lo sienten. Y las herramientas diseñadas para ayudarles están empeorando las cosas.' },
-  'm.lumix.c.problem2': { en: 'Secondary research confirmed the scale:', es: 'La investigación secundaria confirmó la magnitud:' },
-  'm.lumix.c.problem3': { en: 'We validated this through a <b>quantitative survey</b> (85 respondents, ages 22–35), an <b>expert interview</b> with a clinical psychologist, and <b>secondary research</b> on financial stress among Spanish youth. The data consistently pointed to the same conclusion: financial stress is less about numbers and more about <b>perceived lack of control</b>.', es: 'Lo validamos a través de una <b>encuesta cuantitativa</b> (85 participantes, 22–35 años), una <b>entrevista experta</b> con una psicóloga clínica, e <b>investigación secundaria</b> sobre estrés financiero en jóvenes españoles. Los datos apuntaron consistentemente a la misma conclusión: el estrés financiero tiene menos que ver con los números y más con la <b>percepción de falta de control</b>.' },
+  // The Problem
+  'm.lumix.c.problem.p1': { en: 'Financial stress among young adults in Spain isn\'t a niche issue — it\'s a systemic one. Even among people with stable jobs and regular income, the relationship with money is broken. Not because of the money itself, but because of what it triggers emotionally.', es: 'El estrés financiero entre jóvenes adultos en España no es un problema aislado — es sistémico. Incluso entre personas con empleo estable e ingresos regulares, la relación con el dinero está rota. No por el dinero en sí, sino por lo que despierta emocionalmente.' },
+  'm.lumix.c.problem.p2': { en: 'And the tools designed to help? <b>They\'re making it worse.</b> Traditional finance apps overwhelm users with dense dashboards, complex graphs, and data that activates shame instead of control. Only <b>3.9%</b> of young adults actively use a budgeting app. <b>36%</b> have never tried one — out of fear.', es: '¿Y las herramientas diseñadas para ayudar? <b>Lo están empeorando.</b> Las apps financieras tradicionales abruman con dashboards densos, gráficos complejos y datos que activan vergüenza en vez de control. Solo el <b>3,9%</b> de los jóvenes usa activamente una app de presupuestos. El <b>36%</b> nunca ha probado una — por miedo.' },
+
+  // What We Found
+  'm.lumix.c.l.found': { en: 'WHAT WE FOUND', es: 'LO QUE DESCUBRIMOS' },
+  'm.lumix.c.found.intro': { en: 'We ran a quantitative survey (85 respondents, 22–35), an expert interview with a clinical psychologist, and secondary research. The data validated our initial hypothesis — and pushed it further:', es: 'Realizamos una encuesta cuantitativa (85 participantes, 22–35 años), una entrevista experta con una psicóloga clínica e investigación secundaria. Los datos validaron nuestra hipótesis inicial — y la llevaron más lejos:' },
+
+  // The Goal
+  'm.lumix.c.l.goal': { en: 'THE GOAL', es: 'EL OBJETIVO' },
+  'm.lumix.c.goal.p1': { en: 'Design a financial experience that <b>prioritizes emotional regulation over feature density</b>. Not another dashboard — a companion that helps you feel safe facing your own money.', es: 'Diseñar una experiencia financiera que <b>priorice la regulación emocional sobre la densidad de funcionalidades</b>. No otro dashboard — un compañero que te ayude a sentirte seguro al enfrentar tu propio dinero.' },
+  'm.lumix.c.goal.p2': { en: 'We mapped every design decision directly to a research insight:', es: 'Mapeamos cada decisión de diseño directamente a un insight de investigación:' },
+
+  // Meet Lumix
+  'm.lumix.c.l.meet': { en: 'MEET LUMIX', es: 'CONOCE LUMIX' },
+  'm.lumix.c.meet.intro': { en: 'A financial companion that doesn\'t judge. It understands how you feel, simplifies what you see, and helps you build confidence — one day at a time.', es: 'Un compañero financiero que no juzga. Entiende cómo te sientes, simplifica lo que ves y te ayuda a ganar confianza — día a día.' },
+
+  // Pitch screens
+  'm.lumix.c.pitch1.label': { en: 'Your money, without the noise', es: 'Tu dinero, sin ruido' },
+  'm.lumix.c.pitch1.p': { en: 'No complex graphs. No jargon. Just a simplified monthly overview with categorized bubbles you can understand in under 5 seconds. Finally, clarity.', es: 'Sin gráficos complejos. Sin jerga. Solo un resumen mensual simplificado con burbujas categorizadas que entiendes en menos de 5 segundos. Por fin, claridad.' },
+  'm.lumix.c.pitch2.label': { en: 'Feel first. Numbers second.', es: 'Primero sentir. Después los números.' },
+  'm.lumix.c.pitch2.p': { en: 'A daily mood check-in connects how you feel to how you spend. No judgment — just awareness. Over time, you\'ll see the patterns that matter.', es: 'Un check-in diario de estado de ánimo conecta cómo te sientes con cómo gastas. Sin juicio — solo conciencia. Con el tiempo, verás los patrones que importan.' },
+  'm.lumix.c.pitch3.label': { en: 'Learn at your own pace', es: 'Aprende a tu ritmo' },
+  'm.lumix.c.pitch3.p': { en: 'Articles, podcasts, meditations. Not filler — a core feature. Bite-sized content that makes your relationship with money healthier, without pressure.', es: 'Artículos, podcasts, meditaciones. No relleno — una funcionalidad core. Contenido breve que hace tu relación con el dinero más sana, sin presión.' },
 
   // Challenge (kept for modal compatibility)
   'm.lumix.c.challenge1': { en: 'We started with a hypothesis: <b>young professionals with stable income shouldn\'t feel financially stressed — but they do.</b>', es: 'Partimos de una hipótesis: <b>los jóvenes profesionales con ingresos estables no deberían sentir estrés financiero — pero lo sienten.</b>' },
