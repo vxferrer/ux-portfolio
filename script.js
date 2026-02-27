@@ -103,6 +103,32 @@ const T = {
   'card.btn.more':            { en: '+4 videos', es: '+4 vídeos' },
   'card.btn.more.playground': { en: '+4 videos', es: '+4 vídeos' },
 
+  // ─── INDIVIDUAL VIDEO CARD TITLES ───
+  'vid.cfy.welcome.title':  { en: 'Welcome to the new Clientify',      es: 'Bienvenido al nuevo Clientify' },
+  'vid.cfy.welcome.meta':   { en: 'Corporate · Youtube',               es: 'Corporativo · Youtube' },
+  'vid.cfy.clients.title':  { en: "Client's stories · Clientify",      es: 'Historias de clientes · Clientify' },
+  'vid.cfy.clients.meta':   { en: 'Corporate · Youtube',               es: 'Corporativo · Youtube' },
+  'vid.cfy.webinar.title':  { en: 'Intro — Webinars · Clientify',      es: 'Intro — Webinars · Clientify' },
+  'vid.cfy.webinar.meta':   { en: 'Motion Graphics · Education',       es: 'Motion Graphics · Educación' },
+  'vid.cfy.intro.title':    { en: "Intro & Outro · Clientify",         es: 'Intro & Outro · Clientify' },
+  'vid.cfy.intro.meta':     { en: 'Motion Graphics',                   es: 'Motion Graphics' },
+  'vid.cfy.ads.title':      { en: 'Spot Google & Meta ADS · Clientify',es: 'Spot Google & Meta ADS · Clientify' },
+  'vid.cfy.ads.meta':       { en: 'Corporate · Ads',                   es: 'Corporativo · Ads' },
+  'vid.paula.title':        { en: 'Paula Rebollar · Mentor for Copywriters', es: 'Paula Rebollar · Mentora de copywriters' },
+  'vid.paula.meta':         { en: 'Social Media · Instagram',          es: 'Social Media · Instagram' },
+  'vid.101tv.title':        { en: '101TV · Camerawoman & Show Director', es: '101TV · Cámara ENG & Realizadora' },
+  'vid.101tv.meta':         { en: 'Television · Broadcast',            es: 'Televisión · Broadcast' },
+  'vid.ai.title':           { en: 'Experimenting with AI',             es: 'Experimentando con IA' },
+  'vid.ai.meta':            { en: 'Social Media · Instagram · TikTok', es: 'Social Media · Instagram · TikTok' },
+  'vid.brand.title':        { en: 'Content for vanesafrz brand',       es: 'Contenido para la marca vanesafrz' },
+  'vid.brand.meta':         { en: 'Social Media · Instagram',          es: 'Social Media · Instagram' },
+  'vid.insideout.title':    { en: 'Inside Out · Clientify',            es: 'Inside Out · Clientify' },
+  'vid.insideout.meta':     { en: 'Social Media · Instagram · TikTok', es: 'Social Media · Instagram · TikTok' },
+  'vid.roskilde.title':     { en: 'Roskilde University (Denmark)',     es: 'Roskilde University (Dinamarca)' },
+  'vid.roskilde.meta':      { en: 'Education · Motion Graphics · Youtube', es: 'Educación · Motion Graphics · Youtube' },
+  'vid.puraenvidia.title':  { en: 'PuraEnvidia Agency',                es: 'Agencia PuraEnvidia' },
+  'vid.puraenvidia.meta':   { en: 'Social Media',                      es: 'Social Media' },
+
   // ─── Common tags ───
   'tag.skill.app':         { en: 'App', es: 'App' },
   'tag.skill.mobileapp':   { en: 'Mobile App', es: 'App móvil' },
@@ -654,7 +680,7 @@ function initProjectsPage(){
 
   function applyVideoFilters(){
     const videoPanel = document.querySelector('[data-tab-panel="video"]');
-    const videoCards = Array.from(videoPanel?.querySelectorAll('.video-project-card, .project-card') || []);
+    const videoCards = Array.from(videoPanel?.querySelectorAll('.video-mini-card, .video-project-card, .project-card') || []);
     let videoVisible = 0;
     videoCards.forEach(card => {
       const ok = cardMatches(card, selectedVideo);

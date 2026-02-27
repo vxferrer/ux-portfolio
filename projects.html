@@ -8,20 +8,26 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-/* ─── VIDEO CARD INLINE PLAYER ─── */
-.video-project-card{
+/* ─── VIDEO MINI CARDS ─── */
+.video-mini-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.video-mini-card{
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: #fff;
   border: 1px solid var(--gray-200);
   transition: transform .4s, box-shadow .4s;
 }
-.video-project-card:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 20px 60px rgba(0,0,0,.08);
+.video-mini-card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 16px 48px rgba(0,0,0,.08);
 }
 
-.video-project-player{
+.video-mini-player{
   position: relative;
   width: 100%;
   aspect-ratio: 16/9;
@@ -29,7 +35,8 @@
   overflow: hidden;
 }
 
-.video-project-player .video-thumb-overlay{
+/* Thumbnail overlay */
+.video-mini-player .vid-overlay{
   position: absolute;
   inset: 0;
   cursor: pointer;
@@ -39,32 +46,32 @@
   justify-content: center;
   transition: opacity .3s;
 }
-.video-project-player .video-thumb-overlay img{
+.video-mini-player .vid-overlay img{
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.video-project-player .video-thumb-overlay .play-btn{
+.video-mini-player .vid-overlay .play-icon{
   position: absolute;
-  width: 64px;
-  height: 64px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: rgba(10,10,10,.7);
-  backdrop-filter: blur(8px);
+  background: rgba(10,10,10,.65);
+  backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform .3s, background .3s;
 }
-.video-project-player .video-thumb-overlay:hover .play-btn{
+.video-mini-player .vid-overlay:hover .play-icon{
   transform: scale(1.1);
   background: var(--blue);
 }
-.video-project-player .video-thumb-overlay .play-btn svg{
-  margin-left: 3px;
+.video-mini-player .vid-overlay .play-icon svg{
+  margin-left: 2px;
 }
 
-.video-project-player iframe{
+.video-mini-player iframe{
   width: 100%;
   height: 100%;
   position: absolute;
@@ -72,106 +79,35 @@
   border: 0;
 }
 
-.video-project-player.playing .video-thumb-overlay{
+.video-mini-player.playing .vid-overlay{
   opacity: 0;
   pointer-events: none;
 }
 
-.video-project-body{
-  padding: 20px 24px 24px;
+.video-mini-info{
+  padding: 14px 16px 16px;
 }
-.video-project-body .project-name{
+.video-mini-info .vid-title{
   font-family: 'Syne', sans-serif;
   font-weight: 600;
-  font-size: 18px;
-  margin-bottom: 4px;
+  font-size: 14px;
+  line-height: 1.35;
+  margin-bottom: 3px;
+  color: var(--black);
 }
-.video-project-body .project-meta{
+.video-mini-info .vid-meta{
   font-family: 'Space Grotesk', monospace;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
   color: var(--gray-500);
-  letter-spacing: .5px;
-}
-
-/* ─── Multi-video expand ─── */
-.video-project-extras{
-  display: none;
-  padding: 0 24px 20px;
-}
-.video-project-extras.open{
-  display: block;
-}
-.video-extras-grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-.video-extra-item{
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid var(--gray-200);
-  background: var(--gray-100);
-  cursor: pointer;
-  transition: border-color .3s;
-}
-.video-extra-item:hover{
-  border-color: var(--blue);
-}
-.video-extra-item iframe{
-  width: 100%;
-  aspect-ratio: 16/9;
-  display: block;
-  border: 0;
-  pointer-events: none;
-}
-.video-extra-item.active iframe{
-  pointer-events: auto;
-}
-.video-extra-caption{
-  padding: 8px 12px;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--gray-600);
-  background: #fff;
-  border-top: 1px solid var(--gray-200);
-}
-
-.btn-expand-videos{
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: 'Outfit', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--blue);
-  background: none;
-  border: 1px solid var(--gray-200);
-  padding: 8px 16px;
-  border-radius: 100px;
-  cursor: pointer;
-  margin-top: 12px;
-  transition: all .25s;
-}
-.btn-expand-videos:hover{
-  border-color: var(--blue);
-  background: var(--blue-glow);
-}
-.btn-expand-videos .chevron{
-  transition: transform .3s;
-}
-.btn-expand-videos.expanded .chevron{
-  transform: rotate(180deg);
+  letter-spacing: .4px;
 }
 
 @media (max-width: 900px){
-  .video-extras-grid{ grid-template-columns: 1fr; }
+  .video-mini-grid{ grid-template-columns: 1fr 1fr; }
 }
-@media (max-width: 768px){
-  .video-project-player .video-thumb-overlay .play-btn{
-    width: 52px;
-    height: 52px;
-  }
+@media (max-width: 560px){
+  .video-mini-grid{ grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -291,123 +227,187 @@
       <p class="projects-empty" id="emptyUx" data-i18n="projects.empty" style="display:none">No projects match the selected tags.</p>
     </section>
 
-    <!-- ═══ VIDEO PANEL — INLINE PLAYERS ═══ -->
+    <!-- ═══ VIDEO PANEL — 1 MINI CARD PER VIDEO ═══ -->
     <section class="projects-panel" data-tab-panel="video">
-      <div class="projects-grid">
+      <div class="video-mini-grid">
 
-        <!-- ▶ PAULA REBOLLAR -->
-        <div class="video-project-card reveal" data-tags="SocialMedia">
-          <div class="video-project-player" id="player-paula">
-            <div class="video-thumb-overlay" onclick="playVideo(this)">
-              <img src="img/paula-rebollar.jpg" alt="Paula Rebollar" onerror="this.parentElement.style.background='var(--gray-200)'">
-              <div class="play-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6,3 20,12 6,21" fill="#fff"/></svg>
-              </div>
-            </div>
-            <iframe data-src="https://player.vimeo.com/video/1161779234?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="video-project-body">
-            <h3 class="project-name" data-i18n="card.video1.name">Paula Rebollar · Mentor for Copywriters</h3>
-            <p class="project-meta" data-i18n="card.video1.meta">Instagram · Editing</p>
-          </div>
-        </div>
-
-        <!-- ▶ CLIENTIFY (multi-video) -->
-        <div class="video-project-card reveal" data-tags="Corporativo, Educacion, SocialMedia">
-          <div class="video-project-player" id="player-clientify">
-            <div class="video-thumb-overlay" onclick="playVideo(this)">
-              <img src="img/cfy.jpg" alt="Clientify" onerror="this.parentElement.style.background='var(--gray-200)'">
-              <div class="play-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6,3 20,12 6,21" fill="#fff"/></svg>
-              </div>
+        <!-- CLIENTIFY — Welcome to the new Clientify -->
+        <div class="video-mini-card reveal" data-tags="Corporativo">
+          <div class="video-mini-player">
+            <div class="vid-overlay" onclick="playMiniVideo(this)">
+              <img src="img/cfy.jpg" alt="Welcome to the new Clientify" onerror="this.style.display='none'">
+              <div class="play-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><polygon points="6,3 20,12 6,21" fill="#fff"/></svg></div>
             </div>
             <iframe data-src="https://player.vimeo.com/video/1130438639?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
           </div>
-          <div class="video-project-body">
-            <h3 class="project-name" data-i18n="card.video2.name">Clientify · CRM All in One</h3>
-            <p class="project-meta" data-i18n="card.video2.meta">Corporate · Motion Graphics · Videomaking · Education</p>
-            <button class="btn-expand-videos" onclick="toggleExtras(this)">
-              <span data-i18n="card.btn.more">+4 videos</span>
-              <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-          </div>
-          <div class="video-project-extras" id="extras-clientify">
-            <div class="video-extras-grid">
-              <div class="video-extra-item" onclick="swapMainVideo(this, 'player-clientify', 'https://player.vimeo.com/video/1130438930?autoplay=1&title=0&byline=0&portrait=0')">
-                <iframe src="https://player.vimeo.com/video/1130438930?title=0&byline=0&portrait=0" allow="fullscreen" allowfullscreen></iframe>
-                <div class="video-extra-caption">Client's stories</div>
-              </div>
-              <div class="video-extra-item" onclick="swapMainVideo(this, 'player-clientify', 'https://player.vimeo.com/video/1130438460?autoplay=1&title=0&byline=0&portrait=0')">
-                <iframe src="https://player.vimeo.com/video/1130438460?title=0&byline=0&portrait=0" allow="fullscreen" allowfullscreen></iframe>
-                <div class="video-extra-caption">Intro - Webinars</div>
-              </div>
-              <div class="video-extra-item" onclick="swapMainVideo(this, 'player-clientify', 'https://player.vimeo.com/video/1130438368?autoplay=1&title=0&byline=0&portrait=0')">
-                <iframe src="https://player.vimeo.com/video/1130438368?title=0&byline=0&portrait=0" allow="fullscreen" allowfullscreen></iframe>
-                <div class="video-extra-caption">Intro & outro</div>
-              </div>
-              <div class="video-extra-item" onclick="swapMainVideo(this, 'player-clientify', 'https://player.vimeo.com/video/1130439051?autoplay=1&title=0&byline=0&portrait=0')">
-                <iframe src="https://player.vimeo.com/video/1130439051?title=0&byline=0&portrait=0" allow="fullscreen" allowfullscreen></iframe>
-                <div class="video-extra-caption">Google & Meta ADS</div>
-              </div>
-            </div>
+          <div class="video-mini-info">
+            <div class="vid-title" data-i18n="vid.cfy.welcome.title">Welcome to the new Clientify</div>
+            <div class="vid-meta" data-i18n="vid.cfy.welcome.meta">Corporate · Youtube</div>
           </div>
         </div>
 
-        <!-- ▶ 101TV -->
-        <div class="video-project-card reveal" data-tags="Television">
-          <div class="video-project-player" id="player-101tv">
-            <div class="video-thumb-overlay" onclick="playVideo(this)">
-              <img src="img/101tv.jpg" alt="101TV" onerror="this.parentElement.style.background='var(--gray-200)'">
-              <div class="play-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6,3 20,12 6,21" fill="#fff"/></svg>
-              </div>
+        <!-- CLIENTIFY — Client's stories -->
+        <div class="video-mini-card reveal" data-tags="Corporativo">
+          <div class="video-mini-player">
+            <div class="vid-overlay" onclick="playMiniVideo(this)">
+              <img src="img/cfy.jpg" alt="Client's stories" onerror="this.style.display='none'">
+              <div class="play-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><polygon points="6,3 20,12 6,21" fill="#fff"/></svg></div>
+            </div>
+            <iframe data-src="https://player.vimeo.com/video/1130438930?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-mini-info">
+            <div class="vid-title" data-i18n="vid.cfy.clients.title">Client's stories · Clientify</div>
+            <div class="vid-meta" data-i18n="vid.cfy.clients.meta">Corporate · Youtube</div>
+          </div>
+        </div>
+
+        <!-- CLIENTIFY — Intro Webinars -->
+        <div class="video-mini-card reveal" data-tags="Corporativo, Educacion">
+          <div class="video-mini-player">
+            <div class="vid-overlay" onclick="playMiniVideo(this)">
+              <img src="img/cfy.jpg" alt="Intro Webinars" onerror="this.style.display='none'">
+              <div class="play-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><polygon points="6,3 20,12 6,21" fill="#fff"/></svg></div>
+            </div>
+            <iframe data-src="https://player.vimeo.com/video/1130438460?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-mini-info">
+            <div class="vid-title" data-i18n="vid.cfy.webinar.title">Intro — Webinars · Clientify</div>
+            <div class="vid-meta" data-i18n="vid.cfy.webinar.meta">Motion Graphics · Education</div>
+          </div>
+        </div>
+
+        <!-- CLIENTIFY — Intro & Outro -->
+        <div class="video-mini-card reveal" data-tags="Corporativo">
+          <div class="video-mini-player">
+            <div class="vid-overlay" onclick="playMiniVideo(this)">
+              <img src="img/cfy.jpg" alt="Clientify Intro & Outro" onerror="this.style.display='none'">
+              <div class="play-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><polygon points="6,3 20,12 6,21" fill="#fff"/></svg></div>
+            </div>
+            <iframe data-src="https://player.vimeo.com/video/1130438368?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-mini-info">
+            <div class="vid-title" data-i18n="vid.cfy.intro.title">Intro & Outro · Clientify</div>
+            <div class="vid-meta" data-i18n="vid.cfy.intro.meta">Motion Graphics</div>
+          </div>
+        </div>
+
+        <!-- CLIENTIFY — Google & Meta ADS -->
+        <div class="video-mini-card reveal" data-tags="Corporativo, SocialMedia">
+          <div class="video-mini-player">
+            <div class="vid-overlay" onclick="playMiniVideo(this)">
+              <img src="img/cfy.jpg" alt="Spot Google & Meta ADS" onerror="this.style.display='none'">
+              <div class="play-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><polygon points="6,3 20,12 6,21" fill="#fff"/></svg></div>
+            </div>
+            <iframe data-src="https://player.vimeo.com/video/1130439051?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-mini-info">
+            <div class="vid-title" data-i18n="vid.cfy.ads.title">Spot Google & Meta ADS · Clientify</div>
+            <div class="vid-meta" data-i18n="vid.cfy.ads.meta">Corporate · Ads</div>
+          </div>
+        </div>
+
+        <!-- PAULA REBOLLAR -->
+        <div class="video-mini-card reveal" data-tags="SocialMedia">
+          <div class="video-mini-player">
+            <div class="vid-overlay" onclick="playMiniVideo(this)">
+              <img src="img/paula-rebollar.jpg" alt="Paula Rebollar" onerror="this.style.display='none'">
+              <div class="play-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><polygon points="6,3 20,12 6,21" fill="#fff"/></svg></div>
+            </div>
+            <iframe data-src="https://player.vimeo.com/video/1161779234?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-mini-info">
+            <div class="vid-title" data-i18n="vid.paula.title">Paula Rebollar · Mentor for Copywriters</div>
+            <div class="vid-meta" data-i18n="vid.paula.meta">Social Media · Instagram</div>
+          </div>
+        </div>
+
+        <!-- 101TV -->
+        <div class="video-mini-card reveal" data-tags="Television">
+          <div class="video-mini-player">
+            <div class="vid-overlay" onclick="playMiniVideo(this)">
+              <img src="img/101tv.jpg" alt="101TV" onerror="this.style.display='none'">
+              <div class="play-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><polygon points="6,3 20,12 6,21" fill="#fff"/></svg></div>
             </div>
             <iframe data-src="https://player.vimeo.com/video/347324319?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
           </div>
-          <div class="video-project-body">
-            <h3 class="project-name" data-i18n="card.video3.name">101TV</h3>
-            <p class="project-meta" data-i18n="card.video3.meta">Camerawoman · Television · Broadcast</p>
+          <div class="video-mini-info">
+            <div class="vid-title" data-i18n="vid.101tv.title">101TV · Camerawoman & Show Director</div>
+            <div class="vid-meta" data-i18n="vid.101tv.meta">Television · Broadcast</div>
           </div>
         </div>
 
-        <!-- ▶ PLAYGROUND (multi-video) -->
-        <div class="video-project-card reveal" data-tags="SocialMedia, Corporativo">
-          <div class="video-project-player" id="player-playground">
-            <div class="video-thumb-overlay" onclick="playVideo(this)">
-              <img src="img/playground.jpg" alt="Playground" onerror="this.parentElement.style.background='var(--gray-200)'">
-              <div class="play-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6,3 20,12 6,21" fill="#fff"/></svg>
-              </div>
+        <!-- PLAYGROUND — Experimenting with AI -->
+        <div class="video-mini-card reveal" data-tags="SocialMedia">
+          <div class="video-mini-player">
+            <div class="vid-overlay" onclick="playMiniVideo(this)">
+              <img src="img/playground.jpg" alt="Experimenting with AI" onerror="this.style.display='none'">
+              <div class="play-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><polygon points="6,3 20,12 6,21" fill="#fff"/></svg></div>
             </div>
             <iframe data-src="https://player.vimeo.com/video/1130441820?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
           </div>
-          <div class="video-project-body">
-            <h3 class="project-name" data-i18n="card.video4.name">Playground · Social Media</h3>
-            <p class="project-meta" data-i18n="card.video4.meta">Ideas on my mind for all platforms</p>
-            <button class="btn-expand-videos" onclick="toggleExtras(this)">
-              <span data-i18n="card.btn.more.playground">+4 videos</span>
-              <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
+          <div class="video-mini-info">
+            <div class="vid-title" data-i18n="vid.ai.title">Experimenting with AI</div>
+            <div class="vid-meta" data-i18n="vid.ai.meta">Social Media · Instagram · TikTok</div>
           </div>
-          <div class="video-project-extras" id="extras-playground">
-            <div class="video-extras-grid">
-              <div class="video-extra-item" onclick="swapMainVideo(this, 'player-playground', 'https://player.vimeo.com/video/1168784080?autoplay=1&title=0&byline=0&portrait=0')">
-                <iframe src="https://player.vimeo.com/video/1168784080?title=0&byline=0&portrait=0" allow="fullscreen" allowfullscreen></iframe>
-                <div class="video-extra-caption">vanesafrz brand</div>
-              </div>
-              <div class="video-extra-item" onclick="swapMainVideo(this, 'player-playground', 'https://player.vimeo.com/video/1130439400?autoplay=1&title=0&byline=0&portrait=0')">
-                <iframe src="https://player.vimeo.com/video/1130439400?title=0&byline=0&portrait=0" allow="fullscreen" allowfullscreen></iframe>
-                <div class="video-extra-caption">Inside Out · Clientify</div>
-              </div>
-              <div class="video-extra-item" onclick="swapMainVideo(this, 'player-playground', 'https://player.vimeo.com/video/513557441?autoplay=1&title=0&byline=0&portrait=0')">
-                <iframe src="https://player.vimeo.com/video/513557441?title=0&byline=0&portrait=0" allow="fullscreen" allowfullscreen></iframe>
-                <div class="video-extra-caption">Roskilde University</div>
-              </div>
-              <div class="video-extra-item" onclick="swapMainVideo(this, 'player-playground', 'https://player.vimeo.com/video/731482710?autoplay=1&title=0&byline=0&portrait=0')">
-                <iframe src="https://player.vimeo.com/video/731482710?title=0&byline=0&portrait=0" allow="fullscreen" allowfullscreen></iframe>
-                <div class="video-extra-caption">PuraEnvidia Agency</div>
-              </div>
+        </div>
+
+        <!-- PLAYGROUND — vanesafrz brand -->
+        <div class="video-mini-card reveal" data-tags="SocialMedia">
+          <div class="video-mini-player">
+            <div class="vid-overlay" onclick="playMiniVideo(this)">
+              <img src="img/playground.jpg" alt="vanesafrz brand" onerror="this.style.display='none'">
+              <div class="play-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><polygon points="6,3 20,12 6,21" fill="#fff"/></svg></div>
             </div>
+            <iframe data-src="https://player.vimeo.com/video/1168784080?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-mini-info">
+            <div class="vid-title" data-i18n="vid.brand.title">Content for vanesafrz brand</div>
+            <div class="vid-meta" data-i18n="vid.brand.meta">Social Media · Instagram</div>
+          </div>
+        </div>
+
+        <!-- PLAYGROUND — Inside Out · Clientify -->
+        <div class="video-mini-card reveal" data-tags="SocialMedia, Corporativo">
+          <div class="video-mini-player">
+            <div class="vid-overlay" onclick="playMiniVideo(this)">
+              <img src="img/playground.jpg" alt="Inside Out Clientify" onerror="this.style.display='none'">
+              <div class="play-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><polygon points="6,3 20,12 6,21" fill="#fff"/></svg></div>
+            </div>
+            <iframe data-src="https://player.vimeo.com/video/1130439400?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-mini-info">
+            <div class="vid-title" data-i18n="vid.insideout.title">Inside Out · Clientify</div>
+            <div class="vid-meta" data-i18n="vid.insideout.meta">Social Media · Instagram · TikTok</div>
+          </div>
+        </div>
+
+        <!-- PLAYGROUND — Roskilde University -->
+        <div class="video-mini-card reveal" data-tags="Educacion">
+          <div class="video-mini-player">
+            <div class="vid-overlay" onclick="playMiniVideo(this)">
+              <img src="img/playground.jpg" alt="Roskilde University" onerror="this.style.display='none'">
+              <div class="play-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><polygon points="6,3 20,12 6,21" fill="#fff"/></svg></div>
+            </div>
+            <iframe data-src="https://player.vimeo.com/video/513557441?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-mini-info">
+            <div class="vid-title" data-i18n="vid.roskilde.title">Roskilde University (Denmark)</div>
+            <div class="vid-meta" data-i18n="vid.roskilde.meta">Education · Motion Graphics · Youtube</div>
+          </div>
+        </div>
+
+        <!-- PLAYGROUND — PuraEnvidia Agency -->
+        <div class="video-mini-card reveal" data-tags="SocialMedia">
+          <div class="video-mini-player">
+            <div class="vid-overlay" onclick="playMiniVideo(this)">
+              <img src="img/playground.jpg" alt="PuraEnvidia Agency" onerror="this.style.display='none'">
+              <div class="play-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><polygon points="6,3 20,12 6,21" fill="#fff"/></svg></div>
+            </div>
+            <iframe data-src="https://player.vimeo.com/video/731482710?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-mini-info">
+            <div class="vid-title" data-i18n="vid.puraenvidia.title">PuraEnvidia Agency</div>
+            <div class="vid-meta" data-i18n="vid.puraenvidia.meta">Social Media</div>
           </div>
         </div>
 
@@ -436,11 +436,7 @@
 
 <script src="script.js"></script>
 <script>
-// ═══════════════════════════════════════
-// VIDEO INLINE PLAYER LOGIC
-// ═══════════════════════════════════════
-
-function playVideo(overlay){
+function playMiniVideo(overlay){
   const player = overlay.parentElement;
   const iframe = player.querySelector('iframe');
   if(iframe.dataset.src){
@@ -448,23 +444,6 @@ function playVideo(overlay){
     delete iframe.dataset.src;
   }
   player.classList.add('playing');
-}
-
-function toggleExtras(btn){
-  const card = btn.closest('.video-project-card');
-  const extras = card.querySelector('.video-project-extras');
-  if(!extras) return;
-  const isOpen = extras.classList.toggle('open');
-  btn.classList.toggle('expanded', isOpen);
-}
-
-function swapMainVideo(extraItem, playerId, newSrc){
-  const player = document.getElementById(playerId);
-  if(!player) return;
-  const iframe = player.querySelector('iframe');
-  iframe.src = newSrc;
-  player.classList.add('playing');
-  player.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 </script>
 </body>
