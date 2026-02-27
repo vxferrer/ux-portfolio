@@ -43,7 +43,7 @@ const T = {
 
   // ─── INDEX: Hero ───
   'hero.title':      { en: "I'm a <em>Product Designer</em> and strategic, goal oriented thinker focused in turn ideas into desirable products.",
-                       es: "Soy <em>Product Designer</em> centrada en convertir ideas en productos que ganan clientes medibles." },
+                       es: "Soy <em>Product Designer</em> y pensadora estratégica enfocada en convertir ideas en productos deseables." },
   'hero.btn.work':   { en: 'My work',       es: 'Mi trabajo' },
   'hero.btn.chat':   { en: 'Wanna chat?',   es: '¿Hablamos?' },
 
@@ -65,22 +65,6 @@ const T = {
   'projects.empty':      { en: 'No projects match the selected tags.', es: 'No hay proyectos que coincidan con las etiquetas seleccionadas.' },
   'projects.video.empty':{ en: 'Video projects coming soon.', es: 'Proyectos de vídeo próximamente.' },
 
-  // ─── VIDEO CARDS ───
-'card.video1.name': { en: 'Paula Rebollar · Mentor for Copywriters', es: 'Paula Rebollar · Mentora de copywriters' },
-'card.video1.meta': { en: 'Instagram · Editing', es: 'Instagram · Edición' },
-
-'card.video2.name': { en: 'Clientify · CRM All in One', es: 'Clientify · CRM Todo en uno' },
-'card.video2.meta': { en: 'Corporate · Motion Graphics · Videomaking · Education ', es: 'Motion Graphics · Edición de Vídeo · Eduación' },
-
-'card.video3.name': { en: '101TV · 2017, first experience', es: '101TV · 2017, first experience' },
-'card.video3.meta': { en: 'Television · Camerawoman · Show Director', es: 'Television · Cámara ENG · Realizadora' },
-
-'card.video4.name': { en: 'Play Ground · Enjoying times', es: 'El patio de las ideas' },
-'card.video4.meta': { en: 'Ideas on my mind for all platforms', es: 'Experimentando para todas las plataformas' },
-
-// Botón genérico para videos (si no quieres reutilizar "View case study")
-'card.btn.view': { en: 'View', es: 'Ver' },
- 
   // ─── DOMAIN TAGS (for filters + case studies) ───
   'tag.domain.viajes':     { en: 'Travel',    es: 'Viajes' },
   'tag.domain.finanzas':   { en: 'Finance',   es: 'Finanzas' },
@@ -90,44 +74,6 @@ const T = {
   'tag.domain.saas':       { en: 'SaaS',      es: 'SaaS' },
   'tag.domain.fintech':    { en: 'Fintech',   es: 'Fintech' },
   'tag.domain.cultura':    { en: 'Culture',   es: 'Cultura' },
-  'tag.domain.empresa':    { en: 'Small Bussiness',   es: 'Pequeña empresa' },
-  'tag.domain.tv':         { en: 'Television',   es: 'Television' },
-
-  // ─── VIDEO FILTER TAGS ───
-  'tag.video.social':      { en: 'Social Media',  es: 'Social Media' },
-  'tag.video.tv':          { en: 'Television',    es: 'Televisión' },
-  'tag.video.education':   { en: 'Education',     es: 'Educación' },
-  'tag.video.corporate':   { en: 'Corporate',     es: 'Corporativo' },
-
-  // ─── VIDEO EXPAND BUTTONS ───
-  'card.btn.more':            { en: '+4 videos', es: '+4 vídeos' },
-  'card.btn.more.playground': { en: '+4 videos', es: '+4 vídeos' },
-
-  // ─── INDIVIDUAL VIDEO CARD TITLES ───
-  'vid.cfy.welcome.title':  { en: 'Welcome to the new Clientify',      es: 'Bienvenido al nuevo Clientify' },
-  'vid.cfy.welcome.meta':   { en: 'Corporate · Youtube',               es: 'Corporativo · Youtube' },
-  'vid.cfy.clients.title':  { en: "Client's stories · Clientify",      es: 'Historias de clientes · Clientify' },
-  'vid.cfy.clients.meta':   { en: 'Corporate · Youtube',               es: 'Corporativo · Youtube' },
-  'vid.cfy.webinar.title':  { en: 'Intro — Webinars · Clientify',      es: 'Intro — Webinars · Clientify' },
-  'vid.cfy.webinar.meta':   { en: 'Motion Graphics · Education',       es: 'Motion Graphics · Educación' },
-  'vid.cfy.intro.title':    { en: "Intro & Outro · Clientify",         es: 'Intro & Outro · Clientify' },
-  'vid.cfy.intro.meta':     { en: 'Motion Graphics',                   es: 'Motion Graphics' },
-  'vid.cfy.ads.title':      { en: 'Spot Google & Meta ADS · Clientify',es: 'Spot Google & Meta ADS · Clientify' },
-  'vid.cfy.ads.meta':       { en: 'Corporate · Ads',                   es: 'Corporativo · Ads' },
-  'vid.paula.title':        { en: 'Paula Rebollar · Mentor for Copywriters', es: 'Paula Rebollar · Mentora de copywriters' },
-  'vid.paula.meta':         { en: 'Social Media · Instagram',          es: 'Social Media · Instagram' },
-  'vid.101tv.title':        { en: '101TV · Camerawoman & Show Director', es: '101TV · Cámara ENG & Realizadora' },
-  'vid.101tv.meta':         { en: 'Television · Broadcast',            es: 'Televisión · Broadcast' },
-  'vid.ai.title':           { en: 'Experimenting with AI',             es: 'Experimentando con IA' },
-  'vid.ai.meta':            { en: 'Social Media · Instagram · TikTok', es: 'Social Media · Instagram · TikTok' },
-  'vid.brand.title':        { en: 'Content for vanesafrz brand',       es: 'Contenido para la marca vanesafrz' },
-  'vid.brand.meta':         { en: 'Social Media · Instagram',          es: 'Social Media · Instagram' },
-  'vid.insideout.title':    { en: 'Inside Out · Clientify',            es: 'Inside Out · Clientify' },
-  'vid.insideout.meta':     { en: 'Social Media · Instagram · TikTok', es: 'Social Media · Instagram · TikTok' },
-  'vid.roskilde.title':     { en: 'Roskilde University (Denmark)',     es: 'Roskilde University (Dinamarca)' },
-  'vid.roskilde.meta':      { en: 'Education · Motion Graphics · Youtube', es: 'Educación · Motion Graphics · Youtube' },
-  'vid.puraenvidia.title':  { en: 'PuraEnvidia Agency',                es: 'Agencia PuraEnvidia' },
-  'vid.puraenvidia.meta':   { en: 'Social Media',                      es: 'Social Media' },
 
   // ─── Common tags ───
   'tag.skill.app':         { en: 'App', es: 'App' },
@@ -388,11 +334,12 @@ const T = {
 
   // ─── LUMIX CASE STUDY PAGE (lumix.html) ───
 
-  // Subtitle (updated for case page)
-  'm.lumix.sub': { en: 'How might we help young professionals who earn enough but still feel financially anxious? We designed a behavioral fintech app that connects real bank data with emotional awareness — replacing overwhelm with clarity.', es: '¿Cómo podemos ayudar a jóvenes profesionales que ganan lo suficiente pero siguen sintiendo ansiedad financiera? Diseñamos una app fintech conductual que conecta datos bancarios reales con conciencia emocional — reemplazando el agobio por claridad.' },
+  'm.lumix.c.name': { en: 'Lumix — Designing financial clarity through emotional regulation', es: 'Lumix — Diseñando claridad financiera a través de la regulación emocional' },
+  'm.lumix.c.sub': { en: 'How might we help young professionals who earn enough but still feel financially anxious? We designed a behavioral fintech app that connects real bank data with emotional awareness — replacing overwhelm with clarity.', es: '¿Cómo podemos ayudar a jóvenes profesionales que ganan lo suficiente pero siguen sintiendo ansiedad financiera? Diseñamos una app fintech conductual que conecta datos bancarios reales con conciencia emocional — reemplazando el agobio por claridad.' },
 
   // Section labels
   'm.lumix.c.l.overview':       { en: 'OVERVIEW',                es: 'CONTEXTO' },
+  'm.lumix.c.l.problem':        { en: 'THE PROBLEM',             es: 'EL PROBLEMA' },
   'm.lumix.c.l.challenge':      { en: 'THE CHALLENGE',           es: 'EL RETO' },
   'm.lumix.c.l.research':       { en: 'RESEARCH & DISCOVERY',    es: 'INVESTIGACIÓN Y DESCUBRIMIENTO' },
   'm.lumix.c.l.insights':       { en: 'KEY INSIGHTS',            es: 'INSIGHTS CLAVE' },
@@ -402,6 +349,7 @@ const T = {
   'm.lumix.c.l.prioritization': { en: 'FEATURE PRIORITIZATION',  es: 'PRIORIZACIÓN DE FUNCIONALIDADES' },
   'm.lumix.c.l.ia':             { en: 'INFORMATION ARCHITECTURE', es: 'ARQUITECTURA DE INFORMACIÓN' },
   'm.lumix.c.l.decisions':      { en: 'KEY DESIGN DECISIONS',    es: 'DECISIONES CLAVE DE DISEÑO' },
+  'm.lumix.c.l.solution':       { en: 'THE SOLUTION',            es: 'LA SOLUCIÓN' },
   'm.lumix.c.l.prototype':      { en: 'THE PROTOTYPE',           es: 'EL PROTOTIPO' },
   'm.lumix.c.l.clarity':        { en: 'FINANCIAL CLARITY',       es: 'CLARIDAD FINANCIERA' },
   'm.lumix.c.l.conversational': { en: 'CONVERSATIONAL SUPPORT',  es: 'SOPORTE CONVERSACIONAL' },
@@ -425,7 +373,12 @@ const T = {
   'm.lumix.c.role.t4': { en: 'UI design & tone', es: 'Diseño UI y tono' },
   'm.lumix.c.role.d4': { en: 'Friendly language, non-punitive feedback, key screens in Figma', es: 'Lenguaje friendly, feedback no punitivo, pantallas clave en Figma' },
 
-  // Challenge
+  // The Problem (synthesized)
+  'm.lumix.c.problem1': { en: '<b>Hypothesis:</b> young professionals with stable income shouldn\'t feel financially stressed — but they do. And the tools designed to help them are actually making it worse.', es: '<b>Hipótesis:</b> los jóvenes profesionales con ingresos estables no deberían sentir estrés financiero — pero lo sienten. Y las herramientas diseñadas para ayudarles están empeorando las cosas.' },
+  'm.lumix.c.problem2': { en: 'Secondary research confirmed the scale:', es: 'La investigación secundaria confirmó la magnitud:' },
+  'm.lumix.c.problem3': { en: 'We validated this through a <b>quantitative survey</b> (85 respondents, ages 22–35), an <b>expert interview</b> with a clinical psychologist, and <b>secondary research</b> on financial stress among Spanish youth. The data consistently pointed to the same conclusion: financial stress is less about numbers and more about <b>perceived lack of control</b>.', es: 'Lo validamos a través de una <b>encuesta cuantitativa</b> (85 participantes, 22–35 años), una <b>entrevista experta</b> con una psicóloga clínica, e <b>investigación secundaria</b> sobre estrés financiero en jóvenes españoles. Los datos apuntaron consistentemente a la misma conclusión: el estrés financiero tiene menos que ver con los números y más con la <b>percepción de falta de control</b>.' },
+
+  // Challenge (kept for modal compatibility)
   'm.lumix.c.challenge1': { en: 'We started with a hypothesis: <b>young professionals with stable income shouldn\'t feel financially stressed — but they do.</b>', es: 'Partimos de una hipótesis: <b>los jóvenes profesionales con ingresos estables no deberían sentir estrés financiero — pero lo sienten.</b>' },
   'm.lumix.c.challenge2': { en: 'Secondary research confirmed the scale of the problem. The data pointed to a paradox: having income doesn\'t guarantee feeling at peace. And the tools that exist were making it worse.', es: 'La investigación secundaria confirmó la magnitud del problema. Los datos apuntaban a una paradoja: tener ingresos no garantiza sentir paz. Y las herramientas existentes lo estaban empeorando.' },
   'm.lumix.c.stat1': { en: 'of young adults (20–34) at risk of depression due to economic insecurity', es: 'de jóvenes (20–34) en riesgo de depresión por inseguridad económica' },
@@ -445,7 +398,7 @@ const T = {
   'm.lumix.c.meth3.desc': { en: 'Financial stress among Spanish youth, mental health data, behavioral finance, and literacy rates.', es: 'Estrés financiero en jóvenes españoles, datos de salud mental, finanzas conductuales y tasas de alfabetización.' },
 
   // Key Insights
-  'm.lumix.c.insights.intro': { en: 'The research revealed four insights that fundamentally shaped our product direction:', es: 'La investigación reveló cuatro insights que moldearon fundamentalmente la dirección del producto:' },
+  'm.lumix.c.insights.intro': { en: 'The research revealed four patterns that shaped our product direction:', es: 'La investigación reveló cuatro patrones que moldearon la dirección del producto:' },
   'm.lumix.c.ins1.t': { en: 'Anxiety is persistent, not situational', es: 'La ansiedad es persistente, no situacional' },
   'm.lumix.c.ins1.s1': { en: '<strong>46%</strong> feel frequent financial stress', es: '<strong>46%</strong> siente estrés financiero frecuente' },
   'm.lumix.c.ins1.s2': { en: '<strong>5.8%</strong> never feel anxiety', es: '<strong>5.8%</strong> nunca siente ansiedad' },
@@ -531,6 +484,9 @@ const T = {
   'm.lumix.c.ia5.t': { en: 'Lumix AI', es: 'Lumix IA' },
   'm.lumix.c.ia5.d': { en: 'Mascot chatbot. Translates bank data into friendly advice.', es: 'Chatbot mascota. Traduce datos bancarios en consejos amigables.' },
 
+  // The Solution (synthesized)
+  'm.lumix.c.solution.intro': { en: 'Instead of another dashboard-heavy finance app, we designed around four pillars — clarity, automation, projection, and emotional safety — mapping every feature back to a research insight:', es: 'En lugar de otra app financiera llena de dashboards, diseñamos en torno a cuatro pilares — claridad, automatización, proyección y seguridad emocional — mapeando cada funcionalidad a un insight de investigación:' },
+
   // Design decisions
   'm.lumix.c.decisions.intro': { en: 'Every design choice was mapped back to a research insight:', es: 'Cada decisión de diseño se mapeó a un insight de investigación:' },
   'm.lumix.c.dec1.insight': { en: 'Insight: Facing financial data activates emotional pain', es: 'Insight: Enfrentar datos financieros activa dolor emocional' },
@@ -605,113 +561,76 @@ function initProjectsPage(){
 
   const tabBtns = Array.from(document.querySelectorAll('[data-tab]'));
   const tabPanels = Array.from(document.querySelectorAll('[data-tab-panel]'));
-
-  // Separate filter sections
-  const uxFiltersSection = document.getElementById('uxFiltersSection');
-  const videoFiltersSection = document.getElementById('videoFiltersSection');
-  const uxFilterWrap = document.getElementById('uxTagFilters');
-  const videoFilterWrap = document.getElementById('videoTagFilters');
-  const clearUxBtn = document.getElementById('clearFiltersUx');
-  const clearVideoBtn = document.getElementById('clearFiltersVideo');
-  // Legacy fallback for old single-filter layout
-  const legacyFilterWrap = document.getElementById('tagFilters');
-  const legacyClearBtn = document.getElementById('clearFilters');
+  const filterWrap = document.getElementById('tagFilters');
+  const clearBtn = document.getElementById('clearFilters');
   const emptyUx = document.getElementById('emptyUx');
   const emptyVideo = document.getElementById('emptyVideo');
 
-  const selectedUx = new Set();
-  const selectedVideo = new Set();
+  const selected = new Set();
 
-  let currentTab = 'ux';
-
-  // Setup chip click handlers for a filter group
-  function setupChips(wrap, selectedSet, applyFn){
-    if(!wrap) return [];
-    const chips = Array.from(wrap.querySelectorAll('[data-tag]'));
-    chips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        const tag = normalizeTag(chip.getAttribute('data-tag'));
-        if(!tag) return;
-        if(selectedSet.has(tag)) selectedSet.delete(tag);
-        else selectedSet.add(tag);
-        chip.classList.toggle('active', selectedSet.has(tag));
-        applyFn();
-      });
+  const chips = Array.from(filterWrap?.querySelectorAll('[data-tag]') || []);
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const tag = normalizeTag(chip.getAttribute('data-tag'));
+      if(!tag) return;
+      if(selected.has(tag)) selected.delete(tag);
+      else selected.add(tag);
+      chip.classList.toggle('active', selected.has(tag));
+      applyFilters();
     });
-    return chips;
-  }
+  });
 
-  const uxChips = setupChips(uxFilterWrap || legacyFilterWrap, selectedUx, applyUxFilters);
-  const videoChips = setupChips(videoFilterWrap, selectedVideo, applyVideoFilters);
-
-  // Clear buttons
-  function clearSet(set, chips, applyFn){
-    set.clear();
+  clearBtn?.addEventListener('click', () => {
+    selected.clear();
     chips.forEach(c => c.classList.remove('active'));
-    applyFn();
-  }
-
-  (clearUxBtn || legacyClearBtn)?.addEventListener('click', () => clearSet(selectedUx, uxChips, applyUxFilters));
-  clearVideoBtn?.addEventListener('click', () => clearSet(selectedVideo, videoChips, applyVideoFilters));
-
-  function cardMatches(card, selectedSet){
-    if(selectedSet.size === 0) return true;
-    const tags = (card.getAttribute('data-tags') || '')
-      .split(',')
-      .map(normalizeTag)
-      .filter(Boolean);
-    for(const s of selectedSet){
-      if(tags.includes(s)) return true;
-    }
-    return false;
-  }
-
-  function applyUxFilters(){
-    const uxPanel = document.querySelector('[data-tab-panel="ux"]');
-    const uxCards = Array.from(uxPanel?.querySelectorAll('.project-card') || []);
-    let uxVisible = 0;
-    uxCards.forEach(card => {
-      const ok = cardMatches(card, selectedUx);
-      card.style.display = ok ? '' : 'none';
-      if(ok) uxVisible += 1;
-    });
-    if(emptyUx) emptyUx.style.display = (uxCards.length && uxVisible === 0) ? 'block' : 'none';
-  }
-
-  function applyVideoFilters(){
-    const videoPanel = document.querySelector('[data-tab-panel="video"]');
-    const videoCards = Array.from(videoPanel?.querySelectorAll('.video-mini-card, .video-project-card, .project-card') || []);
-    let videoVisible = 0;
-    videoCards.forEach(card => {
-      const ok = cardMatches(card, selectedVideo);
-      card.style.display = ok ? '' : 'none';
-      if(ok) videoVisible += 1;
-    });
-    if(emptyVideo) emptyVideo.style.display = (videoCards.length > 0 && videoVisible === 0) ? 'block' : 'none';
-  }
+    applyFilters();
+  });
 
   function showTab(tab){
-    currentTab = tab;
     tabBtns.forEach(b => b.classList.toggle('active', b.getAttribute('data-tab') === tab));
     tabPanels.forEach(p => p.classList.toggle('active', p.getAttribute('data-tab-panel') === tab));
-
-    // Toggle filter sections
-    if(uxFiltersSection && videoFiltersSection){
-      uxFiltersSection.style.display = (tab === 'ux') ? '' : 'none';
-      videoFiltersSection.style.display = (tab === 'video') ? '' : 'none';
-    }
-
-    // Apply relevant filters
-    if(tab === 'ux') applyUxFilters();
-    else applyVideoFilters();
   }
 
   tabBtns.forEach(btn => btn.addEventListener('click', () => {
     showTab(btn.getAttribute('data-tab'));
   }));
 
+  function cardMatches(card){
+    if(selected.size === 0) return true;
+    const tags = (card.getAttribute('data-tags') || '')
+      .split(',')
+      .map(normalizeTag)
+      .filter(Boolean);
+    for(const s of selected){
+      if(tags.includes(s)) return true;
+    }
+    return false;
+  }
+
+  function applyFilters(){
+    const uxPanel = document.querySelector('[data-tab-panel="ux"]');
+    const uxCards = Array.from(uxPanel?.querySelectorAll('.project-card') || []);
+    let uxVisible = 0;
+    uxCards.forEach(card => {
+      const ok = cardMatches(card);
+      card.style.display = ok ? '' : 'none';
+      if(ok) uxVisible += 1;
+    });
+    if(emptyUx) emptyUx.style.display = (uxCards.length && uxVisible === 0) ? 'block' : 'none';
+
+    const videoPanel = document.querySelector('[data-tab-panel="video"]');
+    const videoCards = Array.from(videoPanel?.querySelectorAll('.project-card') || []);
+    let videoVisible = 0;
+    videoCards.forEach(card => {
+      const ok = cardMatches(card);
+      card.style.display = ok ? '' : 'none';
+      if(ok) videoVisible += 1;
+    });
+    if(emptyVideo) emptyVideo.style.display = (videoCards.length === 0) ? 'block' : (videoVisible === 0 ? 'block' : 'none');
+  }
+
   showTab('ux');
-  applyUxFilters();
+  applyFilters();
 }
 
 // Apply saved language on load
