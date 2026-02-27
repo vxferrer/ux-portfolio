@@ -93,6 +93,16 @@ const T = {
   'tag.domain.empresa':    { en: 'Small Bussiness',   es: 'Pequeña empresa' },
   'tag.domain.tv':         { en: 'Television',   es: 'Television' },
 
+  // ─── VIDEO FILTER TAGS ───
+  'tag.video.social':      { en: 'Social Media',  es: 'Social Media' },
+  'tag.video.tv':          { en: 'Television',    es: 'Televisión' },
+  'tag.video.education':   { en: 'Education',     es: 'Educación' },
+  'tag.video.corporate':   { en: 'Corporate',     es: 'Corporativo' },
+
+  // ─── VIDEO EXPAND BUTTONS ───
+  'card.btn.more':            { en: '+4 videos', es: '+4 vídeos' },
+  'card.btn.more.playground': { en: '+4 videos', es: '+4 vídeos' },
+
   // ─── Common tags ───
   'tag.skill.app':         { en: 'App', es: 'App' },
   'tag.skill.mobileapp':   { en: 'Mobile App', es: 'App móvil' },
@@ -569,76 +579,113 @@ function initProjectsPage(){
 
   const tabBtns = Array.from(document.querySelectorAll('[data-tab]'));
   const tabPanels = Array.from(document.querySelectorAll('[data-tab-panel]'));
-  const filterWrap = document.getElementById('tagFilters');
-  const clearBtn = document.getElementById('clearFilters');
+
+  // Separate filter sections
+  const uxFiltersSection = document.getElementById('uxFiltersSection');
+  const videoFiltersSection = document.getElementById('videoFiltersSection');
+  const uxFilterWrap = document.getElementById('uxTagFilters');
+  const videoFilterWrap = document.getElementById('videoTagFilters');
+  const clearUxBtn = document.getElementById('clearFiltersUx');
+  const clearVideoBtn = document.getElementById('clearFiltersVideo');
+  // Legacy fallback for old single-filter layout
+  const legacyFilterWrap = document.getElementById('tagFilters');
+  const legacyClearBtn = document.getElementById('clearFilters');
   const emptyUx = document.getElementById('emptyUx');
   const emptyVideo = document.getElementById('emptyVideo');
 
-  const selected = new Set();
+  const selectedUx = new Set();
+  const selectedVideo = new Set();
 
-  const chips = Array.from(filterWrap?.querySelectorAll('[data-tag]') || []);
-  chips.forEach(chip => {
-    chip.addEventListener('click', () => {
-      const tag = normalizeTag(chip.getAttribute('data-tag'));
-      if(!tag) return;
-      if(selected.has(tag)) selected.delete(tag);
-      else selected.add(tag);
-      chip.classList.toggle('active', selected.has(tag));
-      applyFilters();
+  let currentTab = 'ux';
+
+  // Setup chip click handlers for a filter group
+  function setupChips(wrap, selectedSet, applyFn){
+    if(!wrap) return [];
+    const chips = Array.from(wrap.querySelectorAll('[data-tag]'));
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const tag = normalizeTag(chip.getAttribute('data-tag'));
+        if(!tag) return;
+        if(selectedSet.has(tag)) selectedSet.delete(tag);
+        else selectedSet.add(tag);
+        chip.classList.toggle('active', selectedSet.has(tag));
+        applyFn();
+      });
     });
-  });
+    return chips;
+  }
 
-  clearBtn?.addEventListener('click', () => {
-    selected.clear();
+  const uxChips = setupChips(uxFilterWrap || legacyFilterWrap, selectedUx, applyUxFilters);
+  const videoChips = setupChips(videoFilterWrap, selectedVideo, applyVideoFilters);
+
+  // Clear buttons
+  function clearSet(set, chips, applyFn){
+    set.clear();
     chips.forEach(c => c.classList.remove('active'));
-    applyFilters();
-  });
+    applyFn();
+  }
+
+  (clearUxBtn || legacyClearBtn)?.addEventListener('click', () => clearSet(selectedUx, uxChips, applyUxFilters));
+  clearVideoBtn?.addEventListener('click', () => clearSet(selectedVideo, videoChips, applyVideoFilters));
+
+  function cardMatches(card, selectedSet){
+    if(selectedSet.size === 0) return true;
+    const tags = (card.getAttribute('data-tags') || '')
+      .split(',')
+      .map(normalizeTag)
+      .filter(Boolean);
+    for(const s of selectedSet){
+      if(tags.includes(s)) return true;
+    }
+    return false;
+  }
+
+  function applyUxFilters(){
+    const uxPanel = document.querySelector('[data-tab-panel="ux"]');
+    const uxCards = Array.from(uxPanel?.querySelectorAll('.project-card') || []);
+    let uxVisible = 0;
+    uxCards.forEach(card => {
+      const ok = cardMatches(card, selectedUx);
+      card.style.display = ok ? '' : 'none';
+      if(ok) uxVisible += 1;
+    });
+    if(emptyUx) emptyUx.style.display = (uxCards.length && uxVisible === 0) ? 'block' : 'none';
+  }
+
+  function applyVideoFilters(){
+    const videoPanel = document.querySelector('[data-tab-panel="video"]');
+    const videoCards = Array.from(videoPanel?.querySelectorAll('.video-project-card, .project-card') || []);
+    let videoVisible = 0;
+    videoCards.forEach(card => {
+      const ok = cardMatches(card, selectedVideo);
+      card.style.display = ok ? '' : 'none';
+      if(ok) videoVisible += 1;
+    });
+    if(emptyVideo) emptyVideo.style.display = (videoCards.length > 0 && videoVisible === 0) ? 'block' : 'none';
+  }
 
   function showTab(tab){
+    currentTab = tab;
     tabBtns.forEach(b => b.classList.toggle('active', b.getAttribute('data-tab') === tab));
     tabPanels.forEach(p => p.classList.toggle('active', p.getAttribute('data-tab-panel') === tab));
+
+    // Toggle filter sections
+    if(uxFiltersSection && videoFiltersSection){
+      uxFiltersSection.style.display = (tab === 'ux') ? '' : 'none';
+      videoFiltersSection.style.display = (tab === 'video') ? '' : 'none';
+    }
+
+    // Apply relevant filters
+    if(tab === 'ux') applyUxFilters();
+    else applyVideoFilters();
   }
 
   tabBtns.forEach(btn => btn.addEventListener('click', () => {
     showTab(btn.getAttribute('data-tab'));
   }));
 
-  function cardMatches(card){
-    if(selected.size === 0) return true;
-    const tags = (card.getAttribute('data-tags') || '')
-      .split(',')
-      .map(normalizeTag)
-      .filter(Boolean);
-    for(const s of selected){
-      if(tags.includes(s)) return true;
-    }
-    return false;
-  }
-
-  function applyFilters(){
-    const uxPanel = document.querySelector('[data-tab-panel="ux"]');
-    const uxCards = Array.from(uxPanel?.querySelectorAll('.project-card') || []);
-    let uxVisible = 0;
-    uxCards.forEach(card => {
-      const ok = cardMatches(card);
-      card.style.display = ok ? '' : 'none';
-      if(ok) uxVisible += 1;
-    });
-    if(emptyUx) emptyUx.style.display = (uxCards.length && uxVisible === 0) ? 'block' : 'none';
-
-    const videoPanel = document.querySelector('[data-tab-panel="video"]');
-    const videoCards = Array.from(videoPanel?.querySelectorAll('.project-card') || []);
-    let videoVisible = 0;
-    videoCards.forEach(card => {
-      const ok = cardMatches(card);
-      card.style.display = ok ? '' : 'none';
-      if(ok) videoVisible += 1;
-    });
-    if(emptyVideo) emptyVideo.style.display = (videoCards.length === 0) ? 'block' : (videoVisible === 0 ? 'block' : 'none');
-  }
-
   showTab('ux');
-  applyFilters();
+  applyUxFilters();
 }
 
 // Apply saved language on load

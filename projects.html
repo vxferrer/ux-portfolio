@@ -6,6 +6,174 @@
 <title>vanesafrz — Projects</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+
+<style>
+/* ─── VIDEO CARD INLINE PLAYER ─── */
+.video-project-card{
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--gray-200);
+  transition: transform .4s, box-shadow .4s;
+}
+.video-project-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.08);
+}
+
+.video-project-player{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: var(--gray-100);
+  overflow: hidden;
+}
+
+.video-project-player .video-thumb-overlay{
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .3s;
+}
+.video-project-player .video-thumb-overlay img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video-project-player .video-thumb-overlay .play-btn{
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(10,10,10,.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .3s, background .3s;
+}
+.video-project-player .video-thumb-overlay:hover .play-btn{
+  transform: scale(1.1);
+  background: var(--blue);
+}
+.video-project-player .video-thumb-overlay .play-btn svg{
+  margin-left: 3px;
+}
+
+.video-project-player iframe{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  border: 0;
+}
+
+.video-project-player.playing .video-thumb-overlay{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.video-project-body{
+  padding: 20px 24px 24px;
+}
+.video-project-body .project-name{
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+.video-project-body .project-meta{
+  font-family: 'Space Grotesk', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gray-500);
+  letter-spacing: .5px;
+}
+
+/* ─── Multi-video expand ─── */
+.video-project-extras{
+  display: none;
+  padding: 0 24px 20px;
+}
+.video-project-extras.open{
+  display: block;
+}
+.video-extras-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.video-extra-item{
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--gray-200);
+  background: var(--gray-100);
+  cursor: pointer;
+  transition: border-color .3s;
+}
+.video-extra-item:hover{
+  border-color: var(--blue);
+}
+.video-extra-item iframe{
+  width: 100%;
+  aspect-ratio: 16/9;
+  display: block;
+  border: 0;
+  pointer-events: none;
+}
+.video-extra-item.active iframe{
+  pointer-events: auto;
+}
+.video-extra-caption{
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gray-600);
+  background: #fff;
+  border-top: 1px solid var(--gray-200);
+}
+
+.btn-expand-videos{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--blue);
+  background: none;
+  border: 1px solid var(--gray-200);
+  padding: 8px 16px;
+  border-radius: 100px;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: all .25s;
+}
+.btn-expand-videos:hover{
+  border-color: var(--blue);
+  background: var(--blue-glow);
+}
+.btn-expand-videos .chevron{
+  transition: transform .3s;
+}
+.btn-expand-videos.expanded .chevron{
+  transform: rotate(180deg);
+}
+
+@media (max-width: 900px){
+  .video-extras-grid{ grid-template-columns: 1fr; }
+}
+@media (max-width: 768px){
+  .video-project-player .video-thumb-overlay .play-btn{
+    width: 52px;
+    height: 52px;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -38,14 +206,13 @@
       <button class="tab-btn" type="button" data-tab="video" data-i18n="projects.tab.video">Videos</button>
     </div>
 
-    <!-- Filters -->
-    <section class="projects-filters reveal" aria-label="Filters">
+    <!-- ═══ UX FILTERS ═══ -->
+    <section class="projects-filters reveal" id="uxFiltersSection" aria-label="UX Filters">
       <div class="filters-head">
         <h2 class="filters-title" data-i18n="projects.filter.title">Filter by tags</h2>
-        <button class="filters-clear" id="clearFilters" type="button" data-i18n="projects.filter.clear">Clear filters</button>
+        <button class="filters-clear" id="clearFiltersUx" type="button" data-i18n="projects.filter.clear">Clear filters</button>
       </div>
-
-      <div class="filters-chips" id="tagFilters">
+      <div class="filters-chips" id="uxTagFilters">
         <button class="chip" type="button" data-tag="Viajes" data-i18n="tag.domain.viajes">Viajes</button>
         <button class="chip" type="button" data-tag="Finanzas" data-i18n="tag.domain.finanzas">Finanzas</button>
         <button class="chip" type="button" data-tag="Bienestar" data-i18n="tag.domain.bienestar">Bienestar</button>
@@ -54,16 +221,28 @@
         <button class="chip" type="button" data-tag="Saas" data-i18n="tag.domain.saas">Saas</button>
         <button class="chip" type="button" data-tag="Fintech" data-i18n="tag.domain.fintech">Fintech</button>
         <button class="chip" type="button" data-tag="Cultura" data-i18n="tag.domain.cultura">Cultura</button>
-        <button class="chip" type="button" data-tag="PequenasEmpresas" data-i18n="tag.domain.empresa">Pequeñas empresas</button>
-        <button class="chip" type="button" data-tag="TV" data-i18n="tag.domain.tv">Pequeñas empresas</button>
       </div>
     </section>
 
-    <!-- Panels -->
+    <!-- ═══ VIDEO FILTERS ═══ -->
+    <section class="projects-filters reveal" id="videoFiltersSection" aria-label="Video Filters" style="display:none">
+      <div class="filters-head">
+        <h2 class="filters-title" data-i18n="projects.filter.title">Filter by tags</h2>
+        <button class="filters-clear" id="clearFiltersVideo" type="button" data-i18n="projects.filter.clear">Clear filters</button>
+      </div>
+      <div class="filters-chips" id="videoTagFilters">
+        <button class="chip" type="button" data-tag="SocialMedia" data-i18n="tag.video.social">Social Media</button>
+        <button class="chip" type="button" data-tag="Television" data-i18n="tag.video.tv">Television</button>
+        <button class="chip" type="button" data-tag="Educacion" data-i18n="tag.video.education">Education</button>
+        <button class="chip" type="button" data-tag="Corporativo" data-i18n="tag.video.corporate">Corporate</button>
+      </div>
+    </section>
+
+    <!-- ═══ UX PANEL ═══ -->
     <section class="projects-panel active" data-tab-panel="ux">
       <div class="projects-grid">
 
-        <!-- LUMIX (UX) -->
+        <!-- LUMIX -->
         <div class="project-card reveal" data-tags="Fintech, Finanzas, Bienestar" onclick="window.location.href='lumix.html'">
           <div class="project-img-wrap">
             <img class="project-thumb" src="img/lumix-portada.jpg" alt="Lumix" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -78,7 +257,7 @@
           </div>
         </div>
 
-        <!-- KOREAN AIR (UX) -->
+        <!-- KOREAN AIR -->
         <div class="project-card reveal" data-tags="Viajes" onclick="window.location.href='korean-air.html'">
           <div class="project-img-wrap">
             <img class="project-thumb" src="img/koreanair-cover.jpg" alt="Korean Air" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -93,7 +272,7 @@
           </div>
         </div>
 
-        <!-- MUSEEK (UX) -->
+        <!-- MUSEEK -->
         <div class="project-card reveal" data-tags="Cultura, Ocio" onclick="window.location.href='museek.html'">
           <div class="project-img-wrap">
             <img class="project-thumb" src="img/museek-cover.jpg" alt="Museek" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -112,86 +291,130 @@
       <p class="projects-empty" id="emptyUx" data-i18n="projects.empty" style="display:none">No projects match the selected tags.</p>
     </section>
 
-    <!-- ✅ VIDEO PANEL (con cards) -->
+    <!-- ═══ VIDEO PANEL — INLINE PLAYERS ═══ -->
     <section class="projects-panel" data-tab-panel="video">
       <div class="projects-grid">
 
-        <!-- VIDEO 1 -->
-<div class="project-card reveal" data-tags="PequenasEmpresas" onclick="window.location.href='social-paula.html'">
-  <div class="project-img-wrap">
-    <img class="project-thumb" src="img/paula-rebollar.jpg" alt="Content Creation"
-         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <div class="project-placeholder video-thumb-placeholder" style="display:none">
-      Video Ad<br><span style="font-size:11px">Recomendado: 800×600px</span>
-    </div>
-  </div>
-  <div class="project-body">
-    <h3 class="project-name" data-i18n="card.video1.name">Paula Rebollar - Mentor Copywriter</h3>
-    <p class="project-meta" data-i18n="card.video1.meta">Instagram · Editing</p>
-    <div class="project-actions">
-      <a class="btn-case" href="social-paula.html" data-i18n="card.btn.view" onclick="event.stopPropagation()">View</a>
-    </div>
-  </div>
-</div>
+        <!-- ▶ PAULA REBOLLAR -->
+        <div class="video-project-card reveal" data-tags="SocialMedia">
+          <div class="video-project-player" id="player-paula">
+            <div class="video-thumb-overlay" onclick="playVideo(this)">
+              <img src="img/paula-rebollar.jpg" alt="Paula Rebollar" onerror="this.parentElement.style.background='var(--gray-200)'">
+              <div class="play-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6,3 20,12 6,21" fill="#fff"/></svg>
+              </div>
+            </div>
+            <iframe data-src="https://player.vimeo.com/video/1161779234?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-project-body">
+            <h3 class="project-name" data-i18n="card.video1.name">Paula Rebollar · Mentor for Copywriters</h3>
+            <p class="project-meta" data-i18n="card.video1.meta">Instagram · Editing</p>
+          </div>
+        </div>
 
-<!-- VIDEO 2 -->
-<div class="project-card reveal" data-tags="Saas" onclick="window.location.href='clientify.html'">
-  <div class="project-img-wrap">
-    <img class="project-thumb" src="img/cfy.jpg" alt="Corporate Video — Demo"
-         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <div class="project-placeholder video-thumb-placeholder" style="display:none">
-      Motion Graphics<br><span style="font-size:11px">Recomendado: 800×600px</span>
-    </div>
-  </div>
-  <div class="project-body">
-    <h3 class="project-name" data-i18n="card.video2.name">Clientify · CRM All in One</h3>
-    <p class="project-meta" data-i18n="card.video2.meta">Corporate · Videomaking · Motion Graphics · Education</p>
-    <div class="project-actions">
-      <a class="btn-case" href="clientify.html" data-i18n="card.btn.view" onclick="event.stopPropagation()">View</a>
-    </div>
-  </div>
-</div>
+        <!-- ▶ CLIENTIFY (multi-video) -->
+        <div class="video-project-card reveal" data-tags="Corporativo, Educacion, SocialMedia">
+          <div class="video-project-player" id="player-clientify">
+            <div class="video-thumb-overlay" onclick="playVideo(this)">
+              <img src="img/cfy.jpg" alt="Clientify" onerror="this.parentElement.style.background='var(--gray-200)'">
+              <div class="play-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6,3 20,12 6,21" fill="#fff"/></svg>
+              </div>
+            </div>
+            <iframe data-src="https://player.vimeo.com/video/1130438639?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-project-body">
+            <h3 class="project-name" data-i18n="card.video2.name">Clientify · CRM All in One</h3>
+            <p class="project-meta" data-i18n="card.video2.meta">Corporate · Motion Graphics · Videomaking · Education</p>
+            <button class="btn-expand-videos" onclick="toggleExtras(this)">
+              <span data-i18n="card.btn.more">+4 videos</span>
+              <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <div class="video-project-extras" id="extras-clientify">
+            <div class="video-extras-grid">
+              <div class="video-extra-item" onclick="swapMainVideo(this, 'player-clientify', 'https://player.vimeo.com/video/1130438930?autoplay=1&title=0&byline=0&portrait=0')">
+                <iframe src="https://player.vimeo.com/video/1130438930?title=0&byline=0&portrait=0" allow="fullscreen" allowfullscreen></iframe>
+                <div class="video-extra-caption">Client's stories</div>
+              </div>
+              <div class="video-extra-item" onclick="swapMainVideo(this, 'player-clientify', 'https://player.vimeo.com/video/1130438460?autoplay=1&title=0&byline=0&portrait=0')">
+                <iframe src="https://player.vimeo.com/video/1130438460?title=0&byline=0&portrait=0" allow="fullscreen" allowfullscreen></iframe>
+                <div class="video-extra-caption">Intro - Webinars</div>
+              </div>
+              <div class="video-extra-item" onclick="swapMainVideo(this, 'player-clientify', 'https://player.vimeo.com/video/1130438368?autoplay=1&title=0&byline=0&portrait=0')">
+                <iframe src="https://player.vimeo.com/video/1130438368?title=0&byline=0&portrait=0" allow="fullscreen" allowfullscreen></iframe>
+                <div class="video-extra-caption">Intro & outro</div>
+              </div>
+              <div class="video-extra-item" onclick="swapMainVideo(this, 'player-clientify', 'https://player.vimeo.com/video/1130439051?autoplay=1&title=0&byline=0&portrait=0')">
+                <iframe src="https://player.vimeo.com/video/1130439051?title=0&byline=0&portrait=0" allow="fullscreen" allowfullscreen></iframe>
+                <div class="video-extra-caption">Google & Meta ADS</div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<!-- VIDEO 3 -->
-<div class="project-card reveal" data-tags="Television" onclick="window.location.href='camerawoman.html'">
-  <div class="project-img-wrap">
-    <img class="project-thumb" src="img/101tv.jpg" alt="Case Study Video — Demo"
-         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <div class="project-placeholder video-thumb-placeholder" style="display:none">
-      Case Study<br><span style="font-size:11px">Recomendado: 800×600px</span>
-    </div>
-  </div>
-  <div class="project-body">
-    <h3 class="project-name" data-i18n="card.video3.name">101TV</h3>
-    <p class="project-meta" data-i18n="card.video3.meta">Camerawoman · Television · Broadcast</p>
-    <div class="project-actions">
-      <a class="btn-case" href="camerawoman.html" data-i18n="card.btn.view" onclick="event.stopPropagation()">View</a>
-    </div>
-  </div>
-</div>
+        <!-- ▶ 101TV -->
+        <div class="video-project-card reveal" data-tags="Television">
+          <div class="video-project-player" id="player-101tv">
+            <div class="video-thumb-overlay" onclick="playVideo(this)">
+              <img src="img/101tv.jpg" alt="101TV" onerror="this.parentElement.style.background='var(--gray-200)'">
+              <div class="play-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6,3 20,12 6,21" fill="#fff"/></svg>
+              </div>
+            </div>
+            <iframe data-src="https://player.vimeo.com/video/347324319?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-project-body">
+            <h3 class="project-name" data-i18n="card.video3.name">101TV</h3>
+            <p class="project-meta" data-i18n="card.video3.meta">Camerawoman · Television · Broadcast</p>
+          </div>
+        </div>
 
-<!-- VIDEO 4 -->
-<div class="project-card reveal" data-tags="PequenasEmpresas" onclick="window.location.href='social-media.html'">
-  <div class="project-img-wrap">
-    <img class="project-thumb" src="img/playground.jpg" alt="Case Study Video — Demo"
-         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <div class="project-placeholder video-thumb-placeholder" style="display:none">
-      Case Study<br><span style="font-size:11px">Recomendado: 800×600px</span>
-    </div>
-  </div>
-  <div class="project-body">
-    <h3 class="project-name" data-i18n="card.video4.name">Playground · Social Media </h3>
-    <p class="project-meta" data-i18n="card.video4.meta">Filming · Editing · Motion Graphics</p>
-    <div class="project-actions">
-      <a class="btn-case" href="social-media.html" data-i18n="card.btn.view" onclick="event.stopPropagation()">View</a>
-    </div>
-  </div>
-</div>
+        <!-- ▶ PLAYGROUND (multi-video) -->
+        <div class="video-project-card reveal" data-tags="SocialMedia, Corporativo">
+          <div class="video-project-player" id="player-playground">
+            <div class="video-thumb-overlay" onclick="playVideo(this)">
+              <img src="img/playground.jpg" alt="Playground" onerror="this.parentElement.style.background='var(--gray-200)'">
+              <div class="play-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="6,3 20,12 6,21" fill="#fff"/></svg>
+              </div>
+            </div>
+            <iframe data-src="https://player.vimeo.com/video/1130441820?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-project-body">
+            <h3 class="project-name" data-i18n="card.video4.name">Playground · Social Media</h3>
+            <p class="project-meta" data-i18n="card.video4.meta">Ideas on my mind for all platforms</p>
+            <button class="btn-expand-videos" onclick="toggleExtras(this)">
+              <span data-i18n="card.btn.more.playground">+4 videos</span>
+              <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <div class="video-project-extras" id="extras-playground">
+            <div class="video-extras-grid">
+              <div class="video-extra-item" onclick="swapMainVideo(this, 'player-playground', 'https://player.vimeo.com/video/1168784080?autoplay=1&title=0&byline=0&portrait=0')">
+                <iframe src="https://player.vimeo.com/video/1168784080?title=0&byline=0&portrait=0" allow="fullscreen" allowfullscreen></iframe>
+                <div class="video-extra-caption">vanesafrz brand</div>
+              </div>
+              <div class="video-extra-item" onclick="swapMainVideo(this, 'player-playground', 'https://player.vimeo.com/video/1130439400?autoplay=1&title=0&byline=0&portrait=0')">
+                <iframe src="https://player.vimeo.com/video/1130439400?title=0&byline=0&portrait=0" allow="fullscreen" allowfullscreen></iframe>
+                <div class="video-extra-caption">Inside Out · Clientify</div>
+              </div>
+              <div class="video-extra-item" onclick="swapMainVideo(this, 'player-playground', 'https://player.vimeo.com/video/513557441?autoplay=1&title=0&byline=0&portrait=0')">
+                <iframe src="https://player.vimeo.com/video/513557441?title=0&byline=0&portrait=0" allow="fullscreen" allowfullscreen></iframe>
+                <div class="video-extra-caption">Roskilde University</div>
+              </div>
+              <div class="video-extra-item" onclick="swapMainVideo(this, 'player-playground', 'https://player.vimeo.com/video/731482710?autoplay=1&title=0&byline=0&portrait=0')">
+                <iframe src="https://player.vimeo.com/video/731482710?title=0&byline=0&portrait=0" allow="fullscreen" allowfullscreen></iframe>
+                <div class="video-extra-caption">PuraEnvidia Agency</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <!-- ✅ Oculta el “coming soon” si ya hay cards -->
-      <p class="projects-empty" id="emptyVideo" data-i18n="projects.video.empty" style="display:none">
-        Video projects coming soon.
+      <p class="projects-empty" id="emptyVideo" data-i18n="projects.empty" style="display:none">
+        No projects match the selected tags.
       </p>
     </section>
 
@@ -202,11 +425,47 @@
   <div class="footer-logo">vanesa<span class="blue">frz</span></div>
   <div class="footer-note" data-i18n="footer.note">Built with 🤍 vanesafrz · 2026</div>
   <div class="footer-socials">
-    <a href="#" aria-label="Behance">B</a>
-    <a href="#" aria-label="LinkedIn">in</a>
+    <a href="https://linkedin.com/in/vanesafrz" target="_blank" aria-label="LinkedIn">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z" stroke="currentColor" stroke-width="2"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="2"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/></svg>
+    </a>
+    <a href="mailto:vanesafrz.ux@gmail.com" aria-label="Email">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M22 7l-10 7L2 7" stroke="currentColor" stroke-width="2"/></svg>
+    </a>
   </div>
 </footer>
 
 <script src="script.js"></script>
+<script>
+// ═══════════════════════════════════════
+// VIDEO INLINE PLAYER LOGIC
+// ═══════════════════════════════════════
+
+function playVideo(overlay){
+  const player = overlay.parentElement;
+  const iframe = player.querySelector('iframe');
+  if(iframe.dataset.src){
+    iframe.src = iframe.dataset.src;
+    delete iframe.dataset.src;
+  }
+  player.classList.add('playing');
+}
+
+function toggleExtras(btn){
+  const card = btn.closest('.video-project-card');
+  const extras = card.querySelector('.video-project-extras');
+  if(!extras) return;
+  const isOpen = extras.classList.toggle('open');
+  btn.classList.toggle('expanded', isOpen);
+}
+
+function swapMainVideo(extraItem, playerId, newSrc){
+  const player = document.getElementById(playerId);
+  if(!player) return;
+  const iframe = player.querySelector('iframe');
+  iframe.src = newSrc;
+  player.classList.add('playing');
+  player.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</script>
 </body>
 </html>
