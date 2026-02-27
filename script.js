@@ -43,7 +43,7 @@ const T = {
 
   // ─── INDEX: Hero ───
   'hero.title':      { en: "I'm a <em>Product Designer</em> and strategic, goal oriented thinker focused in turn ideas into desirable products.",
-                       es: "Soy <em>Product Designer</em> y pensadora estratégica enfocada en convertir ideas en productos deseables." },
+                       es: "Soy <em>Product Designer</em> centrada en convertir ideas en productos que ganan clientes medibles." },
   'hero.btn.work':   { en: 'My work',       es: 'Mi trabajo' },
   'hero.btn.chat':   { en: 'Wanna chat?',   es: '¿Hablamos?' },
 
@@ -72,8 +72,8 @@ const T = {
 'card.video2.name': { en: 'Clientify · CRM All in One', es: 'Clientify · CRM Todo en uno' },
 'card.video2.meta': { en: 'Corporate · Motion Graphics · Videomaking · Education ', es: 'Motion Graphics · Edición de Vídeo · Eduación' },
 
-'card.video3.name': { en: 'Case Study Video — Demo', es: 'Vídeo caso de éxito — Demo' },
-'card.video3.meta': { en: 'Case study · YouTube/Vimeo · Editing', es: 'Caso de éxito · YouTube/Vimeo · Edición' },
+'card.video3.name': { en: 'Case Study Video — Demo', es: '101TV – (2017, first experience)' },
+'card.video3.meta': { en: 'Case study · YouTube/Vimeo · Editing', es: 'Television · Camerawoman · Show Director' },
 
 // Botón genérico para videos (si no quieres reutilizar "View case study")
 'card.btn.view': { en: 'View', es: 'Ver' },
@@ -87,6 +87,8 @@ const T = {
   'tag.domain.saas':       { en: 'SaaS',      es: 'SaaS' },
   'tag.domain.fintech':    { en: 'Fintech',   es: 'Fintech' },
   'tag.domain.cultura':    { en: 'Culture',   es: 'Cultura' },
+  'tag.domain.empresa':    { en: 'Small Bussiness',   es: 'Pequeña empresa' },
+  'tag.domain.tv':         { en: 'Television',   es: 'Television' },
 
   // ─── Common tags ───
   'tag.skill.app':         { en: 'App', es: 'App' },
